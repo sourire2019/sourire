@@ -1,0 +1,55 @@
+/bin/sh: 1: locate: not found
+/bin/sh: 1: locate: not found
+/bin/sh: 1: locate: not found
+postgres://hppoc:password@127.0.0.1:5432/fabricexplorer
+(node:9720) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+(node:9720) UnhandledPromiseRejectionWarning: TypeError: Channel's second argument must be a ChannelCredentials
+    at ServiceClient.Client (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:400:23)
+    at new ServiceClient (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:823:12)
+    at new Admin (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Admin.js:58:32)
+    at Platform.addStatusPeer (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Platform.js:44:39)
+    at configuration.getPeersByOrg.forEach.key (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Platform.js:167:14)
+    at Array.forEach (<anonymous>)
+    at Platform.setupPeers (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Platform.js:155:38)
+    at Platform.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Platform.js:148:12)
+    at <anonymous>
+(node:9720) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:9720) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+postgres://hppoc:password@127.0.0.1:5432/fabricexplorer
+
+Property config.syncStartDate set to  2018/01/01
+
+
+Please open web browser to access ：http://0.0.0.0:8080/
+
+
+pid is 21916
+
+
+(node:21916) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'channel' of undefined
+    at Proxy.getGenesisBlock (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Proxy.js:98:44)
+    at Proxy.getGenesisBlockHash (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Proxy.js:248:33)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/rest/platformroutes.js:78:13
+    at Layer.handle [as handle_request] (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:335:12)
+    at next (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:275:10)
+(node:21916) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:21916) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:21916) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'channel' of undefined
+    at Proxy.getGenesisBlock (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Proxy.js:98:44)
+    at Proxy.getGenesisBlockHash (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/platform/fabric/Proxy.js:248:33)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/rest/platformroutes.js:78:13
+    at Layer.handle [as handle_request] (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:335:12)
+    at next (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/express/lib/router/index.js:275:10)
+(node:21916) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+Received kill signal, shutting down gracefully
+Closed out remaining connections

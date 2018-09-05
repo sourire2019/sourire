@@ -1,0 +1,197 @@
+[2018-08-23 09:22:47.847] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:22:47.904] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:22:47.947] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:22:47.963] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:26:07.810] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:26:07.819] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:26:07.822] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:26:07.824] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:39:33.038] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:39:33.047] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:39:33.050] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:39:33.052] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 09:47:20.832] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 09:47:20.841] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:33:04.359] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:33:04.379] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:44:36.853] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:44:36.863] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:54:24.578] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:54:24.587] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:55:39.106] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:55:39.115] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:59:16.302] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 15:59:16.311] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:06:08.018] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:06:08.027] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:22:21.679] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:22:21.688] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:52:58.959] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 16:52:58.971] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:02:02.284] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:02:02.293] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:08:19.462] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:08:19.471] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:29:24.154] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:29:24.164] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:33:57.875] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:33:57.884] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:37:02.404] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 17:37:02.413] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:09:42.971] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:09:42.980] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:10:23.895] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:10:23.904] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:11:27.450] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:11:27.459] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:11:27.649] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:11:27.651] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:16:19.850] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:16:19.860] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:16:19.863] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:16:19.865] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:16:29.299] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:16:29.308] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:16:29.311] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:16:29.313] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:16:48.533] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:16:48.543] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:21:41.551] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:21:41.560] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:22:39.136] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:22:39.146] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:22:39.149] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:22:39.151] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:26:51.035] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:26:51.044] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:32:03.460] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:32:03.470] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:32:03.473] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:32:03.475] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:32:35.200] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:32:35.209] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:32:35.212] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:32:35.214] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:33:39.888] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:33:39.897] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:36:02.929] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:36:02.938] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:39:37.136] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:39:37.145] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:39:37.148] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:39:37.150] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:46:45.634] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:46:45.644] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:46:45.647] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:46:45.649] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:47:59.412] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:47:59.421] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:47:59.425] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:47:59.427] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:48:40.607] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:48:40.616] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:48:40.619] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:48:40.621] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:49:49.451] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:49:49.460] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:49:49.464] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:49:49.466] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 18:51:26.863] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 18:51:26.872] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:14:17.430] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:14:17.440] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:14:17.443] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:14:17.445] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:21:50.656] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:21:50.666] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:21:50.669] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:21:50.671] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:22:44.259] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:22:44.268] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:22:44.271] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:22:44.273] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:39:33.603] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:39:33.612] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:39:33.615] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:39:33.617] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:41:09.185] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:41:09.195] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 19:41:09.198] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 19:41:09.200] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:28:11.499] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:28:11.509] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:28:11.512] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:28:11.514] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:28:39.255] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:28:39.264] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:28:39.267] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:28:39.269] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:30:44.931] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:30:44.941] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:30:44.944] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:30:44.946] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:32:30.683] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:32:30.692] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:32:30.695] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:32:30.697] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:51:10.447] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:51:10.456] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:51:10.460] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:51:10.462] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:51:29.761] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:51:29.770] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 21:51:29.773] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 21:51:29.775] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:27:14.685] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:27:14.693] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:27:14.696] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:27:14.698] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:27:14.720] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:27:14.720] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:31:21.835] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:31:21.844] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:31:21.847] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:31:21.849] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:31:21.866] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:31:21.866] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:33:46.727] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:33:46.736] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 22:33:46.739] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:33:46.741] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 22:33:46.759] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:33:46.759] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 22:36:14.071] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-08-23 22:36:14.075] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-08-23 23:05:07.281] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:05:07.290] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:05:07.293] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:05:07.295] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:05:07.312] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 23:05:07.312] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-08-23 23:30:27.551] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:30:27.560] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:30:27.563] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:30:27.565] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:30:27.579] [ERROR] Query - Error: 14 UNAVAILABLE: Connect Failed
+    at new createStatusError (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:64:15)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:583:15
+[2018-08-23 23:32:28.423] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:32:28.431] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:32:28.434] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:32:28.436] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:32:28.451] [ERROR] Query - Error: 14 UNAVAILABLE: Connect Failed
+    at new createStatusError (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:64:15)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:583:15
+[2018-08-23 23:42:55.318] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:42:55.326] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-08-23 23:42:55.329] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:42:55.331] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-08-23 23:42:55.346] [ERROR] Query - Error: 14 UNAVAILABLE: Connect Failed
+    at new createStatusError (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:64:15)
+    at /media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/node_modules/grpc/src/client.js:583:15

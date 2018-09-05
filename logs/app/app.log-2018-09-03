@@ -1,0 +1,956 @@
+[2018-09-03 11:46:40.558] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 11:46:40.586] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 11:46:40.609] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 11:46:40.611] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 11:46:40.643] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 11:46:40.643] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 11:46:40.643] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 11:46:40.647] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 11:46:40.647] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 11:46:40.673] [DEBUG] Query - ===========================================
+[2018-09-03 11:46:40.673] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 11:46:40.674] [DEBUG] Query - ===========================================
+[2018-09-03 11:46:40.679] [DEBUG] Query - ===========================================
+[2018-09-03 11:46:40.679] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 11:46:40.680] [DEBUG] Query - ===========================================
+[2018-09-03 12:18:07.868] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 12:18:07.879] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 12:18:07.882] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 12:18:07.884] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 12:18:07.915] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 12:18:07.915] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 12:18:07.915] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 12:18:07.919] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 12:18:07.919] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 12:18:07.946] [DEBUG] Query - ===========================================
+[2018-09-03 12:18:07.946] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 12:18:07.948] [DEBUG] Query - ===========================================
+[2018-09-03 12:18:07.948] [DEBUG] Query - ===========================================
+[2018-09-03 12:18:07.948] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 12:18:07.948] [DEBUG] Query - ===========================================
+[2018-09-03 16:28:15.917] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 16:28:15.928] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 16:28:15.931] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 16:28:15.933] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 16:28:15.967] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 16:28:15.967] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 16:28:15.967] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 16:28:15.970] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 16:28:15.970] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 16:28:15.996] [DEBUG] Query - ===========================================
+[2018-09-03 16:28:15.996] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 16:28:15.997] [DEBUG] Query - ===========================================
+[2018-09-03 16:28:16.001] [DEBUG] Query - ===========================================
+[2018-09-03 16:28:16.001] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 16:28:16.002] [DEBUG] Query - ===========================================
+[2018-09-03 16:28:23.028] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:28:26.489] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:29:26.460] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:30:26.935] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:31:26.947] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:32:26.936] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:33:26.902] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:34:26.928] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 16:35:26.995] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 17:16:59.795] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 17:16:59.803] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 17:16:59.806] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 17:16:59.808] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 17:16:59.843] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 17:16:59.843] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 17:16:59.843] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 17:16:59.847] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 17:16:59.847] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 17:16:59.876] [DEBUG] Query - ===========================================
+[2018-09-03 17:16:59.876] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 17:16:59.877] [DEBUG] Query - ===========================================
+[2018-09-03 17:16:59.881] [DEBUG] Query - ===========================================
+[2018-09-03 17:16:59.881] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 17:16:59.881] [DEBUG] Query - ===========================================
+[2018-09-03 18:01:22.956] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:01:22.966] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:01:22.968] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:01:22.970] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:01:23.003] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:01:23.003] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:01:23.003] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:01:23.006] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:01:23.006] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:01:23.035] [DEBUG] Query - ===========================================
+[2018-09-03 18:01:23.035] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:01:23.036] [DEBUG] Query - ===========================================
+[2018-09-03 18:01:23.040] [DEBUG] Query - ===========================================
+[2018-09-03 18:01:23.040] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:01:23.040] [DEBUG] Query - ===========================================
+[2018-09-03 18:01:26.923] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:20:12.073] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:20:12.082] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:20:12.085] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:20:12.087] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:20:12.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:20:12.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:20:12.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:20:12.124] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:20:12.124] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:20:12.152] [DEBUG] Query - ===========================================
+[2018-09-03 18:20:12.152] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:20:12.153] [DEBUG] Query - ===========================================
+[2018-09-03 18:20:12.157] [DEBUG] Query - ===========================================
+[2018-09-03 18:20:12.158] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:20:12.158] [DEBUG] Query - ===========================================
+[2018-09-03 18:20:26.928] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:21:26.920] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:22:26.973] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:23:07.940] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:23:07.949] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:23:07.951] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:23:07.953] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:23:07.989] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:23:07.989] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:23:07.989] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:23:07.992] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:23:07.992] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:23:08.021] [DEBUG] Query - ===========================================
+[2018-09-03 18:23:08.021] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:23:08.021] [DEBUG] Query - ===========================================
+[2018-09-03 18:23:08.025] [DEBUG] Query - ===========================================
+[2018-09-03 18:23:08.025] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:23:08.025] [DEBUG] Query - ===========================================
+[2018-09-03 18:23:26.958] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:30:23.312] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:30:23.321] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:30:23.324] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:30:23.326] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:30:23.360] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:23.360] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:23.360] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:23.363] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:30:23.364] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:30:23.389] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:23.389] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:30:23.389] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:23.398] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:23.398] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:30:23.398] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:26.996] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:30:58.372] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:30:58.381] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:30:58.384] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:30:58.386] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:30:58.418] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:58.418] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:58.418] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:30:58.421] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:30:58.421] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:30:58.451] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:58.451] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:30:58.452] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:58.456] [DEBUG] Query - ===========================================
+[2018-09-03 18:30:58.456] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:30:58.456] [DEBUG] Query - ===========================================
+[2018-09-03 18:31:27.028] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:32:26.993] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:33:26.958] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:34:26.973] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:35:26.936] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:36:26.910] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:37:26.908] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:38:26.932] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:39:26.909] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:40:27.043] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:41:26.895] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:42:26.907] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:43:26.920] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 18:43:54.914] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:43:54.922] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 18:43:54.925] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:43:54.927] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 18:43:54.960] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:43:54.960] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:43:54.960] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 18:43:54.963] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 18:43:54.963] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 18:43:54.993] [DEBUG] Query - ===========================================
+[2018-09-03 18:43:54.993] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:43:54.994] [DEBUG] Query - ===========================================
+[2018-09-03 18:43:54.998] [DEBUG] Query - ===========================================
+[2018-09-03 18:43:54.998] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 18:43:54.998] [DEBUG] Query - ===========================================
+[2018-09-03 21:32:08.295] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:32:08.303] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:32:08.306] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:32:08.308] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:32:08.341] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:32:08.341] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:32:08.341] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:32:08.345] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 21:32:08.345] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 21:32:08.367] [DEBUG] Query - ===========================================
+[2018-09-03 21:32:08.367] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 21:32:08.368] [DEBUG] Query - ===========================================
+[2018-09-03 21:32:08.384] [DEBUG] Query - ===========================================
+[2018-09-03 21:32:08.384] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 21:32:08.384] [DEBUG] Query - ===========================================
+[2018-09-03 21:32:22.521] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 21:32:26.951] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 21:33:21.085] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:33:21.093] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:33:21.096] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:33:21.098] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:33:21.131] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:33:21.131] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:33:21.131] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:33:21.135] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 21:33:21.135] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 21:33:21.155] [DEBUG] Query - ===========================================
+[2018-09-03 21:33:21.155] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 21:33:21.156] [DEBUG] Query - ===========================================
+[2018-09-03 21:33:21.174] [DEBUG] Query - ===========================================
+[2018-09-03 21:33:21.174] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 21:33:21.174] [DEBUG] Query - ===========================================
+[2018-09-03 21:33:26.955] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 21:34:26.955] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 21:35:34.921] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:35:34.929] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:35:34.932] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:35:34.934] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:37:04.362] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:37:04.371] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:37:04.374] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:37:04.376] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:37:04.394] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncChaincodes (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:394:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:24:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:46:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:04.395] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncPeerlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:408:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:28:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:04.395] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncOrdererlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:421:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:36:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:49:17)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:04.395] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.saveChannel (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:325:35)
+    at SynBlockData.syncChannels (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:357:24)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:04.398] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:37:04.398] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:37:04.398] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:37:42.932] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:37:42.941] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:37:42.944] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:37:42.945] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:37:42.964] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncChaincodes (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:394:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:24:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:46:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:42.965] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncPeerlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:408:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:28:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:42.965] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncOrdererlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:421:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:36:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:49:17)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:42.967] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.saveChannel (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:325:35)
+    at SynBlockData.syncChannels (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:357:24)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:37:42.968] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:37:42.968] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:37:42.968] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:40:50.585] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:40:50.594] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 21:40:50.597] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:40:50.599] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 21:40:50.618] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncChaincodes (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:394:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:24:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:46:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:40:50.619] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncPeerlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:408:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:28:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:40:50.619] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.syncOrdererlist (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:421:39)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:36:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:49:17)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:40:50.621] [ERROR] synBlockData - TypeError: Cannot read property 'getChannels' of undefined
+    at SynBlockData.saveChannel (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:325:35)
+    at SynBlockData.syncChannels (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:357:24)
+    at BlockListener.<anonymous> (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+[2018-09-03 21:40:50.622] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:40:50.622] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:40:50.622] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:44:54.237] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:44:54.237] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:44:54.237] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:49:22.374] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:49:22.374] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:49:22.374] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:50:16.807] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:50:16.807] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:50:16.807] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:51:35.862] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:51:35.862] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:51:35.862] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:53:36.716] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:53:36.716] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:53:36.716] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:54:49.365] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:54:49.365] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 21:54:49.365] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:01:37.123] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:01:37.123] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:01:37.123] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:03:11.543] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:03:11.543] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:03:11.543] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:04:44.377] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:04:44.377] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:04:44.377] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:07:10.481] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:07:10.489] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:07:10.492] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:07:10.494] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:07:10.525] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:07:10.525] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:07:10.525] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:07:10.528] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:07:10.528] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:07:10.553] [DEBUG] Query - ===========================================
+[2018-09-03 22:07:10.553] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:07:10.555] [DEBUG] Query - ===========================================
+[2018-09-03 22:07:10.558] [DEBUG] Query - ===========================================
+[2018-09-03 22:07:10.559] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:07:10.559] [DEBUG] Query - ===========================================
+[2018-09-03 22:07:26.531] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:07:29.987] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:08:33.943] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:09:33.920] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:10:34.097] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:11:33.984] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:12:33.542] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:12:33.550] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:12:33.553] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:12:33.555] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:12:33.586] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:12:33.586] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:12:33.586] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:12:33.589] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:12:33.589] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:12:33.615] [DEBUG] Query - ===========================================
+[2018-09-03 22:12:33.615] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:12:33.616] [DEBUG] Query - ===========================================
+[2018-09-03 22:12:33.620] [DEBUG] Query - ===========================================
+[2018-09-03 22:12:33.620] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:12:33.620] [DEBUG] Query - ===========================================
+[2018-09-03 22:13:39.249] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:13:39.258] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:13:39.261] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:13:39.263] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:13:39.292] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:13:39.292] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:13:39.292] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:13:39.296] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:13:39.296] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:13:39.322] [DEBUG] Query - ===========================================
+[2018-09-03 22:13:39.322] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:13:39.323] [DEBUG] Query - ===========================================
+[2018-09-03 22:13:39.327] [DEBUG] Query - ===========================================
+[2018-09-03 22:13:39.327] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:13:39.327] [DEBUG] Query - ===========================================
+[2018-09-03 22:14:33.997] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:15:33.923] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:16:33.935] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:17:33.965] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:18:34.017] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:19:30.672] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:20:33.990] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:21:35.782] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:21:35.791] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:21:35.794] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:21:35.796] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:21:35.828] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:21:35.828] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:21:35.828] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:21:35.831] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:21:35.831] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:21:35.858] [DEBUG] Query - ===========================================
+[2018-09-03 22:21:35.858] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:21:35.859] [DEBUG] Query - ===========================================
+[2018-09-03 22:21:35.864] [DEBUG] Query - ===========================================
+[2018-09-03 22:21:35.864] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:21:35.864] [DEBUG] Query - ===========================================
+[2018-09-03 22:30:25.061] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:30:25.069] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:30:25.072] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:30:25.074] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:30:25.105] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:30:25.105] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:30:25.105] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:30:25.108] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:30:25.108] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:30:25.137] [DEBUG] Query - ===========================================
+[2018-09-03 22:30:25.137] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:30:25.138] [DEBUG] Query - ===========================================
+[2018-09-03 22:30:25.143] [DEBUG] Query - ===========================================
+[2018-09-03 22:30:25.143] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:30:25.143] [DEBUG] Query - ===========================================
+[2018-09-03 22:30:36.435] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:31:39.819] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:32:14.107] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:32:14.116] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:32:14.119] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:32:14.120] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:32:14.152] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:32:14.152] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:32:14.152] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:32:14.156] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:32:14.156] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:32:14.183] [DEBUG] Query - ===========================================
+[2018-09-03 22:32:14.183] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:32:14.184] [DEBUG] Query - ===========================================
+[2018-09-03 22:32:14.190] [DEBUG] Query - ===========================================
+[2018-09-03 22:32:14.190] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:32:14.190] [DEBUG] Query - ===========================================
+[2018-09-03 22:32:39.843] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:33:39.961] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:34:39.956] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:35:39.930] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:36:39.953] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:37:39.957] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:38:40.113] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:39:39.935] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:40:39.954] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:41:02.985] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:41:02.993] [DEBUG] FabricConfiguration - Msp ID : Org1MSP
+[2018-09-03 22:41:02.996] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:41:02.999] [DEBUG] FabricConfiguration - Msp ID : Org2MSP
+[2018-09-03 22:41:03.033] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:41:03.033] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:41:03.033] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:41:03.036] [DEBUG] Query - <<< Instantiated Chaincodes >>>
+[2018-09-03 22:41:03.036] [DEBUG] Query - name: mycc, version: 1.0, path: github.com/chaincode/chaincode_example02/go/
+[2018-09-03 22:41:03.065] [DEBUG] Query - ===========================================
+[2018-09-03 22:41:03.065] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:41:03.066] [DEBUG] Query - ===========================================
+[2018-09-03 22:41:03.072] [DEBUG] Query - ===========================================
+[2018-09-03 22:41:03.072] [DEBUG] Query - ByteBuffer {
+  buffer: <Buffer 08 10 12 20 92 ff 91 5b f1 1e 19 ee 07 3c 54 b9 39 c3 c9 1e 54 a0 b1 3a 60 79 7c 34 27 6e cb 68 1b 2d eb bb 1a 20 91 2b 23 e9 a9 c1 74 0b 19 6e b4 7a ... >,
+  offset: 4,
+  markedOffset: -1,
+  limit: 36,
+  littleEndian: true,
+  noAssert: false }
+[2018-09-03 22:41:03.072] [DEBUG] Query - ===========================================
+[2018-09-03 22:41:39.981] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:42:39.939] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:43:39.997] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:44:39.991] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:45:39.942] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:46:39.934] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:47:39.936] [DEBUG] platform - GetStatus All! [ { status: 'RUNNING', server_hostname: 'peer0.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org1.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer0.org2.example.com' },
+  { status: 'RUNNING', server_hostname: 'peer1.org2.example.com' } ]
+[2018-09-03 22:48:06.847] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:48:06.847] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:48:06.847] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:03.334] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:03.334] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:03.334] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:36.412] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:36.412] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:49:36.412] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:55:20.223] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:55:20.223] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:55:20.223] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:02.506] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:02.506] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:02.506] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:48.078] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:48.078] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 22:56:48.078] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:00:07.582] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:00:07.582] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:00:07.582] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:03:26.778] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:03:26.778] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:03:26.778] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:43:01.028] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:43:01.028] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:43:01.028] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:46:14.385] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:46:14.385] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:46:14.385] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:46:23.236] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/media/baiwenteng/2DC43D8741BDF328/appjs/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-03 23:53:42.740] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:53:42.740] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:53:42.740] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:55:59.407] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:55:59.407] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-03 23:55:59.407] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

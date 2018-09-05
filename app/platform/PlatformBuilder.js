@@ -3,6 +3,7 @@
 */
 
 var Platform = require('./fabric/Platform.js');
+var PlatformTender = require('./tendermint/PlatformTender.js');
 
 class PlatformBuilder {
 
@@ -11,6 +12,9 @@ class PlatformBuilder {
         if(pltfrm == 'fabric') {
             var platform = new Platform();
             await platform.initialize();
+            return platform;
+        } else if(pltfrm == "tendermint") {
+            var platform = new PlatformTender();
             return platform;
         }
 

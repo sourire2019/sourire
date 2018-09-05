@@ -49,6 +49,7 @@ class BlockScanner {
     async syncBlock() {
         try {
             // sync block data historicaly
+            console.log("this is fabric BlockScanner");
             var syncStartDate = this.proxy.getSyncStartDate();
             var channels = this.proxy.getChannels();
 

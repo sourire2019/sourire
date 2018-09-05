@@ -37,8 +37,10 @@
     "stomp-broker-js": "^0.1.3",
     "stompjs": "^2.3.3",
     "swagger-ui-express": "^3.0.9",
+    "sync-request": "^6.0.0",
     "winston": "^2.2.0",
-    "ws": "^5.1.1"
+    "ws": "^5.1.1",
+    "xd-synchttp": "^0.3.3"
   },
   "license": "Apache-2.0",
   "devDependencies": {

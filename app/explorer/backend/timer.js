@@ -16,6 +16,7 @@
 var Metrics = require('./metrics')
 var BlockListener = require('./BlockListener')
 var BlockScanner = require('./BlockScanner')
+var SynBlockData = require('./tendermint/SynBlockData')
 
 
 
@@ -25,7 +26,13 @@ var txnPerMinMeter = Metrics.txMetrics
 
 async function start(platform, persistence, broadcaster) {
 
-        blockScanner = new BlockScanner(platform, persistence, broadcaster);
+        var blockScanner;
+        if (platform.plf == "tendermint") {
+         blockScanner = new SynBlockData(platform, persistence, broadcaster);
+        } else {
+         blockScanner = new BlockScanner(platform, persistence, broadcaster);   
+        }
+
         blockListener = new BlockListener(blockScanner);
 
         setInterval(function () {

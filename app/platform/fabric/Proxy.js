@@ -196,7 +196,6 @@ class Proxy {
 	}
 
 	async syncChannelEventHubBlock(callback) {
-
 		var fabChannels = this.getChannelObjects();
 		fabChannels.forEach(fabChannel => {
 			var channel_event_hub = fabChannel.channelEventHub;
