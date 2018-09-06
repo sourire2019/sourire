@@ -151,43 +151,43 @@ class Blocks extends Component {
           ),
         filterAll: true,
         width: 150
-      },
-      {
-        Header: "Transactions",
-        accessor: "txhash",
-        Cell: row => (
-          <ul>
-            {row.value.map(tid => (
-              <li
-                key={tid}
-                style={{
-                  overflow: "hidden",
-                  whiteSpace: "nowrap",
-                  textOverflow: "ellipsis"
-                }}
-              >
-                <a
-                  className="partialHash"
-                  onClick={() => this.handleDialogOpen(tid)}
-                  href="#/blocks"
-                >
-                  <div className="fullHash" id="showTransactionId">
-                    {tid}
-                  </div>{" "}
-                  {tid.slice(0, 6)} {!tid ? "" : "... "}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ),
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            {keys: ["txhash"]},
-            {threshold: matchSorter.rankings.SIMPLEMATCH}
-          ),
-        filterAll: true
+      // },
+      // {
+      //   Header: "Transactions",
+      //   accessor: "txhash",
+      //   Cell: row => (
+      //     <ul>
+      //       {row.value.map(tid => (
+      //         <li
+      //           key={tid}
+      //           style={{
+      //             overflow: "hidden",
+      //             whiteSpace: "nowrap",
+      //             textOverflow: "ellipsis"
+      //           }}
+      //         >
+      //           <a
+      //             className="partialHash"
+      //             onClick={() => this.handleDialogOpen(tid)}
+      //             href="#/blocks"
+      //           >
+      //             <div className="fullHash" id="showTransactionId">
+      //               {tid}
+      //             </div>{" "}
+      //             {tid.slice(0, 6)} {!tid ? "" : "... "}
+      //           </a>
+      //         </li>
+      //       ))}
+      //     </ul>
+      //   ),
+      //   filterMethod: (filter, rows) =>
+      //     matchSorter(
+      //       rows,
+      //       filter.value,
+      //       {keys: ["txhash"]},
+      //       {threshold: matchSorter.rankings.SIMPLEMATCH}
+      //     ),
+        // filterAll: true
       }
     ];
   };
