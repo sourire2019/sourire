@@ -69,21 +69,21 @@ class Transactions extends Component {
       {
         Header: "Tx Id",
         accessor: "txhash",
-        // Cell: row => (
-        //   <span>
-        //     <a
-        //       className="partialHash"
-        //       onClick={() => this.handleDialogOpen(row.value)}
-        //       href="#/transactions"
-        //     >
-        //       <div className="fullHash" id="showTransactionId">
-        //         {row.value}
-        //       </div>{" "}
-        //       {row.value.slice(0, 6)}
-        //       {!row.value ? "" : "... "}
-        //     </a>
-        //   </span>
-        // ),
+        Cell: row => (
+          <span>
+            <a
+              className="partialHash"
+              onClick={() => this.handleDialogOpen(row.value)}
+              href="#/transactions"
+            >
+              <div className="fullHash" id="showTransactionId">
+                {row.value}
+              </div>{" "}
+              {row.value.slice(0, 6)}
+              {!row.value ? "" : "... "}
+            </a>
+          </span>
+        ),
         filterMethod: (filter, rows) =>
           matchSorter(
             rows,
