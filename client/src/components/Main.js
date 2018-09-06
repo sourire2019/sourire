@@ -43,7 +43,6 @@ export const Main = (props) => {
     getTransaction: props.getTransaction,
     transaction: props.transaction,
   }
-
   const chaincodeViewProps = {
     chaincodeList: props.chaincodeList
   }
