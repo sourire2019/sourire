@@ -97,7 +97,8 @@ const tedermintroutes = async function (app, pltfrm) {
   curl -i 'http://<host>:<port>/api/curChannel'
   */
   app.get("/api/changeChannel/:channelName", async function (req, res) {
-    res.send({ status: 200});
+    // res.send({ status: 200});
+    res.send({ "currentChannel": "chain-U7Evx6"})
   });
     /**
       Chaincode list
