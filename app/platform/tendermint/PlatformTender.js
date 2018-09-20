@@ -11,6 +11,7 @@ var http = require('http');
 var async = require('async');
 var request = require('sync-request');
 var url = require("url");
+var Platform = require("../Platform");
 
 class PlatformTender {
   constructor() {
@@ -26,10 +27,7 @@ class PlatformTender {
 
   getBlockByNumber(channelName, blockNumber) {
       try{
-      	var urlre = url.resolve(this.baseurl,"/block?height=" + blockNumber);
-        var res = request('GET', urlre);
-        var resultdata = JSON.parse(res.getBody().toString());
-        return resultdata.result;
+        return  Platform.getBlockByNumber(this.baseurl,channelName,blockNumber);
       } catch(err){
         console.log(err);
       }
@@ -87,10 +85,7 @@ class PlatformTender {
 
   getStatus() {
       try{
-      	var urlre = url.resolve(this.baseurl,"/status");
-        var res = request('GET', urlre);
-        var resultdata = res.getBody().toString();
-        return resultdata;
+      	return Platform.getStatus(this.baseurl);
       } catch(err){
         console.log(err);
       }
@@ -98,40 +93,38 @@ class PlatformTender {
 
   getnetInfo() {
       try{
-      	var urlre = url.resolve(this.baseurl,"/net_info");
-        var res = request('GET', urlre);
-        var resultdata = res.getBody().toString();
-        return resultdata;
+        let path = "/net_info";
+      	
+        return Platform.getnetInfo(this.baseurl,path);
       } catch(err){
         console.log(err);
       }
   }
 
-  getChaincode(channelName, cb) {
+  getContract(channelName, cb) {
       try {
-        var ChaincodeArray = [];
-        cb(ChaincodeArray);
+        Platform.getContract(channelName,cb);
       } catch(err) {
         logger.error(err)
         cb([])
       }
   }
 
-  getPeersStatus(channelName,cb){
+  getNodesStatus(channelName,cb){
       try {
-      	var peers = [];
+      	var nodes = [];
       	var statusdata = JSON.parse(this.getStatus());
       	var netinfo = JSON.parse(this.getnetInfo());
       	if(statusdata) {
-      		peers.push({"status": "RUNNING","server_hostname": statusdata.result.node_info.listen_addr})
+      		nodes.push({"status": "RUNNING","server_hostname": statusdata.result.node_info.listen_addr})
       	}
       	if(netinfo) {
-      		var netpeers = netinfo.result.peers;
-      		for( var i = 0;i < netpeers.length;i++){
-      			peers.push({"status": "RUNNING","server_hostname": netpeers[i].node_info.listen_addr})
+      		var netnodes = netinfo.result.peers;
+      		for( var i = 0;i < netnodes.length;i++){
+      			nodes.push({"status": "RUNNING","server_hostname": netnodes[i].node_info.listen_addr})
       		}
       	}
-       cb(peers);
+       cb(nodes);
 
       } catch(err) {
         console.log(err);

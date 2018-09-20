@@ -57,7 +57,6 @@ class TenderClient {
             if(blockHeader.result.data) {
               if(blockHeader.result.data.value.header.height) {
                 var height = blockHeader.result.data.value.header.height;
-                console.log(blockHeader.result.data.value.header.height);
                 blockScanner.syncBlockByNumber(parseInt(height));
               }
             }

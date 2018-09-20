@@ -1,0 +1,44 @@
+[2018-09-10 15:09:43.090] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:51:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-10 15:09:43.096] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:09:43.096] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:09:43.096] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:24:32.979] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:51:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-10 15:40:37.312] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:50:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-10 15:40:37.340] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:40:37.340] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:40:37.340] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:45:19.663] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:45:19.663] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 15:45:19.663] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 18:45:40.199] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-10 18:45:40.199] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

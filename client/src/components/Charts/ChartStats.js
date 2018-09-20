@@ -16,6 +16,7 @@ import {
 import { chartSelectors } from '../../state/redux/charts/'
 import classnames from 'classnames';
 import { chartOperations } from '../../state/redux/charts/'
+import {FormattedMessage} from 'react-intl';
 
 const {
   blockPerHour,
@@ -103,8 +104,13 @@ export class ChartStats extends Component {
                     this.toggle("1");
                   }}
                 >
-                  BLOCKS / HOUR
-                     </NavLink>
+                  <FormattedMessage
+                    id="page.localeProvider.blocksh"
+                    defaultMessage="BLOCKS1 / HOUR"
+                    description="BLOCKS / HOUR"
+                    />
+                  
+              </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
@@ -115,8 +121,12 @@ export class ChartStats extends Component {
                     this.toggle("2");
                   }}
                 >
-                  BLOCKS / MIN
-                        </NavLink>
+                  <FormattedMessage
+                    id="page.localeProvider.blocksm"
+                    defaultMessage="BLOCKS / MIN"
+                    description="BLOCKS / MIN"
+                    />
+              </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
@@ -127,8 +137,13 @@ export class ChartStats extends Component {
                     this.toggle("3");
                   }}
                 >
-                  TX / HOUR
-                        </NavLink>
+                  <FormattedMessage
+                    id="page.localeProvider.txh"
+                    defaultMessage="TX / HOUR"
+                    description="TX / HOUR"
+                    />
+                  
+              </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
@@ -139,8 +154,12 @@ export class ChartStats extends Component {
                     this.toggle("4");
                   }}
                 >
-                  TX / MIN
-                        </NavLink>
+                  <FormattedMessage
+                      id="page.localeProvider.txm"
+                      defaultMessage="TX / MIN"
+                      description="TX / MIN"
+                  />
+              </NavLink>
               </NavItem>
             </Nav>
             <TabContent activeTab={this.state.activeTab} className="activeChartTab">

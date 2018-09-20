@@ -5,10 +5,8 @@
 const util = require('util');
 var path = require('path');
 const exec = util.promisify(require('child_process').exec);
-var config = require('../../../platform/fabric/config.json');
 var fileUtil = require('./utils/fileUtils.js');
 var helper = require('../../../helper.js');
-var configtxgenToolPath = config.configtxgenToolPath;
 var fs = require('fs');
 var logger = helper.getLogger('channelservice');
 logger.setLevel('INFO');
@@ -18,16 +16,6 @@ var generateChannelArtifacts = async function (artifacts) {
     var artifactChannelPath = path.resolve(artifactsDir);
     let channelTxPath = `${artifactChannelPath}/${artifacts.channelName}.tx`;
     let channelBlockPath = `${artifactChannelPath}/${artifacts.channelName}.block`;
-    logger.info(` ${configtxgenToolPath}/configtxgen -profile ${artifacts.profile} -outputCreateChannelTx ${channelTxPath} -channelID ${artifacts.channelName} `)
-    logger.info(` ${configtxgenToolPath}/configtxgen -profile ${artifacts.genesisBlock} -outputBlock ${channelBlockPath} `)
-
-    const [status] = await Promise.all([
-        exec(` ${configtxgenToolPath}/configtxgen -profile ${artifacts.profile} -outputCreateChannelTx ${channelTxPath} -channelID ${artifacts.channelName} `),
-        exec(` ${configtxgenToolPath}/configtxgen -profile ${artifacts.genesisBlock} -outputBlock ${channelBlockPath} `)
-    ]).catch((error) => {
-        logger.error(error);
-        throw new Error(error);
-    })
     let channelArtifacts = {
         channelTxPath: channelTxPath,
         channelBlockPath: channelBlockPath

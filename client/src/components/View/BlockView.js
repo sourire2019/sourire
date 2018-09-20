@@ -5,7 +5,7 @@
 import React, { Component } from "react";
 import FontAwesome from "react-fontawesome";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import {FormattedMessage} from 'react-intl';
 import {
   Table,
   Card,
@@ -43,7 +43,9 @@ class BlockView extends Component {
         <div className={this.state.toggleClass ? "dark-theme" : ""}>
           <Card>
             <CardTitle className="dialogTitle">
-              <FontAwesome name="cube" />Block Details
+              <FontAwesome name="cube" />
+              Block Details
+              
             </CardTitle>
             <CardBody>
               <span className="loading-wheel">
@@ -60,7 +62,12 @@ class BlockView extends Component {
           <div className="dialog">
             <Card>
               <CardTitle className="dialogTitle">
-                <FontAwesome name="cube" className="cubeIcon" />Block Details
+                <FontAwesome name="cube" className="cubeIcon" />
+                  <FormattedMessage
+                    id="page.localeProvider.datah"
+                    defaultMessage="Block Details"
+                    description="Block Details"
+                  />
                 <button onClick={this.handleClose} className="closeBtn">
                   <FontAwesome name="close" />
                 </button>
@@ -69,28 +76,67 @@ class BlockView extends Component {
                 <Table striped hover responsive className="table-striped">
                   <tbody>
                     <tr>
-                      <th>Channel name:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.channelname"
+                          defaultMessage="Channel name"
+                          description="Channel name"
+                        />
+                      </th>
                       <td>{blockHash.channelname}</td>
                     </tr>
                     <tr>
-                      <th>ID</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.id"
+                          defaultMessage="ID"
+                          description="ID"
+                        />
+                      </th>
                       <td>{blockHash.id}</td>
                     </tr>
                     <tr>
-                      <th>Block Number</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.blocknum"
+                          defaultMessage="Block Number"
+                          description="Block Number"
+                        />
+                      </th>
                       <td>{blockHash.blocknum}</td>
                     </tr>
                     <tr>
-                      <th>Created at</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.create"
+                          defaultMessage="Created at"
+                          description="Created at"
+                        />
+                      
+                      </th>
                       <td>{blockHash.createdt}</td>
                     </tr>
 
                     <tr>
-                      <th>Number of Transactions</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.txnum"
+                          defaultMessage=" Number of Transactions"
+                          description=" Number of Transactions"
+                        />
+                     
+                      </th>
                       <td>{blockHash.txcount}</td>
                     </tr>
                     <tr>
-                      <th>Block Hash</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.blockhash"
+                          defaultMessage="Block Hash"
+                          description="Block Hash"
+                        />
+                      
+                      </th>
                       <td>
                         {blockHash.blockhash}
                         <button className="copyBtn">
@@ -102,7 +148,14 @@ class BlockView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Data Hash</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.datahash"
+                          defaultMessage="Data Hash"
+                          description="Data Hash"
+                        />
+                      
+                      </th>
                       <td>
                         {blockHash.datahash}
                         <button className="copyBtn">
@@ -114,7 +167,14 @@ class BlockView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Prehash</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.prehash"
+                          defaultMessage="Prehash"
+                          description="Prehash"
+                        />
+                      
+                      </th>
                       <td>
                         {blockHash.prehash}
                         <button className="copyBtn">

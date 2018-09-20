@@ -8,7 +8,7 @@ import TransactionView from "../View/TransactionView";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import matchSorter from "match-sorter";
-
+import {FormattedMessage} from 'react-intl';
 class Transactions extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +43,11 @@ class Transactions extends Component {
   render() {
     const columnHeaders = [
       {
-        Header: "Creator",
+        Header:<FormattedMessage
+                    id="page.localeProvider.creator"
+                    defaultMessage="Creator"
+                    description="Creator"
+                    /> ,
         accessor: "creator_msp_id",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -55,7 +59,11 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Channel Name",
+        Header:<FormattedMessage
+                    id="page.localeProvider.channelname"
+                    defaultMessage="Channel Name"
+                    description="Channel Name"
+                    /> ,
         accessor: "channelname",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -67,7 +75,11 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Tx Id",
+        Header:<FormattedMessage
+                    id="page.localeProvider.txid"
+                    defaultMessage="Tx Id"
+                    description="Tx Id"
+                    /> ,
         accessor: "txhash",
         Cell: row => (
           <span>
@@ -94,7 +106,11 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Type",
+        Header:<FormattedMessage
+                    id="page.localeProvider.type"
+                    defaultMessage="Type"
+                    description="Type"
+                    /> ,
         accessor: "type",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -106,19 +122,27 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Chaincode",
-        accessor: "chaincodename",
+        Header:<FormattedMessage
+                    id="page.localeProvider.contract"
+                    defaultMessage="Contract"
+                    description="Contract"
+                    /> ,
+        accessor: "contractname",
         filterMethod: (filter, rows) =>
           matchSorter(
             rows,
             filter.value,
-            {keys: ["chaincodename"]},
+            {keys: ["contractname"]},
             {threshold: matchSorter.rankings.SIMPLEMATCH}
           ),
         filterAll: true
       },
       {
-        Header: "Timestamp",
+        Header:<FormattedMessage
+                    id="page.localeProvider.timestamp"
+                    defaultMessage="Timestamp"
+                    description="Timestamp"
+                    /> ,
         accessor: "createdt",
         filterMethod: (filter, rows) =>
           matchSorter(

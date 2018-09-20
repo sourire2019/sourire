@@ -89,11 +89,11 @@ const notificationReducer = (state = initialState, action) => {
   }
 };
 
-const peerStatusReducer = (state = initialState, action) => {
+const nodeStatusReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.PEER_STATUS: {
+    case types.NODE_STATUS: {
       return {
-        list: action.payload.peers,
+        list: action.payload.nodes,
         loaded: true,
         errors: action.errors
       };
@@ -156,7 +156,7 @@ const reducer = combineReducers({
   channelList: channelListReducer,
   dashStats: dashStatsReducer,
   notification: notificationReducer,
-  peerStatus: peerStatusReducer,
+  nodeStatus: nodeStatusReducer,
   transactionByOrg: transactionByOrgReducer,
   transactionPerHour: transactionPerHourReducer,
   transactionPerMin: transactionPerMinReducer,

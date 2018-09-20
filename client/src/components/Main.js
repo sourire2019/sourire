@@ -8,25 +8,26 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import BlocksView from './View/BlocksView';
 import NetworkView from './View/NetworkView';
 import TransactionsView from './View/TransactionsView';
-import ChaincodeView from './View/ChaincodeView';
+import ContractView from './View/ContractView';
 import DashboardView from './View/DashboardView';
 import ChannelsView from './View/ChannelsView';
 import { chartSelectors } from '../state/redux/charts/'
 import { tableOperations, tableSelectors } from '../state/redux/tables/'
+import { IntlProvider, addLocaleData } from 'react-intl';
 
 const {
   currentChannelSelector,
   channelListSelector,
   dashStatsSelector,
-  peerStatusSelector,
+  nodeStatusSelector,
   transactionByOrgSelector,
 } = chartSelectors
 
 const {
   blockListSelector,
-  chaincodeListSelector,
+  contractListSelector,
   channelsSelector,
-  peerListSelector,
+  nodeListSelector,
   transactionSelector,
   transactionListSelector,
 } = tableSelectors
@@ -42,40 +43,43 @@ export const Main = (props) => {
     currentChannel: props.currentChannel,
     getTransaction: props.getTransaction,
     transaction: props.transaction,
+    appLocale: props.appLocale
   }
-  const chaincodeViewProps = {
-    chaincodeList: props.chaincodeList
+  const contractViewProps = {
+    contractList: props.contractList,
+    appLocale: props.appLocale,
   }
 
   const channelsViewProps = {
     channels: props.channels,
+    appLocale: props.appLocale,
   }
 
   const dashboardViewProps = {
     blockList: props.blockList,
     dashStats: props.dashStats,
-    peerStatus : props.peerStatus,
+    nodeStatus : props.nodeStatus,
     transactionByOrg: props.transactionByOrg,
+    appLocale: props.appLocale,
   }
-
   const networkViewProps = {
-    peerList: props.peerList
+    nodeList: props.nodeList,
+    appLocale: props.appLocale,
   }
-
   const transactionsViewProps = {
     currentChannel: props.currentChannel,
     transaction: props.transaction,
     transactionList: props.transactionList,
-    getTransaction: props.getTransaction
+    getTransaction: props.getTransaction,
+    appLocale: props.appLocale,
   }
-
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => <DashboardView {...dashboardViewProps} />} />
           <Route path="/blocks" render={() => <BlocksView {...blocksViewProps} />} />
-          <Route path="/chaincodes" render={() => <ChaincodeView {...chaincodeViewProps} />} />
+          <Route path="/contracts" render={() => <ContractView {...contractViewProps} />} />
           <Route path="/channels" render={() => <ChannelsView {...channelsViewProps} />} />
           <Route path="/network" render={() => <NetworkView  {...networkViewProps} />} />
           <Route path="/transactions" render={() => <TransactionsView {...transactionsViewProps} />} />
@@ -87,13 +91,13 @@ export const Main = (props) => {
 
 export default connect((state) => ({
   blockList: blockListSelector(state),
-  chaincodeList: chaincodeListSelector(state),
+  contractList: contractListSelector(state),
   channelList: channelListSelector(state),
   channels: channelsSelector(state),
   currentChannel: currentChannelSelector(state),
   dashStats: dashStatsSelector(state),
-  peerList: peerListSelector(state),
-  peerStatus: peerStatusSelector(state),
+  nodeList: nodeListSelector(state),
+  nodeStatus: nodeStatusSelector(state),
   transaction: transactionSelector(state),
   transactionByOrg: transactionByOrgSelector(state),
   transactionList: transactionListSelector(state)

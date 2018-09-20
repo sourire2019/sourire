@@ -102,7 +102,7 @@ function saveRow(tablename, columnValues) {
     var updatesqlflagstr = updatesqlflag.join(",");
     var addSql = `INSERT INTO ${tablename}  ( ${updatesqlparmstr} ) VALUES( ${updatesqlflagstr}  ) RETURNING *;`;
     logger.debug(`Insert sql is ${addSql}`);
-    console.log(`Insert sql is ${addSql}`);
+    // console.log(`Insert sql is ${addSql}`);
     client.query(addSql, addSqlParams, (err, res) => {
       if (err) {
         logger.error("[INSERT ERROR] - ", err.message);
@@ -113,7 +113,7 @@ function saveRow(tablename, columnValues) {
       logger.debug(
         "--------------------------INSERT----------------------------"
       );
-      console.log("INSERT ID:", res.rows[0].id);
+      // console.log("INSERT ID:", res.rows[0].id);
       logger.debug(
         "-----------------------------------------------------------------\n\n"
       );
@@ -165,7 +165,7 @@ function updateRowByPk(tablename, columnAndValue, pkName, pkValue) {
     var addSql = ` UPDATE ${tablename} set ${updateParmsStr} WHERE ${pkName} = ${pkValue} RETURNING *`;
 
     logger.debug(`update sql is ${addSql}`);
-    console.log(`update sql is ${addSql}`);
+    // console.log(`update sql is ${addSql}`);
     client.query(addSql, addSqlParams, (err, res) => {
       if (err) {
         logger.error("[INSERT ERROR] - ", err.message);
@@ -227,7 +227,7 @@ function updateRow(tablename, columnAndValue, condition) {
     var addSql = ` UPDATE ${tablename} set ${updateParmsStr} WHERE ${updatewhereparm} RETURNING * `;
 
     logger.debug(`update sql is ${addSql}`);
-    console.log(`update sql is ${addSql}`);
+    // console.log(`update sql is ${addSql}`);
     client.query(addSql, addSqlParams, (err, res) => {
       if (err) {
         logger.error("[INSERT ERROR] - ", err.message);

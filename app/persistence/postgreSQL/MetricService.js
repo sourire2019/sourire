@@ -14,12 +14,12 @@ class MetricService {
 
 
         //==========================query counts ==========================
-    getChaincodeCount(channelName) {
-      return sql.getRowsBySQlCase(`select count(1) c from chaincodes where genesis_block_hash='${channelName}' `)
+    getContractCount(channelName) {
+      return sql.getRowsBySQlCase(`select count(1) c from contracts where genesis_block_hash='${channelName}' `)
     }
 
-    getPeerlistCount(channelName) {
-      return sql.getRowsBySQlCase(`select count(1) c from peer where genesis_block_hash='${channelName}' `)
+    getNodelistCount(channelName) {
+      return sql.getRowsBySQlCase(`select count(1) c from node where genesis_block_hash='${channelName}' `)
     }
 
     getTxCount(channelName) {
@@ -30,14 +30,14 @@ class MetricService {
       return sql.getRowsBySQlCase(`select count(1) c from blocks where genesis_block_hash='${channelName}'`)
     }
 
-    async getPeerData(channelName) {
-      let peerArray = []
-      var c1 = await sql.getRowsBySQlNoCondtion(`select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from peer as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='${channelName}'`);
+    async getNodeData(channelName) {
+      let nodeArray = []
+      var c1 = await sql.getRowsBySQlNoCondtion(`select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='${channelName}'`);
       for (var i = 0, len = c1.length; i < len; i++) {
         var item = c1[i];
-        peerArray.push({ 'name': item.channelname, 'requests': item.requests, 'server_hostname': item.server_hostname ,"genesis_block_hash":item.genesis_block_hash})
+        nodeArray.push({ 'name': item.channelname, 'requests': item.requests, 'server_hostname': item.server_hostname ,"genesis_block_hash":item.genesis_block_hash})
       }
-      return peerArray
+      return nodeArray
     }
 //BE -303
 	async getOrdererData() {
@@ -50,22 +50,22 @@ class MetricService {
       return ordererArray
     }
 //BE -303
-    async getTxPerChaincodeGenerate(channelName) {
+    async getTxPerContractGenerate(channelName) {
       let txArray = []
-      var c = await sql.getRowsBySQlNoCondtion(`select  c.name as chaincodename,channel.name as channelname ,c.version as version,c.genesis_block_hash as genesis_block_hash,c.path as path ,txcount  as c from chaincodes as c inner join channel on c.genesis_block_hash=channel.genesis_block_hash where  c.genesis_block_hash='${channelName}' `);
-      //console.log("chaincode---" + c)
+      var c = await sql.getRowsBySQlNoCondtion(`select  c.name as contractname,channel.name as channelname ,c.version as version,c.genesis_block_hash as genesis_block_hash,c.path as path ,txcount  as c from contracts as c inner join channel on c.genesis_block_hash=channel.genesis_block_hash where  c.genesis_block_hash='${channelName}' `);
+      //console.log("contract---" + c)
       if (c) {
         c.forEach((item, index) => {
-          txArray.push({ 'channelName': item.channelname, 'chaincodename': item.chaincodename, 'path': item.path, 'version': item.version, 'txCount': item.c,'genesis_block_hash':item.genesis_block_hash })
+          txArray.push({ 'channelName': item.channelname, 'contractname': item.contractname, 'path': item.path, 'version': item.version, 'txCount': item.c,'genesis_block_hash':item.genesis_block_hash })
         })
       }
       return txArray
 
     }
 
-    async getTxPerChaincode(channelName, cb) {
+    async getTxPerContract(channelName, cb) {
       try {
-        var txArray = await this.getTxPerChaincodeGenerate(channelName);
+        var txArray = await this.getTxPercontractGenerate(channelName);
         cb(txArray);
       } catch(err) {
         logger.error(err)
@@ -74,18 +74,18 @@ class MetricService {
     }
 
     async getStatusGenerate(channelName) {
-      var chaincodeCount = await this.getChaincodeCount(channelName)
-      if (!chaincodeCount) chaincodeCount = 0
+      var contractCount = await this.getContractCount(channelName)
+      if (!contractCount) contractCount = 0
       var txCount = await this.getTxCount(channelName)
       if (!txCount) txCount = 0
       txCount.c = txCount.c ? txCount.c : 0
       var blockCount = await this.getBlockCount(channelName)
       if (!blockCount) blockCount = 0
       blockCount.c = blockCount.c ? blockCount.c : 0
-      var peerCount = await this.getPeerlistCount(channelName)
-      if (!peerCount) peerCount = 0
-      peerCount.c = peerCount.c ? peerCount.c : 0
-      return { 'chaincodeCount': chaincodeCount.c, 'txCount': txCount.c, 'latestBlock': blockCount.c, 'peerCount': peerCount.c }
+      var nodeCount = await this.getNodelistCount(channelName)
+      if (!nodeCount) nodeCount = 0
+      nodeCount.c = nodeCount.c ? nodeCount.c : 0
+      return { 'contractCount': contractCount.c, 'txCount': txCount.c, 'latestBlock': blockCount.c, 'nodeCount': nodeCount.c }
     }
 
     async getStatus(channelName, cb) {
@@ -99,10 +99,10 @@ class MetricService {
 
     }
 
-    async getPeerList(channelName, cb) {
+    async getNodeList(channelName, cb) {
       try {
-          var peerArray = await this.getPeerData(channelName);
-          cb(peerArray)
+          var nodeArray = await this.getNodeData(channelName);
+          cb(nodeArray)
       } catch(err) {
         logger.error(err)
         cb([])

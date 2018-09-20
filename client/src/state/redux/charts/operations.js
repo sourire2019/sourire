@@ -70,10 +70,10 @@ const notification = notification => dispatch => {
   dispatch(actions.getNotification(notify));
 };
 
-const peerStatus = channel => dispatch => {
-  return get(`/api/peersStatus/${channel}`)
+const nodeStatus = channel => dispatch => {
+  return get(`/api/nodesStatus/${channel}`)
     .then(resp => {
-      dispatch(actions.getPeerStatus(resp));
+      dispatch(actions.getNodeStatus(resp));
     })
     .catch(error => {
       console.error(error);
@@ -121,5 +121,5 @@ export default {
   channel,
   channelList,
   changeChannel,
-  peerStatus
+  nodeStatus
 };

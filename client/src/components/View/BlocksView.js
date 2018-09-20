@@ -8,6 +8,9 @@ import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import Blocks from '../Lists/Blocks';
 import Card from 'material-ui/Card';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -46,6 +49,11 @@ export class BlocksView extends Component {
     const { classes } = this.props;
     return (
       <div className="view-fullwidth" >
+        <IntlProvider
+          locale={this.props.appLocale.locale}
+          messages={this.props.appLocale.messages}
+          formats={this.props.appLocale.formats}
+        >
         <div className="view-display">
         <Card className="table-card">
           <Blocks
@@ -55,6 +63,7 @@ export class BlocksView extends Component {
             getTransaction={this.props.getTransaction} />
        </Card>
         </div>
+      </IntlProvider>
       </div>
     );
   }

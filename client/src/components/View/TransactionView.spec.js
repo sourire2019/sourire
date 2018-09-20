@@ -18,15 +18,15 @@ const setup = () => {
       'blockid': 19,
       'txhash': '912cd6e7624313675cb1806e2ce0243bbeff247792f2c7aae857a8c5436074f6',
       'createdt': '2018-04-26T20:32:12.000Z',
-      'chaincodename': 'mycc',
+      'contractname': 'mycc',
       'status': 200,
       'creator_msp_id': 'Org1MSP',
       "endorser_msp_id": '{\"Org1MSP\"}',
-      'chaincode_id': '',
+      'contract_id': '',
       'type': 'ENDORSER_TRANSACTION',
       'read_set': [
         {
-          chaincode: 'lscc',
+          contract: 'lscc',
           set: [
             {
               key: 'mycc',
@@ -38,7 +38,7 @@ const setup = () => {
           ]
         },
         {
-          chaincode: 'mycc',
+          contract: 'mycc',
           set: [
             {
               key: 'a',
@@ -58,11 +58,11 @@ const setup = () => {
         }],
       'write_set': [
         {
-          chaincode: 'lscc',
+          contract: 'lscc',
           set: []
         },
         {
-          chaincode: 'lscc',
+          contract: 'lscc',
           set: [
             {
               is_delete: false,
@@ -115,11 +115,11 @@ describe('TransactionView', () => {
       'blockid': 19,
       'txhash': '912cd6e7624313675cb1806e2ce0243bbeff247792f2c7aae857a8c5436074f6',
       'createdt': '2018-04-26T20:32:12.000Z',
-      'chaincodename': 'mycc',
+      'contractname': 'mycc',
       'status': 200,
       'creator_msp_id': 'Org1MSP',
       'endorser_msp_id': '{\"Org1MSP\"}',
-      'chaincode_id': '',
+      'contract_id': '',
       'type': 'ENDORSER_TRANSACTION',
     'read_set': [null],
     'write_set': [null]
@@ -137,16 +137,16 @@ describe('TransactionView', () => {
         'blockid': 19,
         'txhash': '912cd6e7624313675cb1806e2ce0243bbeff247792f2c7aae857a8c5436074f6',
         'createdt': '2018-04-26T20:32:12.000Z',
-        'chaincodename': 'mycc',
+        'contractname': 'mycc',
         'status': 200,
         'creator_msp_id': 'Org1MSP',
         'endorser_msp_id': '{\"Org1MSP\"}',
-        'chaincode_id': '',
+        'contract_id': '',
         'type': 'ENDORSER_TRANSACTION',
         'read_set': [
           null,
           {
-            chaincode: 'mycc',
+            contract: 'mycc',
             set: [
               {
                 key: 'a',
@@ -161,7 +161,7 @@ describe('TransactionView', () => {
         'write_set': [
           null,
           {
-            chaincode: 'lscc',
+            contract: 'lscc',
             set: [
               {
                 is_delete: false,

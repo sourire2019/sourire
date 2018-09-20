@@ -26,8 +26,8 @@ var myEnum = new Enum({
     TARGET_CHAIN_NOT_FOUND: 14,
     MARSHAL_TX_ERROR: 15,
     NIL_TXACTION: 16,
-    EXPIRED_CHAINCODE: 17,
-    CHAINCODE_VERSION_CONFLICT: 18,
+    EXPIRED_CONTRACT: 17,
+    CONTRACT_VERSION_CONFLICT: 18,
     BAD_HEADER_EXTENSION: 19,
     BAD_CHANNEL_HEADER: 20,
     BAD_RESPONSE_PAYLOAD: 21,
@@ -113,8 +113,8 @@ class SynBlockData {
         };
 
     async saveTransactions(block,channelName) {
-        //////////chaincode//////////////////
-        //syncChaincodes();
+        //////////contract//////////////////
+        //synccontracts();
         //////////tx/////////////////////////
         let txLen = block.block_meta.header.num_txs;
         if (parseInt(txLen) >0 ) {
@@ -125,8 +125,8 @@ class SynBlockData {
                 'blockid': block.block_meta.header.height,
                 'txhash': txhash,
                 'createdt': new Date(block.block_meta.header.time),
-                'chaincodename': "",
-                'chaincode_id': "",
+                'contractname': "",
+                'contract_id': "",
                 'status': 0,
                 'creator_msp_id': "",
                 'endorser_msp_id': "",
@@ -138,7 +138,7 @@ class SynBlockData {
                 'envelope_signature': "",
                 'payload_extension': "",
                 'creator_nonce': "",
-                'chaincode_proposal_input': "",
+                'contract_proposal_input': "",
                 'endorser_signature': "",
                 'creator_id_bytes': "",
                 'payload_proposal_hash': "",
@@ -161,7 +161,6 @@ class SynBlockData {
     async getBlockByNumber(channelName, start, end) {
         while (start < end) {
             let block = platform.getBlockByNumber(channelName, start);
-
             try {
                 var savedNewBlock = await this.saveBlockRange(block,channelName)
             } catch (err) {
@@ -226,8 +225,8 @@ class SynBlockData {
     };
 
 
-    // ====================chaincodes=====================================
-    async saveChaincodes(channelName) {};
+    // ====================contracts=====================================
+    async saveContracts(channelName) {};
     //没有多个，故按一个处理先
     async saveChannel() {
             //从status内查询 名称及块数
@@ -264,40 +263,40 @@ class SynBlockData {
         }
     };
 
-    async savePeerlist() {
-        var peerlists = [];
+    async saveNodelist() {
+        var nodelists = [];
         var statusdata = JSON.parse(platform.getStatus());
         var netinfo = JSON.parse(platform.getnetInfo());
 
          if(statusdata) {
-            peerlists.push({"requests": statusdata.result.node_info.listen_addr,
+            nodelists.push({"requests": statusdata.result.node_info.listen_addr,
                             "genesis_block_hash": statusdata.result.node_info.network,
                             "server_hostname": statusdata.result.node_info.listen_addr
                         });
         }
         if(netinfo) {
-            var netpeers = netinfo.result.peers;
-            for( var i = 0;i < netpeers.length;i++){
-                peerlists.push({"requests": netpeers[i].node_info.listen_addr,
-                                "genesis_block_hash": netpeers[i].node_info.network,
-                                "server_hostname": netpeers[i].node_info.listen_addr
+            var netnodes = netinfo.result.peers;
+            for( var i = 0;i < netnodes.length;i++){
+                nodelists.push({"requests": netnodes[i].node_info.listen_addr,
+                                "genesis_block_hash": netnodes[i].node_info.network,
+                                "server_hostname": netnodes[i].node_info.listen_addr
                               });
             }
         }
-        let peerlen = peerlists.length
-        for (let i = 0; i < peerlen; i++) {
-            var peers = peerlists[i]
-            this.crudService.savePeer(peers);
+        let nodelen = nodelists.length
+        for (let i = 0; i < nodelen; i++) {
+            var nodes = nodelists[i]
+            this.crudService.saveNode(nodes);
         }
     };
     // ====================Orderer BE-303=====================================
     async saveOrdererlist(channelName) {};
     // ====================Orderer BE-303=====================================
-    async syncChaincodes() {};
+    async syncContracts() {};
     //暂时没有多个channel，故直接调用。
-    syncPeerlist() {
+    syncNodelist() {
         try {
-            this.savePeerlist();
+            this.saveNodelist();
         } catch (err) {
             logger.error(err)
         }

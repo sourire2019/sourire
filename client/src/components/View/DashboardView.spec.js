@@ -61,9 +61,9 @@ const setup = () => {
     ],
     channel: { currentChannel: 'mychannel' },
     dashStats: {
-      chaincodeCount: '3',
+      contractCount: '3',
       latestBlock: 12,
-      peerCount: '4',
+      nodeCount: '4',
       txCount: '33'
     },
     getTxByOrg: jest.fn()

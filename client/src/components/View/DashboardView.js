@@ -4,9 +4,8 @@
 
 import React, { Component } from 'react';
 import ChartStats from '../Charts/ChartStats';
-import PeersHealth from '../Lists/PeersHealth';
+import NodesHealth from '../Lists/NodesHealth';
 import TimelineStream from '../Lists/TimelineStream';
-import OrgPieChart from '../Charts/OrgPieChart';
 import {
   Row,
   Col
@@ -14,6 +13,8 @@ import {
 import FontAwesome from 'react-fontawesome';
 import Card from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 export class DashboardView extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export class DashboardView extends Component {
   }
 
   componentWillMount() {
-    if (this.props.blockList == undefined || this.props.dashStats == undefined || this.props.peerStatus == undefined || this.props.transactionByOrg == undefined) {
+    if (this.props.blockList == undefined || this.props.dashStats == undefined || this.props.nodeStatus == undefined || this.props.transactionByOrg == undefined) {
       this.setState({ hasDbError: true });
     }
   }
@@ -43,7 +44,7 @@ export class DashboardView extends Component {
     if (blockList !== undefined) {
       for (
         let i = 0;
-        i < 3 && blockList && blockList[i];
+        i < 6 && blockList && blockList[i];
         i++
       ) {
         const block = blockList[i];
@@ -71,6 +72,11 @@ export class DashboardView extends Component {
     }
     return (
       <div className="background-view">
+        <IntlProvider
+          locale={this.props.appLocale.locale}
+          messages={this.props.appLocale.messages}
+          formats={this.props.appLocale.formats}
+        >
         <div className="dash-view" >
           <Row>
             <Col sm="12">
@@ -87,8 +93,13 @@ export class DashboardView extends Component {
                       <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
                     </Col>
                   </Row>
-                  BLOCKS
-                    </div>
+                   <FormattedMessage
+                    id="page.localeProvider.blocks"
+                    defaultMessage="BLOCKS"
+                    description="BLOCKS"
+                    />
+                  
+                </div>
                 <div className="statistic vdivide">
                   <Row>
                     <Col sm="4">
@@ -100,8 +111,13 @@ export class DashboardView extends Component {
                       <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
                     </Col>
                   </Row>
-                  TRANSACTIONS
-                   </div>
+                    <FormattedMessage
+                    id="page.localeProvider.transactions"
+                    defaultMessage="TRANSACTIONS"
+                    description="TRANSACTIONS"
+                    />
+                  
+               </div>
                 <div className="statistic vdivide">
                   <Row>
                     <Col sm="4">
@@ -110,50 +126,61 @@ export class DashboardView extends Component {
                       </Avatar>
                     </Col>
                     <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.peerCount}</h1>
+                      <h1 className="stat-count">{this.props.dashStats.nodeCount}</h1>
                     </Col>
                   </Row>
-                  NODES
-                  </div>
+                  <FormattedMessage
+                    id="page.localeProvider.nodes"
+                    defaultMessage="NODES"
+                    description="NODES"
+                    />
+                  
+                </div>
                 <div className="statistic">
                   <Row>
                     <Col sm="4">
-                      <Avatar className="stat-avatar avatar-chaincode" >
+                      <Avatar className="stat-avatar avatar-contract" >
                         <FontAwesome name="handshake-o" />
                       </Avatar>
                     </Col>
                     <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.chaincodeCount}</h1>
+                      <h1 className="stat-count">{this.props.dashStats.contractCount}</h1>
                     </Col>
                   </Row>
-                  CHAINCODES
-                  </div>
+                  <FormattedMessage
+                    id="page.localeProvider.contracts"
+                    defaultMessage="CONTRACTS"
+                    description="CONTRACTS"
+                    />
+                  
+                </div>
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="6" >
               <Card className="dash-section">
-                <PeersHealth
-                  peerStatus={this.props.peerStatus}
+                <NodesHealth
+                  nodeStatus={this.props.nodeStatus}
                 />
               </Card>
-              <Card className="dash-section">
-                <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} />
-              </Card>
+              
             </Col>
             <Col sm="6">
               <Card className="dash-section">
-                <ChartStats />
+                <ChartStats appLocale= {this.props.appLocale} />
               </Card>
-              <Card className="dash-section center-column">
-                <h5 className="org-header">Transactions by Organziation</h5>
-                <hr />
-                <OrgPieChart transactionByOrg={this.props.transactionByOrg} />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="12">
+              <Card className="dash-section">
+                <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
               </Card>
             </Col>
           </Row>
         </div>
+        </IntlProvider>
       </div>
     );
   }

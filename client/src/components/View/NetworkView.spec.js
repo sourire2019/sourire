@@ -12,7 +12,7 @@ const setup = () => {
       root: 'NetworkView-root-56',
       title: 'NetworkView-title-58'
     },
-    peerList: []
+    nodeList: []
   }
 
   const wrapper = shallow(<NetworkView {...props} />);

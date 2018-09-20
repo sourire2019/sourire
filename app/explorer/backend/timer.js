@@ -15,9 +15,8 @@
  */
 var Metrics = require('./metrics')
 var BlockListener = require('./BlockListener')
-var BlockScanner = require('./BlockScanner')
 var SynBlockData = require('./tendermint/SynBlockData')
-
+var BurrowSynBlockData = require("./burrow/SynBlockData")
 
 
 var blockPerMinMeter = Metrics.blockMetrics
@@ -28,11 +27,10 @@ async function start(platform, persistence, broadcaster) {
 
         var blockScanner;
         if (platform.plf == "tendermint") {
-         blockScanner = new SynBlockData(platform, persistence, broadcaster);
-        } else {
-         blockScanner = new BlockScanner(platform, persistence, broadcaster);   
+            blockScanner = new SynBlockData(platform, persistence, broadcaster);
+        } else if (platform.plf == "burrow") {
+            blockScanner = new BurrowSynBlockData(platform, persistence, broadcaster);
         }
-
         blockListener = new BlockListener(blockScanner);
 
         setInterval(function () {
@@ -43,8 +41,8 @@ async function start(platform, persistence, broadcaster) {
 
         //Sync Block
         blockListener.emit('syncChannels');
-        blockListener.emit('syncChaincodes');
-        blockListener.emit('syncPeerlist');
+        blockListener.emit('syncContracts');
+        blockListener.emit('syncNodelist');
 		// ====================Orderer BE-303=====================================
 		blockListener.emit('syncOrdererlist');
 		// ====================Orderer BE-303=====================================

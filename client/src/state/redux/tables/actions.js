@@ -9,9 +9,9 @@ const getBlockList = (blockList) => ({
   payload: blockList
 })
 
-const getChaincodeList = (chaincodeList) => ({
-  type: types.CHAINCODE_LIST,
-  payload: chaincodeList
+const getContractList = (contractList) => ({
+  type: types.CONTRACT_LIST,
+  payload: contractList
 })
 
 const getChannels = (channels) => ({
@@ -19,9 +19,9 @@ const getChannels = (channels) => ({
   payload: channels
 })
 
-const getPeerList = (peerList) => ({
-  type: types.PEER_LIST,
-  payload: peerList
+const getNodeList = (nodeList) => ({
+  type: types.NODE_LIST,
+  payload: nodeList
 })
 
 const getTransaction = (transaction) => ({
@@ -37,9 +37,9 @@ const getTransactionList = (transactionList) => ({
 
 export default {
   getBlockList,
-  getChaincodeList,
+  getContractList,
   getChannels,
-  getPeerList,
+  getNodeList,
   getTransaction,
   getTransactionList
 }

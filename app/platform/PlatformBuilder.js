@@ -2,19 +2,17 @@
 *SPDX-License-Identifier: Apache-2.0
 */
 
-var Platform = require('./fabric/Platform.js');
 var PlatformTender = require('./tendermint/PlatformTender.js');
+var PlatformBurrow = require('./burrow/PlatformBurrow.js');
 
 class PlatformBuilder {
 
     static async build(pltfrm) {
-
-        if(pltfrm == 'fabric') {
-            var platform = new Platform();
-            await platform.initialize();
-            return platform;
-        } else if(pltfrm == "tendermint") {
+        if(pltfrm == "tendermint") {
             var platform = new PlatformTender();
+            return platform;
+        }else if(pltfrm == "burrow"){
+        	var platform = new PlatformBurrow();
             return platform;
         }
 

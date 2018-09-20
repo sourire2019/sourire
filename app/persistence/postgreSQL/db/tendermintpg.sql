@@ -26,11 +26,11 @@ CREATE TABLE blocks (
 ALTER table blocks owner to tendermint;
 
 -- ----------------------------
---  Table structure for `chaincodes`
+--  Table structure for `contracts`
 -- ----------------------------
-DROP TABLE IF EXISTS chaincodes;
+DROP TABLE IF EXISTS contracts;
 
-CREATE TABLE chaincodes (
+CREATE TABLE contracts (
   id SERIAL PRIMARY KEY,
   name character varying(255) DEFAULT NULL,
   version character varying(255) DEFAULT NULL,
@@ -40,8 +40,8 @@ CREATE TABLE chaincodes (
   createdt Timestamp DEFAULT NULL
 );
 
-ALTER table chaincodes owner to tendermint;
-Alter sequence chaincodes_id_seq restart with 10;
+ALTER table contracts owner to tendermint;
+Alter sequence contracts_id_seq restart with 10;
 -- ----------------------------
 --  Table structure for `channel`
 -- ----------------------------
@@ -60,13 +60,13 @@ CREATE TABLE channel (
 ALTER table channel owner to tendermint;
 Alter sequence channel_id_seq restart with 3;
 -- ----------------------------
---  Table structure for `peer`
+--  Table structure for `node`
 -- ----------------------------
-DROP TABLE IF EXISTS peer;
+DROP TABLE IF EXISTS node;
 
 --   state character(1) NOT NULL DEFAULT 'A' CHECK (state in ('A', 'D', 'S'))
 
-CREATE TABLE peer (
+CREATE TABLE node (
   id SERIAL PRIMARY KEY,
   org integer DEFAULT NULL,
   name varchar(64) DEFAULT NULL,
@@ -76,19 +76,19 @@ CREATE TABLE peer (
   server_hostname varchar(64) DEFAULT NULL,
   createdt timestamp DEFAULT NULL
 );
-ALTER table peer owner to tendermint;
+ALTER table node owner to tendermint;
 -- ---------------------------
---  Table structure for `peer_ref_channel`
+--  Table structure for `node_ref_channel`
 -- ----------------------------
-DROP TABLE IF EXISTS peer_ref_channel;
+DROP TABLE IF EXISTS node_ref_channel;
 
-CREATE TABLE peer_ref_channel (
+CREATE TABLE node_ref_channel (
   id SERIAL PRIMARY KEY,
-  peerid integer DEFAULT NULL,
+  nodeid integer DEFAULT NULL,
   channelid integer DEFAULT NULL,
   createdt Timestamp DEFAULT NULL
 );
-ALTER table peer_ref_channel owner to tendermint;
+ALTER table node_ref_channel owner to tendermint;
 
 -- ====================Orderer BE-303=====================================
 -- ----------------------------
@@ -117,7 +117,7 @@ CREATE TABLE transaction (
   blockid integer DEFAULT NULL,
   txhash character varying(256) DEFAULT NULL,
   createdt timestamp DEFAULT NULL,
-  chaincodename character varying(255) DEFAULT NULL
+  contractname character varying(255) DEFAULT NULL
   );
 
 ALTER table transaction owner to tendermint;

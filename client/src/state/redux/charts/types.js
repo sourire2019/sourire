@@ -23,7 +23,7 @@ const CHANNEL = `${namespaces}/CHANNEL`;
 const CHANGE_CHANNEL = `${namespaces}/CHANGE_CHANNEL`;
 const CHANNEL_LIST = `${namespaces}/CHANNEL_LIST`;
 
-const PEER_STATUS = `${namespaces}/PEER_STATUS`
+const NODE_STATUS = `${namespaces}/NODE_STATUS`
 
 export default {
   BLOCK_CHART_HOUR,
@@ -33,7 +33,7 @@ export default {
   CHANNEL_LIST,
   DASHBOARD_STATS,
   NOTIFICATION_LOAD,
-  PEER_STATUS,
+  NODE_STATUS,
   TRANSACTION_CHART_HOUR,
   TRANSACTION_CHART_MIN,
   TRANSACTION_CHART_ORG,

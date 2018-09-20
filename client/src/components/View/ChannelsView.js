@@ -7,6 +7,7 @@ import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
 import Channels from '../Lists/Channels';
 import Card from 'material-ui/Card';
+import { IntlProvider, addLocaleData } from 'react-intl';
 
 const styles = theme => ({
   root: {
@@ -45,11 +46,17 @@ export class ChannelsView extends Component {
   render() {
     return (
       <div className="view-fullwidth" >
-        <div className="view-display">
-          <Card className="table-card">
-            <Channels channels={this.props.channels} />
-          </Card>
-        </div>
+        <IntlProvider
+          locale={this.props.appLocale.locale}
+          messages={this.props.appLocale.messages}
+          formats={this.props.appLocale.formats}
+        >
+          <div className="view-display">
+            <Card className="table-card">
+              <Channels channels={this.props.channels} />
+            </Card>
+          </div>
+        </IntlProvider>
       </div>
     );
   }

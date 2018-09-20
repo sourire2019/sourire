@@ -1,6 +1,6 @@
 {
 	"pg": {
-		"host": "172.22.0.150",
+		"host": "172.16.1.171",
 		"port": "5432",
 		"database": "tendermintexplorer",
 		"username": "tendermint",

@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import matchSorter from 'match-sorter';
+import {FormattedMessage} from 'react-intl';
 
 class Channels extends Component {
   constructor(props) {
@@ -15,7 +16,11 @@ class Channels extends Component {
   reactTableSetup = () => {
     return [
       {
-        Header: 'ID',
+        Header: <FormattedMessage
+                    id="page.localeProvider.id"
+                    defaultMessage='ID'
+                    description='ID'
+                    />,
         accessor: 'id',
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -28,7 +33,11 @@ class Channels extends Component {
         width: 100
       },
       {
-        Header: 'Channel Name',
+        Header: <FormattedMessage
+                    id="page.localeProvider.channelname"
+                    defaultMessage='Channel Name'
+                    description='Channel Name'
+                    />,
         accessor: 'channelname',
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -40,7 +49,11 @@ class Channels extends Component {
         filterAll: true
       },
       {
-        Header: 'Channel Hash',
+        Header: <FormattedMessage
+                    id="page.localeProvider.channelhash"
+                    defaultMessage='Channel Hash'
+                    description='Channel Hash'
+                    />,
         accessor: 'channel_hash',
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -52,7 +65,11 @@ class Channels extends Component {
         filterAll: true
       },
       {
-        Header: 'Blocks',
+        Header: <FormattedMessage
+                    id="page.localeProvider.blocks"
+                    defaultMessage='Blocks'
+                    description='Blocks'
+                    />,
         accessor: 'blocks',
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -65,7 +82,11 @@ class Channels extends Component {
         width: 125
       },
       {
-        Header: 'Transactions',
+        Header: <FormattedMessage
+                    id="page.localeProvider.transactionsl"
+                    defaultMessage='Transactions'
+                    description='Transactions'
+                    />,
         accessor: 'transactions',
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -78,7 +99,11 @@ class Channels extends Component {
         width: 125
       },
       {
-        Header: 'Timestamp',
+        Header: <FormattedMessage
+                    id="page.localeProvider.timestamp"
+                    defaultMessage='Timestamp'
+                    description='Timestamp'
+                    />,
         accessor: 'createdat',
         filterMethod: (filter, rows) =>
           matchSorter(

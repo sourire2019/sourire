@@ -5,17 +5,17 @@
 const namespaces = 'tables'
 
 const BLOCK_LIST = `${namespaces}/BLOCK_LIST`;
-const CHAINCODE_LIST = `${namespaces}/CHAINCODE_LIST`;
+const CONTRACT_LIST = `${namespaces}/CONTRACT_LIST`;
 const CHANNELS = `${namespaces}/CHANNELS`;
-const PEER_LIST = `${namespaces}/PEER_LIST`;
+const NODE_LIST = `${namespaces}/NODE_LIST`;
 const TRANSACTION = `${namespaces}/TRANSACTION`;
 const TRANSACTION_LIST = `${namespaces}/TRANSACTION_LIST`;
 
 export default {
   BLOCK_LIST,
-  CHAINCODE_LIST,
+  CONTRACT_LIST,
   CHANNELS,
-  PEER_LIST,
+  NODE_LIST,
   TRANSACTION,
   TRANSACTION_LIST
 }

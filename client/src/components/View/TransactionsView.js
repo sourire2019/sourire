@@ -7,6 +7,7 @@ import compose from "recompose/compose";
 import {withStyles} from "material-ui/styles";
 import Transactions from "../Lists/Transactions";
 import Card from "material-ui/Card";
+import { IntlProvider, addLocaleData } from 'react-intl';
 
 const styles = theme => ({
   root: {
@@ -45,6 +46,11 @@ export class TransactionsView extends Component {
   render() {
     return (
       <div className="view-fullwidth">
+        <IntlProvider
+          locale={this.props.appLocale.locale}
+          messages={this.props.appLocale.messages}
+          formats={this.props.appLocale.formats}
+        >
         <div className="view-display">
           <Card className="table-card">
             <Transactions
@@ -58,6 +64,7 @@ export class TransactionsView extends Component {
             />
           </Card>
         </div>
+        </IntlProvider>
       </div>
     );
   }

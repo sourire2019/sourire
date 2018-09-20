@@ -20,12 +20,12 @@ class  BlockListener extends EventEmitter{
 
             });
 
-            this.on('syncChaincodes', function () {
-                    blockScanner.syncChaincodes()
+            this.on('syncContracts', function () {
+                    blockScanner.syncContracts()
             });
 
-            this.on('syncPeerlist', function () {
-                    blockScanner.syncPeerlist()
+            this.on('syncNodelist', function () {
+                    blockScanner.syncNodelist()
             });
 
             this.on('syncChannels', function () {

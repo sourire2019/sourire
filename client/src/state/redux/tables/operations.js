@@ -15,10 +15,10 @@ const blockList = (channel) => (dispatch) => {
     })
 }
 
-const chaincodeList = (channel) => (dispatch) => {
- return get(`/api/chaincode/${channel}`)
+const contractList = (channel) => (dispatch) => {
+ return get(`/api/contract/${channel}`)
     .then( resp => {
-      dispatch(actions.getChaincodeList(resp))
+      dispatch(actions.getContractList(resp))
     }).catch( error => {
       console.error(error)
     })
@@ -40,10 +40,10 @@ const channels = () => (dispatch) => {
     })
 }
 
-const peerList = (channel) => (dispatch) => {
- return get(`/api/peers/${channel}`)
+const nodeList = (channel) => (dispatch) => {
+ return get(`/api/nodes/${channel}`)
     .then(resp => {
-      dispatch(actions.getPeerList(resp))
+      dispatch(actions.getNodeList(resp))
     }).catch( error => {
       console.error(error)
     })
@@ -52,53 +52,6 @@ const peerList = (channel) => (dispatch) => {
 const transaction = (channel, transactionId) => (dispatch) => {
   return get(`/api/transaction/${channel}/${transactionId}`)
     .then(resp => {
-      let resp1 = {
-        "status": 200,
-        "row": {
-        "txhash": "5018a79af996a441731b85e5853921d8ddf45978ec932a6fdef0c9e7b6b685a9",
-        "validation_code": "VALID",
-        "payload_proposal_hash": "a4f4dfa04ca3805cd758a9b3ebe1fb5ef6d6ca65f4b6d6201bae48c510536d60",
-        "creator_msp_id": "Org2MSP",
-        "endorser_msp_id": "{\"Org2MSP\"}",
-        "chaincodename": "lscc",
-        "type": "ENDORSER_TRANSACTION",
-        "createdt": "2018-08-27T04:01:06.000Z",
-        "read_set": [
-          {
-            "chaincode": "lscc",
-            "set": [
-              {
-              "key": "mycc",
-              "version": null
-              }
-            ]
-          },
-          {
-            "chaincode": "mycc",
-            "set": []
-          }
-        ],
-        "write_set": [
-          {
-            "chaincode": "mycc",
-            "set": [
-              {
-                "key": "a",
-                "is_delete": false,
-                "value": "100"
-              },
-              {
-                "key": "b",
-                "is_delete": false,
-                "value": "200"
-              }
-            ] 
-          }
-        ],
-        "channelname": "mychannel"
-      } 
-    };
-
       dispatch(actions.getTransaction(resp))
     }).catch( error => {
       console.error(error)
@@ -122,9 +75,9 @@ const transactionList = (channel) => (dispatch) => {
 
 export default {
   blockList,
-  chaincodeList,
+  contractList,
   channels,
-  peerList,
+  nodeList,
   transaction,
   transactionList
 }

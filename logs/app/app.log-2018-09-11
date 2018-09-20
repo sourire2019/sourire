@@ -1,0 +1,14 @@
+[2018-09-11 10:22:58.502] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 10:22:58.502] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 13:05:22.413] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-11 13:06:28.898] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 13:06:28.898] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 15:14:08.946] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 15:14:08.946] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-11 15:14:13.744] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)

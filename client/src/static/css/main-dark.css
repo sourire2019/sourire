@@ -73,7 +73,6 @@
 }
 
 .dark-theme  .scrollable-card{
-    height: 300px;
     overflow-y: scroll;
 
 }
@@ -339,15 +338,14 @@ margin-top:-10px;
    content: " ";
    position: relative;
 }
-.dark-theme .peers-health{
+.dark-theme .nodes-health{
     height: 335px;
     overflow-y: scroll;
 }
 
 /* Chart Body*/
 .dark-theme .dash-section{
-    height: 335px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     color:#ffffff;
     background-color:#3c3558!important;
 
@@ -368,6 +366,7 @@ margin-top:-10px;
     width: 80%;
     margin-left:10%;
     margin-right:10%;
+    overflow: hidden;
     /* padding-top: 85px;
     padding-left: 0px!important;
     width: 100%; */
@@ -494,7 +493,7 @@ background-color:#423b5f!important;
    padding:0 6 0 6;
    color:#ffffff;
    background-color: #5e558e!important;
-   margin-left:-250px;
+   margin-left:-5px;
    margin-top:-30px;
    opacity:1
     }

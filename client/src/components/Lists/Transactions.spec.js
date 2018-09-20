@@ -9,9 +9,9 @@ import TransactionView from "../View/TransactionView";
 const setup = () => {
   const props = {
     countHeader: {
-      chaincodeCount: "1",
+      contractCount: "1",
       latestBlock: 20,
-      peerCount: "4",
+      nodeCount: "4",
       txCount: "36"
     },
     currentChannel: "mychannel",
@@ -22,15 +22,15 @@ const setup = () => {
       txhash:
         "912cd6e7624313675cb1806e2ce0243bbeff247792f2c7aae857a8c5436074f6",
       createdt: "2018-04-26T20:32:12.000Z",
-      chaincodename: "mycc",
+      contractname: "mycc",
       status: 200,
       creator_msp_id: "Org1MSP",
       endorser_msp_id: "{'Org1MSP'}",
-      chaincode_id: "",
+      contract_id: "",
       type: "ENDORSER_TRANSACTION",
       read_set: [
         {
-          chaincode: "lscc",
+          contract: "lscc",
           set: [
             {
               key: "mycc",
@@ -42,7 +42,7 @@ const setup = () => {
           ]
         },
         {
-          chaincode: "mycc",
+          contract: "mycc",
           set: [
             {
               key: "a",
@@ -63,11 +63,11 @@ const setup = () => {
       ],
       write_set: [
         {
-          chaincode: "lscc",
+          contract: "lscc",
           set: []
         },
         {
-          chaincode: "lscc",
+          contract: "lscc",
           set: [
             {
               is_delete: false,
@@ -86,8 +86,8 @@ const setup = () => {
     transactionList: [
       {
         blockid: 20,
-        chaincode_id: "",
-        chaincodename: "mycc",
+        contract_id: "",
+        contractname: "mycc",
         channelname: "mychannel",
         createdt: "4-26-2018 4:32 PM EDT",
         creator_msp_id: "Org1MSP",
@@ -102,8 +102,8 @@ const setup = () => {
       },
       {
         blockid: 20,
-        chaincode_id: "",
-        chaincodename: "mycc",
+        contract_id: "",
+        contractname: "mycc",
         channelname: "mychannel",
         createdt: "4-26-2018 4:32 PM EDT",
         creator_msp_id: "Org1MSP",
@@ -118,8 +118,8 @@ const setup = () => {
       },
       {
         blockid: 19,
-        chaincode_id: "",
-        chaincodename: "mycc",
+        contract_id: "",
+        contractname: "mycc",
         channelname: "mychannel",
         createdt: "4-26-2018 4:32 PM EDT",
         creator_msp_id: "Org1MSP",
@@ -190,7 +190,7 @@ describe("Transactions", () => {
         .findWhere(n => n.contains("ENDORSER_TRANSACTION"))
         .exists()
     ).toBe(true);
-    //Chaincode
+    //contract
     expect(
       wrapper
         .find("TdComponent")
@@ -274,11 +274,11 @@ describe("Transactions", () => {
     expect(wrapper.find(ReactTable).find("TrGroupComponent").length).toBe(3);
   });
 
-  test("Simulate Chaincode filterMethod should have no results when given a value of newcc", () => {
+  test("Simulate contract filterMethod should have no results when given a value of newcc", () => {
     const {wrapper} = setup();
     wrapper
       .find("ThComponent")
-      .findWhere(n => n.key() === "4-chaincodename")
+      .findWhere(n => n.key() === "4-contractname")
       .find("input")
       .simulate("change", {target: {value: "newcc"}});
     expect(wrapper.find(ReactTable).find("TrGroupComponent").length).toBe(0);

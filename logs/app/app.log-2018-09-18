@@ -1,0 +1,229 @@
+[2018-09-18 09:48:26.417] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 09:48:26.422] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 09:48:26.422] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:02:04.906] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:02:04.910] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:02:04.910] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:02:28.879] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:02:28.883] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:02:28.883] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:04:32.226] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:04:32.230] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:04:32.230] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:04:56.932] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:04:56.936] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:04:56.936] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:06:25.457] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:06:25.461] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:06:25.461] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:22:01.970] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:22:01.974] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:22:01.974] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:25:07.410] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:239:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:25:07.414] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:25:07.414] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:28:29.692] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:240:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:262:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:28:29.696] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:28:29.696] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:31:35.808] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.getMaxBlockNum (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:223:53)
+    at SynBlockData.syncBlock (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:63:43)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:40:40)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:31:35.808] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:242:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:264:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:31:35.812] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:31:35.812] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:33:32.141] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.getMaxBlockNum (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:223:53)
+    at SynBlockData.syncBlock (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:63:43)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:40:40)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:33:32.141] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:242:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:264:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:33:32.146] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:33:32.146] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:34:53.565] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.getMaxBlockNum (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:222:53)
+    at SynBlockData.syncBlock (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:62:43)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:40:40)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:34:53.565] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:241:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:263:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:34:53.569] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:34:53.569] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:37:13.109] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.getMaxBlockNum (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:222:53)
+    at SynBlockData.syncBlock (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:62:43)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:40:40)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:37:13.110] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:241:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:263:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:37:13.114] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:37:13.114] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:40:25.836] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.getMaxBlockNum (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:222:53)
+    at SynBlockData.syncBlock (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:62:43)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:40:40)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:47:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:40:25.837] [ERROR] synBlockData - TypeError: Cannot read property 'latest_block_height' of undefined
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:241:51)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:263:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:41:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-18 10:40:25.841] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 10:40:25.841] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 11:24:33.496] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 11:24:33.496] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 12:36:17.737] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-18 12:36:17.737] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

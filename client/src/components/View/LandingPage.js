@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import Logo from '../../static/images/Explorer_Logo.svg';
+import Logo from '../../static/images/logo.png';
 import { chartOperations } from '../../state/redux/charts/'
 import { tableOperations } from '../../state/redux/tables/'
 import { chartSelectors } from '../../state/redux/charts/'
@@ -16,7 +16,7 @@ const {
   channel,
   channelList,
   dashStats,
-  peerStatus,
+  nodeStatus,
   transactionByOrg,
   transactionPerHour,
   transactionPerMin
@@ -24,9 +24,9 @@ const {
 
 const {
   blockList,
-  chaincodeList,
+  contractList,
   channels,
-  peerList,
+  nodeList,
   transactionList
 } = tableOperations
 
@@ -67,12 +67,12 @@ export class LandingPage extends Component {
       this.props.getBlockList(currentChannel),
       this.props.getBlocksPerMin(currentChannel),
       this.props.getBlocksPerHour(currentChannel),
-      this.props.getChaincodeList(currentChannel),
+      this.props.getContractList(currentChannel),
       this.props.getChannelList(currentChannel),
       this.props.getChannels(),
       this.props.getDashStats(currentChannel),
-      this.props.getPeerList(currentChannel),
-      this.props.getPeerStatus(currentChannel),
+      this.props.getNodeList(currentChannel),
+      this.props.getNodeStatus(currentChannel),
       this.props.getTransactionByOrg(currentChannel),
       this.props.getTransactionList(currentChannel),
       this.props.getTransactionPerHour(currentChannel),
@@ -93,7 +93,7 @@ export class LandingPage extends Component {
     return (
       <div className="landingBackground">
         <div className="landing" >
-          <img src={Logo} style={this.state.logoStyle} alt="Hyperledger Logo" />
+          <img src={Logo} style={this.state.logoStyle} alt="TrustChain Logo" />
           <Slider {...this.state.settings}>
             <div><h3>ACCESSING THE NETWORK</h3></div>
             <div><h3>CONNECTING TO CHANNEL</h3></div>
@@ -111,13 +111,13 @@ export default connect((state) => ({
     getBlockList: blockList,
     getBlocksPerHour: blockPerHour,
     getBlocksPerMin: blockPerMin,
-    getChaincodeList: chaincodeList,
+    getContractList: contractList,
     getChannelList: channelList,
     getChannel: channel,
     getChannels: channels,
     getDashStats: dashStats,
-    getPeerList: peerList,
-    getPeerStatus: peerStatus,
+    getNodeList: nodeList,
+    getNodeStatus: nodeStatus,
     getTransactionByOrg: transactionByOrg,
     getTransactionList: transactionList,
     getTransactionPerHour: transactionPerHour,

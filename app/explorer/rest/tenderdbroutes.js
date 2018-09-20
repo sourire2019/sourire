@@ -14,8 +14,8 @@ const tenderdbroutes = (app, persist) => {
       statusMetrics.getStatus(channelName, function (data) {
         if (
           data &&
-          (data.chaincodeCount &&
-            data.txCount &&  data.peerCount)
+          (data.contractCount &&
+            data.txCount &&  data.nodeCount)
         ) {
           return res.send(data);
         } else {
@@ -93,7 +93,7 @@ const tenderdbroutes = (app, persist) => {
   Response:
   {"rows":[{"id":56,"channelname":"mychannel","blockid":24,
   "txhash":"c42c4346f44259628e70d52c672d6717d36971a383f18f83b118aaff7f4349b8",
-  "createdt":"2018-03-09T19:40:59.000Z","chaincodename":"mycc"}]}
+  "createdt":"2018-03-09T19:40:59.000Z","contractname":"mycc"}]}
   */
   app.get("/api/txList/:channel/:blocknum/:txid", function (req, res) {
     let channelName = req.params.channel;
@@ -115,22 +115,22 @@ const tenderdbroutes = (app, persist) => {
   });
 
 
-  /***Peer List
-  GET /peerlist -> /api/peers
-  curl -i 'http://<host>:<port>/api/peers/<channel>'
+  /***Node List
+  GET /nodelist -> /api/nodes
+  curl -i 'http://<host>:<port>/api/nodes/<channel>'
   Response:
   [
     {
       "requests": "grpcs://127.0.0.1:7051",
-      "server_hostname": "peer0.org1.example.com"
+      "server_hostname": "node0.org1.example.com"
     }
   ]
   */
-  app.get("/api/peers/:channel", function (req, res) {
+  app.get("/api/nodes/:channel", function (req, res) {
     let channelName = req.params.channel;
     if (channelName) {
-      statusMetrics.getPeerList(channelName, function (data) {
-        res.send({ status: 200, peers: data });
+      statusMetrics.getNodeList(channelName, function (data) {
+        res.send({ status: 200, nodes: data });
       });
     } else {
       return requtil.invalidRequest(req, res);

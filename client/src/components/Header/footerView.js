@@ -5,7 +5,7 @@
 import 'react-select/dist/react-select.css';
 import React, { Component } from 'react';
 import clientJson from '../../../package.json';
-import Version from '../../../src/FabricVerison';
+import {FormattedMessage} from 'react-intl';
 
 export class FooterView extends Component {
   handleChange = (selectedOption) => {
@@ -22,11 +22,17 @@ export class FooterView extends Component {
     return (
       <div>
         <div class="footer">
-          {'Hyperledger Explorer Client Version: '}{clientJson.version}&emsp;
-              {'Fabric Compatibility: '} {Version.map(version => {
-            return version;
-          })
-          }
+          <FormattedMessage
+            id="page.localeProvider.trustchain"
+            values= {
+              {
+                foot : "Copyright © 2018 sjclian.com | A | All rights reserved"
+              }
+            }
+            defaultMessage="Trust chain {foot}"
+            description="footer"
+            />
+          {""}
         </div>
       </div>
     );

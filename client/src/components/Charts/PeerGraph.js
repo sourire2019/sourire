@@ -7,7 +7,7 @@ import { Graph } from 'react-d3-graph';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import 'react-tree-graph/dist/style.css';
 
-class PeerGraph extends Component {
+class NodeGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,20 +45,20 @@ class PeerGraph extends Component {
     }
   }
 
-  peerDataSetup = (peerData) => {
+  nodeDataSetup = (nodeData) => {
     let nodes = [];
     let links = [];
-    for (var i = 0; i < peerData.length; i++) {
-      nodes[i] = { id: peerData[i].server_hostname };
-      if (i < (peerData.length - 1)) {
+    for (var i = 0; i < nodeData.length; i++) {
+      nodes[i] = { id: nodeData[i].server_hostname };
+      if (i < (nodeData.length - 1)) {
         links[i] = {
-          source: peerData[i].server_hostname,
-          target: peerData[i + 1].server_hostname
+          source: nodeData[i].server_hostname,
+          target: nodeData[i + 1].server_hostname
         };
       } else {
         links[i] = {
-          source: peerData[i].server_hostname,
-          target: peerData[0].server_hostname
+          source: nodeData[i].server_hostname,
+          target: nodeData[0].server_hostname
         };
       }
     }
@@ -72,17 +72,17 @@ class PeerGraph extends Component {
   }
 
   componentDidMount() {
-    this.peerDataSetup(this.props.peerList)
+    this.nodeDataSetup(this.props.nodeList)
   }
 
   render() {
     return (
-      <div className="peer-graph">
+      <div className="node-graph">
         <Card>
           <CardHeader>
-            <h5>PeerGraph</h5>
+            <h5>NodeGraph</h5>
           </CardHeader>
-          <CardBody className="peerGraphBody">
+          <CardBody className="nodeGraphBody">
             <Graph id="graph-id"
               data={this.state.data}
               config={this.state.myConfig} />
@@ -93,4 +93,4 @@ class PeerGraph extends Component {
   }
 }
 
-export default PeerGraph;
+export default NodeGraph;

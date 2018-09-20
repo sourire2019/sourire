@@ -4,5 +4,5 @@
 
 // TODO add request mocks
 const countHeader = {
-    chaincodeCount: 1, txCount: 10, latestBlock: 5, peerCount: 1
+    contractCount: 1, txCount: 10, latestBlock: 5, nodeCount: 1
 }

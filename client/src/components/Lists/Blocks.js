@@ -11,6 +11,8 @@ import "react-table/react-table.css";
 import matchSorter from "match-sorter";
 import FontAwesome from "react-fontawesome";
 import find from "lodash/find";
+import {FormattedMessage} from 'react-intl';
+import Transaction from "./Transaction"
 
 class Blocks extends Component {
   constructor(props) {
@@ -19,7 +21,8 @@ class Blocks extends Component {
       dialogOpen: false,
       loading: false,
       dialogOpenBlockHash: false,
-      blockHash: {}
+      blockHash: {},
+      transactions :{}
     };
   }
 
@@ -27,6 +30,17 @@ class Blocks extends Component {
     await this.props.getTransaction(this.props.currentChannel, tid);
     this.setState({dialogOpen: true});
   };
+
+  handleDialogOpenTransactions = transaction =>{
+    const data = [];
+    transaction.forEach(element => {
+      data.push({
+        txhash: element
+      })
+      })
+    // this.state.transactions.push(transactions);
+    this.setState({dialogOpen: true , transactions: data});
+  }
 
   handleDialogClose = () => {
     //this.props.removeTransactionInfo();
@@ -43,6 +57,7 @@ class Blocks extends Component {
       blockHash: data
     });
   };
+
 
   handleDialogCloseBlockHash = () => {
     this.setState({dialogOpenBlockHash: false});
@@ -64,7 +79,11 @@ class Blocks extends Component {
   reactTableSetup = () => {
     return [
       {
-        Header: "Block Number",
+        Header: <FormattedMessage
+                    id="page.localeProvider.blocknum"
+                    defaultMessage="Block Number"
+                    description="Block Number"
+                    />,
         accessor: "blocknum",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -77,7 +96,11 @@ class Blocks extends Component {
         width: 150
       },
       {
-        Header: "Channel Name",
+        Header: <FormattedMessage
+                    id="page.localeProvider.channelname"
+                    defaultMessage="Channel Name"
+                    description="Channel Name"
+                    />,
         accessor: "channelname",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -89,7 +112,11 @@ class Blocks extends Component {
         filterAll: true
       },
       {
-        Header: "Number of Tx",
+        Header: <FormattedMessage
+                    id="page.localeProvider.num"
+                    defaultMessage="Number of Tx"
+                    description="Number of Tx"
+                    />,
         accessor: "txcount",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -102,7 +129,11 @@ class Blocks extends Component {
         width: 150
       },
       {
-        Header: "Data Hash",
+        Header: <FormattedMessage
+                    id="page.localeProvider.datah"
+                    defaultMessage="Data Hash"
+                    description="Data Hash"
+                    />,
         accessor: "datahash",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -114,7 +145,11 @@ class Blocks extends Component {
         filterAll: true
       },
       {
-        Header: "Block Hash",
+        Header: <FormattedMessage
+                    id="page.localeProvider.blockhash"
+                    defaultMessage="Block Hash"
+                    description="Block Hash"
+                    />,
         accessor: "blockhash",
         Cell: row => (
           <span>
@@ -140,7 +175,11 @@ class Blocks extends Component {
         filterAll: true
       },
       {
-        Header: "Previous Hash",
+        Header: <FormattedMessage
+                    id="page.localeProvider.prehash"
+                    defaultMessage="Previous Hash"
+                    description="Previous Hash"
+                    />,
         accessor: "prehash",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -153,35 +192,25 @@ class Blocks extends Component {
         width: 150
       },
       {
-        Header: "Transactions",
+        Header: <FormattedMessage
+                    id="page.localeProvider.transactionsl"
+                    defaultMessage="Transactions"
+                    description="Transactions"
+                    />,
         accessor: "txhash",
         Cell: row => (
-          <ul>
-            {row.value ===null ? (""): (
-              row.value.map(tid => (
-                <li
-                  key={tid}
-                  style={{
-                    overflow: "hidden",
-                    whiteSpace: "nowrap",
-                    textOverflow: "ellipsis"
-                  }}
-                >
-                  <a
-                    className="partialHash"
-                    onClick={() => this.handleDialogOpen(tid)}
-                    href="#/blocks"
-                  >
-                    <div className="fullHash" id="showTransactionId">
-                      {tid}
-                    </div>{" "}
-                    {tid.slice(0, 6)} {!tid ? "" : "... "}
-                  </a>
-                </li>
-              ))
-
-            )}
-          </ul>
+          <span>
+            <button
+              className="partialHash"
+              onClick={() => this.handleDialogOpenTransactions(row.value)}
+              href="#/blocks"
+            >
+              <div className="fullHash" id="showTransactionId">
+                显示详情
+              </div>{" "}
+              显示详情
+            </button>{" "}
+          </span>
         ),
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -214,9 +243,11 @@ class Blocks extends Component {
           fullWidth={true}
           maxWidth={"md"}
         >
-          <TransactionView
-            transaction={this.props.transaction}
+          <Transaction
+            transaction={this.state.transactions}
             onClose={this.handleDialogClose}
+            transactions = {this.props.transaction}
+            gettransaction = {this.props.getTransaction}
           />
         </Dialog>
 

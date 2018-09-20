@@ -86,10 +86,10 @@ div.menuItems > nav{
     border-bottom: 2px #000000 solid;
 }
 .logo{
-    /* width: 365px;
-    height: 70px; */
-    width: 260px;
-    height: 50px;
+     width: 365px;
+    height: 70px; 
+    /*width: 260px;
+    height: 50px;*/
 }
 /* Dashboard */
  .count-card{
@@ -135,8 +135,9 @@ word-wrap: break-word;
     padding: 5px;
 }
 .scrollable-card{
-    height: 300px;
-    overflow-y: scroll;
+    height: 180px;
+    overflow: hidden;
+    overflow-x: scroll;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -186,11 +187,11 @@ word-wrap: break-word;
     margin-left: 5% !important;
     margin-right: 5% !important;
 }
-.peerList{
+.nodeList{
     margin-left: 300px;
     max-width: 550px;
 }
-.peerStatus{
+.nodeStatus{
     margin-left: 300px;
     max-width: 550px;
 }
@@ -234,8 +235,8 @@ word-wrap: break-word;
     color:#bdc3c7;
     font-size:16pt;
 }
-/* Peer Graph  */
- .peer-graph{
+/* node Graph  */
+ .node-graph{
     /* width: 633px; */
 }
 
@@ -448,7 +449,7 @@ margin-top:-10px;
    content: " ";
    position: relative;
 }
-.peers-health{
+.nodes-health{
     height: 335px;
     overflow-y: scroll;
 }
@@ -457,8 +458,7 @@ margin-top:-10px;
 }
 
 .dash-section{
-    height: 335px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 .org-pie{
    padding-left:10%;
@@ -473,6 +473,7 @@ margin-top:-10px;
     width: 80%;
     margin-left:10%;
     margin-right:10%;
+    overflow: hidden;
     /* padding-top: 85px;
     padding-left: 0px!important;
     width: 100%; */
@@ -529,7 +530,7 @@ margin-top:-10px;
     color:#21295C!important;
     background-color: #858AA6!important;
 }
-.avatar-chaincode{
+.avatar-contract{
     color: #407B20 !important;
     background-color: #D0ECDA!important;
 }
@@ -539,6 +540,11 @@ margin-top:-10px;
 }
 .moonIcon{
     color:rgb(104, 195, 245)
+}
+.langIcon {
+    display: inline-block;
+    margin-top: 15px;
+    color: grey;
 }
 /*Time Chart and Chart stats */
 .recharts-layer{
@@ -558,7 +564,7 @@ display:block;
 position:absolute!important;
 padding:4px 4px;
 background-color: #000000!important;
-margin-left:-250px;
+margin-left:-5px;
 margin-top:-30px;
 border-radius:8px;
 color:#ffffff;
@@ -597,4 +603,14 @@ opacity:0.7
 .loader{
     margin: 0 auto;
     width: 100px;
+}
+
+.scoll{
+    width: 400px;
+    float: left;
+}
+.scroll-div{
+    height: 200px;
+    width: 2000px;
+    overflow: hidden;
 }

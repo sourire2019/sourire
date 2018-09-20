@@ -16,6 +16,8 @@ import "../../static/css/main.css";
 import "../../static/css/main-dark.css";
 import chartsOperations from '../../state/redux/charts/operations'
 import tablesOperations from '../../state/redux/tables/operations'
+import { IntlProvider, addLocaleData } from 'react-intl';
+
 const {
   blockPerHour,
   blockPerMin,
@@ -27,14 +29,14 @@ const {
   channel,
   channelList,
   changeChannel,
-  peerStatus
+  nodeStatus
 } = chartsOperations
 
 const {
   blockList,
-  chaincodeList,
+  contractList,
   channels,
-  peerList,
+  nodeList,
   transactionInfo,
   transactionList
 } = tablesOperations
@@ -51,13 +53,39 @@ const muiTheme = createMuiTheme({
   }
 });
 
+function getLocale(lang) {
+  /* eslint-disable global-require */
+  let result = {};
+  switch (lang) {
+    case 'zh-CN':
+      result = require('../locales/zh-Hans');
+      break;
+    case 'en-US':
+      result = require('../locales/en-US');
+      break;
+    default:
+      result = require('../locales/en-US');
+  }
+
+  return result.default || result;
+  /* eslint-enable global-require */
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.refreshComponent = this.refreshComponent.bind(this);
     this.state = {
-      loading: true
+      loading: true,
+      lang: 'en-US',
     };
+  }
+
+  onChange = (index) => {
+    const lang = index === 0 ? 'en-US' : 'zh-CN';
+    this.setState({
+      lang,
+    });
   }
 
   componentWillMount() {
@@ -86,21 +114,36 @@ class App extends Component {
   };
 
   render() {
+    const { lang } = this.state;
+
+    const appLocale = getLocale(lang);
+    addLocaleData(...appLocale.data);
+
     if (this.state.loading) {
       return <LandingPage
         updateLoadStatus={this.updateLoadStatus}
       />;
     }
-
+    
     return (
       <MuiThemeProvider theme={muiTheme}>
+        <IntlProvider
+          locale={appLocale.locale}
+          messages={appLocale.messages}
+          formats={appLocale.formats}
+        >
         <div>
-          <HeaderView refresh={this.refreshComponent.bind(this)} />
-          <Main />
-          <div class="footerView">
-            <FooterView />
-          </div>
+          
+            <HeaderView refresh={this.refreshComponent.bind(this)} onChange={(index) => { this.onChange(index); }}/>
+          
+            <Main  appLocale= {getLocale(this.state.lang)}/>
+            <div class="footerView">
+                <FooterView />
+             
+            </div>
+          
         </div>
+        </IntlProvider>
       </MuiThemeProvider>
     );
   }

@@ -11,18 +11,18 @@ import Select from "react-select";
 import {Nav, Navbar, NavbarBrand, NavbarToggler} from "reactstrap";
 import {HashRouter as Router, NavLink, Link} from "react-router-dom";
 import Switch from "material-ui/Switch";
-import AdminPanel from "../Panels/AdminPanel";
-import Logo from "../../static/images/Explorer_Logo.svg";
+import Logo from "../../static/images/logo.png";
 import FontAwesome from "react-fontawesome";
 import Drawer from "material-ui/Drawer";
 import Button from "material-ui/Button";
-import NotificationsPanel from "../Panels/NotificationsPanel";
 import Websocket from "react-websocket";
 import Badge from "material-ui/Badge";
 import Dialog from "material-ui/Dialog";
 import Loader from 'react-loader-spinner';
 import {chartOperations, chartSelectors} from "../../state/redux/charts/";
 import {tableOperations, tableSelectors} from "../../state/redux/tables/";
+import PropTypes from 'prop-types';
+import {FormattedMessage} from 'react-intl';
 
 const {
   blockPerHour,
@@ -32,10 +32,10 @@ const {
   transactionByOrg,
   dashStats,
   changeChannel,
-  peerStatus
+  nodeStatus
 } = chartOperations;
 
-const {blockList, chaincodeList, peerList, transactionList} = tableOperations;
+const {blockList, contractList, nodeList, transactionList} = tableOperations;
 
 const {currentChannelSelector} = chartSelectors;
 const {channelsSelector} = tableSelectors;
@@ -67,7 +67,9 @@ export class HeaderView extends Component {
       isLoading: true,
       modalOpen: false,
       selectedChannel: {},
-      isLight: true
+      isLight: true,
+      langSelectedIndex: 1,
+      value : 1
     };
   }
 
@@ -77,8 +79,12 @@ export class HeaderView extends Component {
     });
   };
 
+  val (value) {
+    this.setState({
+      value: value === 0? 1 : 0
+    });
+  };
   handleData(notification) {
-    // this.props.getNotification(notification);
     let notifyArr = this.state.notifications;
     notifyArr.unshift(JSON.parse(notification));
     this.setState({notifications: notifyArr});
@@ -112,28 +118,14 @@ export class HeaderView extends Component {
   }
 
   async syncData(currentChannel) {
-    // this.props.getBlockList(currentChannel, 0);
-    // this.props.getBlocksPerHour(currentChannel);
-    // this.props.getBlocksPerMin(currentChannel);
-    // this.props.getChaincodeList(currentChannel);
-    // this.props.getDashStats(currentChannel);
-    // this.props.getPeerList(currentChannel);
-    // this.props.getPeerStatus(currentChannel);
-    // this.props.getTransactionByOrg(currentChannel);
-    // this.props.getTransactionList(currentChannel, 0);
-    // this.props.getTransactionPerHour(currentChannel);
-    // this.props.getTransactionPerMin(currentChannel);
-
     await Promise.all([
       this.props.getBlockList(currentChannel),
       this.props.getBlocksPerMin(currentChannel),
       this.props.getBlocksPerHour(currentChannel),
-      this.props.getChaincodeList(currentChannel),
-      // this.props.getChannelList(currentChannel),
-      // this.props.getChannels(),
+      this.props.getContractList(currentChannel),
       this.props.getDashStats(currentChannel),
-      this.props.getPeerList(currentChannel),
-      this.props.getPeerStatus(currentChannel),
+      this.props.getNodeList(currentChannel),
+      this.props.getNodeStatus(currentChannel),
       this.props.getTransactionByOrg(currentChannel),
       this.props.getTransactionList(currentChannel),
       this.props.getTransactionPerHour(currentChannel),
@@ -193,7 +185,6 @@ export class HeaderView extends Component {
     this.setState({selectedChannel});
     this.props.getChangeChannel(selectedChannel.value);
    await this.syncData(selectedChannel.value);
-  //  this.handleClose();
   };
 
   handleOpen = () => {
@@ -240,12 +231,11 @@ export class HeaderView extends Component {
 
   handleThemeChange = () => {
     const theme =
-      sessionStorage.getItem("toggleTheme") === "true" ? false : true;
+    sessionStorage.getItem("toggleTheme") === "true" ? false : true;
     sessionStorage.setItem("toggleTheme", theme);
     this.setState({isLight: theme});
     this.props.refresh(theme);
   };
-
   render() {
     const {classes} = this.props;
     const {hostname, port} = window.location;
@@ -257,22 +247,21 @@ export class HeaderView extends Component {
     const transLink = props => (
       <Link to="/transactions" activeClassName="active" {...props} />
     );
-
     return (
       <div>
-        {/* production */}
-        {/* development */}
         <Websocket
           url={webSocketUrl}
           onMessage={this.handleData.bind(this)}
           reconnect={true}
         />
+         
+
         <Router>
           <div>
             <Navbar className="navbar-header" expand="md" fixed="top">
               <NavbarBrand href="/">
                 {" "}
-                <img src={Logo} className="logo" alt="Hyperledger Logo" />
+                <img src={Logo} className="logo" alt="Trustchain Logo" />
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
@@ -283,7 +272,11 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    DASHBOARD
+                   <FormattedMessage
+                    id="page.localeProvider.dashboard"
+                    defaultMessage="DASHBOARD"
+                    description="DASHBOARD"
+                    />
                   </NavLink>
                 </li>
                 <li>
@@ -292,7 +285,11 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    NETWORK
+                    <FormattedMessage
+                    id="page.localeProvider.network"
+                    defaultMessage="NETWORK"
+                    description="network"
+                    />
                   </NavLink>
                 </li>
                 <li>
@@ -301,7 +298,11 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    BLOCKS
+                    <FormattedMessage
+                    id="page.localeProvider.blocks"
+                    defaultMessage="BLOCKS"
+                    description="BLOCKS"
+                    />
                   </NavLink>
                 </li>
                 <li>
@@ -310,16 +311,26 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    TRANSACTIONS
+                    <FormattedMessage
+                    id="page.localeProvider.transactions"
+                    defaultMessage="TRANSACTIONS"
+                    description="TRANSACTIONS"
+                    />
+                    
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/chaincodes"
+                    to="/contracts"
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    CHAINCODES
+                    <FormattedMessage
+                    id="page.localeProvider.contracts"
+                    defaultMessage="CONTRACTS"
+                    description="CONTRACTS"
+                    />
+                    
                   </NavLink>
                 </li>
                 <li>
@@ -328,10 +339,14 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    CHANNELS
+                    <FormattedMessage
+                    id="page.localeProvider.channels"
+                    defaultMessage="CHANNELS"
+                    description="CHANNELS"
+                    />
+                    
                   </NavLink>
                 </li>
-
                 <div>
                   <Select
                     className="channel-dropdown"
@@ -344,29 +359,10 @@ export class HeaderView extends Component {
                     options={this.state.channels}
                   />
                 </div>
-                {
-                  <div className="admin-buttons">
-                    <FontAwesome
-                      name="bell"
-                      className="bell"
-                      onClick={() => this.handleDrawOpen("notifyDrawer")}
-                    />
-                    <Badge
-                      className="navIcons"
-                      badgeContent={this.state.notifyCount}
-                      color="primary"
-                    />
-                  </div>
-                }
-                {/*
-              //Use when Admin functionality is required
-              <div className="admin-buttons">
-                <FontAwesome
-                  name="cog"
-                  className="cog"
-                  onClick={() => this.handleDrawOpen("adminDrawer")}
-                />
-              </div> */}
+                <div  className="admin-buttons theme-switch" onClick= {() => {
+                this.props.onChange(this.state.value); this.val(this.state.value)}}>
+                  <FontAwesome name="language" className="langIcon" />
+                </div>
                 <div className="admin-buttons theme-switch">
                   <FontAwesome name="sun-o" className="sunIcon" />
                   <Switch
@@ -377,23 +373,13 @@ export class HeaderView extends Component {
                 </div>
               </Nav>
             </Navbar>
-            <Drawer
-              anchor="right"
-              open={this.state.notifyDrawer}
-              onClose={() => this.handleDrawClose("notifyDrawer")}
-            >
-              <div tabIndex={0} role="button">
-                <NotificationsPanel notifications={this.state.notifications} />
-              </div>
-            </Drawer>
+            
             <Drawer
               anchor="right"
               open={this.state.adminDrawer}
               onClose={() => this.handleDrawClose("adminDrawer")}
             >
-              <div tabIndex={0} role="button">
-                <AdminPanel />
-              </div>
+              
             </Drawer>
               <Dialog
                 open={this.state.modalOpen}
@@ -409,10 +395,10 @@ export class HeaderView extends Component {
                     width={70}
                     className="loader" />
                 </div>
-           </Dialog>
+              </Dialog>
           </div>
         </Router>
-      </div>
+        </div>
     );
   }
 }
@@ -428,11 +414,11 @@ export default compose(
       getBlockList: blockList,
       getBlocksPerHour: blockPerHour,
       getBlocksPerMin: blockPerMin,
-      getChaincodeList: chaincodeList,
+      getContractList: contractList,
       getChangeChannel: changeChannel, //not in syncdata
       getDashStats: dashStats,
-      getPeerList: peerList,
-      getPeerStatus: peerStatus,
+      getNodeList: nodeList,
+      getNodeStatus: nodeStatus,
       getTransactionByOrg: transactionByOrg,
       getTransactionList: transactionList,
       getTransactionPerHour: transactionPerHour,

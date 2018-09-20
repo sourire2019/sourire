@@ -16,6 +16,8 @@ import {
   CardBody,
   CardTitle} from "reactstrap";
 
+import {FormattedMessage} from 'react-intl';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -56,8 +58,12 @@ export class TransactionView extends Component {
         <div className={this.state.toggleClass ? "dark-theme" : ""}>
           <div>
             <CardTitle className="dialogTitle">
-              <FontAwesome name="list-alt" className="listIcon" />Transaction
-              Details
+              <FontAwesome name="list-alt" className="listIcon" />
+                <FormattedMessage
+                    id="page.localeProvider.txdetails"
+                    defaultMessage="Transaction Details"
+                    description="Transaction Details"
+                    />:
               <button onClick={this.handleClose} className="closeBtn">
                 <FontAwesome name="close" />
               </button>
@@ -79,8 +85,13 @@ export class TransactionView extends Component {
           <div className="dialog">
             <Card>
               <CardTitle className="dialogTitle">
-                <FontAwesome name="list-alt" className="listIcon" />Transaction
-                Details
+                <FontAwesome name="list-alt" className="listIcon" />
+                  <FormattedMessage
+                    id="page.localeProvider.txdetails"
+                    defaultMessage="Transaction Details"
+                    description="Transaction Details"
+                  />:
+                
                 <button onClick={this.handleClose} className="closeBtn">
                   <FontAwesome name="close" />
                 </button>
@@ -89,7 +100,14 @@ export class TransactionView extends Component {
                 <Table striped hover responsive className="table-striped">
                   <tbody>
                     <tr>
-                      <th>Transaction ID:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.transactionid"
+                          defaultMessage="Transaction ID"
+                          description="Transaction ID"
+                        />
+                        :
+                      </th>
                       <td>
                         {this.props.transaction.txhash}
                         <button className="copyBtn">
@@ -102,120 +120,84 @@ export class TransactionView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Validation Code:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.valcode"
+                          defaultMessage="Validation Code"
+                          description="Validation Code"
+                        />
+                        :
+                      </th>
                       <td>{this.props.transaction.validation_code}</td>
                     </tr>
                     <tr>
-                      <th>Payload Proposal Hash:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.payprohash"
+                          defaultMessage="Payload Proposal Hash"
+                          description="Payload Proposal Hash"
+                        />
+                        :
+                      </th>
                       <td>{this.props.transaction.payload_proposal_hash}</td>
                     </tr>
                     <tr>
-                      <th>Creator MSP:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.creatormsp"
+                          defaultMessage="Creator MSP"
+                          description="Creator MSP"
+                        />
+                        :
+                      </th>
                       <td>{this.props.transaction.creator_msp_id}</td>
                     </tr>
                     <tr>
-                      <th>Endoser:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.endoser"
+                          defaultMessage="Endoser"
+                          description="Endoser"
+                        />
+                        :
+                      </th>
                       <td>{this.props.transaction.endorser_msp_id}</td>
                     </tr>
                     <tr>
-                      <th>Chaincode Name:</th>
-                      <td>{this.props.transaction.chaincodename}</td>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.contractname"
+                          defaultMessage="Contract Name"
+                          description="Contract Name"
+                        />
+                        :
+                      </th>
+                      <td>{this.props.transaction.contractname}</td>
                     </tr>
                     <tr>
-                      <th>Type:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.type"
+                          defaultMessage="Type"
+                          description="Type"
+                        />
+                        :
+                      </th>
                       <td>{this.props.transaction.type}</td>
                     </tr>
                     <tr>
-                      <th>Time:</th>
+                      <th>
+                        <FormattedMessage
+                          id="page.localeProvider.time"
+                          defaultMessage="Time"
+                          description="Time"
+                        />
+                        :
+                      </th>
                       <td>
                         {moment(this.props.transaction.createdt)
                           .tz(moment.tz.guess())
                           .format("M-D-YYYY h:mm A zz")}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th style={reads}>Reads:</th>
-                      <td>
-                        {" "}
-                        {this.props.transaction.write_set.length === undefined ? (""): (
-                          this.props.transaction.read_set.map(function(
-                            item,
-                            index
-                          ) {
-                            return item === null ? (
-                              ""
-                            ) : (
-                              <li key={index}>
-                                <Typography
-                                  variant="subheading"
-                                  className="dialogCells"
-                                >
-                                  {" "}
-                                  {item.chaincode}
-                                </Typography>
-                                <ul>
-                                  {item.set.map(function(x, index) {
-                                    var block_num = "";
-                                    var tx_num = "";
-                                    if (x.version !== null) {
-                                      block_num = x.version.block_num;
-                                      tx_num = x.version.tx_num;
-                                    }
-                                    return x === null ? (
-                                      ""
-                                    ) : (
-                                      <li key={index}>
-                                        key:{x.key} ,version:( block:{block_num},tx:{
-                                          tx_num
-                                        }){" "}
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                                <br />
-                              </li>
-                            );
-                          })
-                        )}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th style={writes}>Writes:</th>
-                      <td>
-                        {" "}
-                        {this.props.transaction.write_set.length === undefined ? (""): 
-                          (this.props.transaction.write_set.map(function(
-                            item,
-                            index
-                          ) {
-                            return item === null ? (
-                              ""
-                            ) : (
-                              <li key={index}>
-                                <Typography
-                                  variant="subheading"
-                                  className="dialogCells"
-                                >
-                                  {" "}
-                                  {item.chaincode}
-                                </Typography>
-                                <ul>
-                                  {item.set.map(function(x, index) {
-                                    return x === null ? (
-                                      ""
-                                    ) : (
-                                      <li key={index}>
-                                        key:{x.key} ,is_delete:{x.is_delete.toString()},value:{
-                                          x.value
-                                        }{" "}
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                                <br />
-                              </li>
-                            );
-                          }))}
                       </td>
                     </tr>
                   </tbody>

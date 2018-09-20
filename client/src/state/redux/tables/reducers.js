@@ -22,11 +22,11 @@ const blockListReducer = (state = initialState, action) => {
   }
 }
 
-const chaincodeListReducer = (state = initialState, action) => {
+const contractListReducer = (state = initialState, action) => {
   switch(action.type) {
-    case types.CHAINCODE_LIST: {
+    case types.CONTRACT_LIST: {
       return ({
-        rows: action.payload.chaincode,
+        rows: action.payload.contract,
         loaded: true,
         errors: action.error
       })
@@ -52,11 +52,11 @@ const channelsReducer = (state = initialState, action) => {
   }
 }
 
-const peerListReducer = (state = initialState, action) => {
+const nodeListReducer = (state = initialState, action) => {
   switch(action.type) {
-    case types.PEER_LIST: {
+    case types.NODE_LIST: {
       return ({
-        rows: action.payload.peers,
+        rows: action.payload.nodes,
         loaded: true,
         errors: action.error
       })
@@ -101,9 +101,9 @@ const transactionListReducer = (state = initialState, action) => {
 
 const reducer = combineReducers({
   blockList: blockListReducer,
-  chaincodeList: chaincodeListReducer,
+  contractList: contractListReducer,
   channels: channelsReducer,
-  peerList: peerListReducer,
+  nodeList: nodeListReducer,
   transaction: transactionReducer,
   transactionList: transactionListReducer
 })

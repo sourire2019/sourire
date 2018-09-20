@@ -1,0 +1,173 @@
+[2018-09-12 10:03:45.864] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 10:03:45.868] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 10:03:45.868] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 10:17:56.607] [ERROR] synBlockData - SyntaxError: Unexpected token u in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at SynBlockData.saveChannel (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:234:35)
+    at SynBlockData.syncChannels (/opt/blockchain-explorer/app/explorer/backend/tendermint/SynBlockData.js:261:24)
+    at BlockListener.<anonymous> (/opt/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7)
+    at Object.start (/opt/blockchain-explorer/app/explorer/backend/timer.js:45:23)
+    at Explorer.initialize (/opt/blockchain-explorer/app/explorer/Explorer.js:43:25)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 10:17:56.612] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 10:17:56.612] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 10:32:13.067] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 10:32:13.067] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 11:47:07.011] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 11:48:00.218] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 11:49:00.058] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getPeerData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 13:18:10.957] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 13:19:12.127] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 13:24:23.281] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 13:35:05.354] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 13:36:33.705] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 14:53:56.065] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 14:53:56.065] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:06:40.181] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:06:40.181] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:08:05.633] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:08:05.633] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:08:52.768] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:08:52.768] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:09:03.849] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:09:04.006] [ERROR] platformtender - TypeError: Cannot read property 'length' of undefined
+    at PlatformTender.getNodesStatus (/opt/blockchain-explorer/app/platform/tendermint/PlatformTender.js:130:37)
+    at /opt/blockchain-explorer/app/explorer/rest/tedermintroutes.js:109:17
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+    at Function.process_params (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:410:3)
+[2018-09-12 15:10:19.826] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:10:19.826] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:10:25.563] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:11:46.698] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:11:46.698] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:12:01.771] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:12:40.686] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:14:10.858] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:14:10.858] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:14:28.570] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:14:42.304] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:16:28.588] [ERROR] metricservice - TypeError: this.getcontractCount is not a function
+    at MetricService.getStatusGenerate (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:77:38)
+    at MetricService.getStatus (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:94:33)
+    at /opt/blockchain-explorer/app/explorer/rest/dbroutes.js:14:21
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at next (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/opt/blockchain-explorer/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/opt/blockchain-explorer/node_modules/express/lib/router/layer.js:95:5)
+    at /opt/blockchain-explorer/node_modules/express/lib/router/index.js:281:22
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:354:14)
+    at param (/opt/blockchain-explorer/node_modules/express/lib/router/index.js:365:14)
+[2018-09-12 15:19:25.233] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:19:25.233] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:20:28.598] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getNodeData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 15:20:31.158] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getNodeData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 15:21:31.184] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
+    at MetricService.getNodeData (/opt/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-12 15:35:22.144] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 15:35:22.144] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 16:39:41.964] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 16:39:41.964] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 17:08:08.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 17:08:08.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 19:02:47.021] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 19:02:47.021] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 19:17:53.539] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 19:17:53.539] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 20:49:00.163] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-12 20:49:00.163] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

@@ -218,32 +218,32 @@ describe("Charts", () => {
       expect(actions[0].type).toBe(types.NOTIFICATION_LOAD);
     });
 
-    test("peerStatus", async done => {
+    test("nodeStatus", async done => {
       nock(/\w*(\W)/g)
-        .get(`/api/peersStatus/${channel}`)
+        .get(`/api/nodesStatus/${channel}`)
         .reply(200, {
           rows: [{ test: "rows" }]
         });
 
-      const expectedActions = [{ type: types.PEER_STATUS }];
+      const expectedActions = [{ type: types.NODE_STATUS }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.peerStatus(channel));
+      await store.dispatch(operations.nodeStatus(channel));
       const actions = store.getActions();
-      expect(actions[0].type).toBe(types.PEER_STATUS);
+      expect(actions[0].type).toBe(types.NODE_STATUS);
       done();
     });
 
-    test("peerStatus catch error", async done => {
+    test("nodeStatus catch error", async done => {
       spyOn(console, "error");
       nock(/\w*(\W)/g)
-        .get(`/api/peersStatus/${channel}`)
+        .get(`/api/nodesStatus/${channel}`)
         .replyWithError({ code: "ECONNREFUSED" });
 
-      const expectedActions = [{ type: types.peerStatus }];
+      const expectedActions = [{ type: types.nodeStatus }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.peerStatus(channel));
+      await store.dispatch(operations.nodeStatus(channel));
       const actions = store.getActions();
       expect(actions).toEqual([]);
       done();
@@ -402,12 +402,12 @@ describe("Charts", () => {
       expect(newState.notification).toBe("test");
     });
 
-    test("peerStatusReducer", () => {
-      const payload = { peers: "test" };
-      const action = actions.getPeerStatus(payload);
+    test("nodeStatusReducer", () => {
+      const payload = { nodes: "test" };
+      const action = actions.getNodeStatus(payload);
 
       const newState = reducers(initialState, action);
-      expect(newState.peerStatus.list).toBe("test");
+      expect(newState.nodeStatus.list).toBe("test");
     });
 
     test("transactionByOrgReducer", () => {
@@ -473,10 +473,10 @@ describe("Charts", () => {
     expect(notification).toBe("test");
   });
 
-  test("peerStatusSelector", () => {
-    const state = { charts: { peerStatus: { list: "test" } } };
-    const peerStatus = selectors.peerStatusSelector(state);
-    expect(peerStatus).toBe("test");
+  test("nodeStatusSelector", () => {
+    const state = { charts: { nodeStatus: { list: "test" } } };
+    const nodeStatus = selectors.nodeStatusSelector(state);
+    expect(nodeStatus).toBe("test");
   });
 
   test("transactionByOrgSelector", () => {

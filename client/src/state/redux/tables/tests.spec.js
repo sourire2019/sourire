@@ -56,33 +56,33 @@ describe("Tables", () => {
       done();
     });
 
-    test("chaincodeList", async done => {
+    test("contractList", async done => {
       nock(/\w*(\W)/g)
-        .get(`/api/chaincode/${channel}`)
+        .get(`/api/contract/${channel}`)
         .reply(200, {
           rows: [{ test: "rows" }]
         });
 
-      const expectedActions = [{ type: types.CHAINCODE_LIST }];
+      const expectedActions = [{ type: types.CONTRACT_LIST }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.chaincodeList(channel));
+      await store.dispatch(operations.contractList(channel));
       const actions = store.getActions();
-      expect(actions[0].type).toEqual(types.CHAINCODE_LIST);
+      expect(actions[0].type).toEqual(types.CONTRACT_LIST);
 
       done();
     });
 
-    test("chaincodeList catch error", async done => {
+    test("contractList catch error", async done => {
       spyOn(console, "error");
       nock(/\w*(\W)/g)
-        .get(`/api/chaincode/${channel}`)
+        .get(`/api/contract/${channel}`)
         .replyWithError({ code: "ECONNREFUSED" });
 
-      const expectedActions = [{ type: types.CHAINCODE_LIST }];
+      const expectedActions = [{ type: types.CONTRACT_LIST }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.chaincodeList(channel));
+      await store.dispatch(operations.contractList(channel));
       const actions = store.getActions();
       expect(actions).toEqual([]);
 
@@ -122,33 +122,33 @@ describe("Tables", () => {
       done();
     });
 
-    test("peerList", async done => {
+    test("nodeList", async done => {
       nock(/\w*(\W)/g)
-        .get(`/api/peers/${channel}`)
+        .get(`/api/nodes/${channel}`)
         .reply(200, {
           rows: [{ test: "rows" }]
         });
 
-      const expectedActions = [{ type: types.PEER_LIST }];
+      const expectedActions = [{ type: types.NODE_LIST }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.peerList(channel));
+      await store.dispatch(operations.nodeList(channel));
       const actions = store.getActions();
-      expect(actions[0].type).toEqual(types.PEER_LIST);
+      expect(actions[0].type).toEqual(types.NODE_LIST);
 
       done();
     });
 
-    test("peerList catch error", async done => {
+    test("nodeList catch error", async done => {
       spyOn(console, "error");
       nock(/\w*(\W)/g)
-        .get(`/api/peers/${channel}`)
+        .get(`/api/nodes/${channel}`)
         .replyWithError({ code: "ECONNREFUSED" });
 
-      const expectedActions = [{ type: types.PEER_LIST }];
+      const expectedActions = [{ type: types.NODE_LIST }];
       const store = mockStore(initialState, expectedActions);
 
-      await store.dispatch(operations.peerList(channel));
+      await store.dispatch(operations.nodeList(channel));
       const actions = store.getActions();
       expect(actions).toEqual([]);
 
@@ -231,12 +231,12 @@ describe("Tables", () => {
       expect(newState.blockList.rows).toBe("test");
     });
 
-    test("chaincodeListReducer", () => {
-      const payload = { chaincode: "test" };
-      const action = actions.getChaincodeList(payload);
+    test("contractListReducer", () => {
+      const payload = { contract: "test" };
+      const action = actions.getcontractList(payload);
 
       const newState = reducers(initialState, action);
-      expect(newState.chaincodeList.rows).toBe("test");
+      expect(newState.contractList.rows).toBe("test");
     });
 
     test("channelsReducer", () => {
@@ -247,12 +247,12 @@ describe("Tables", () => {
       expect(newState.channels.rows).toBe("test");
     });
 
-    test("peerListReducer", () => {
-      const payload = { peers: "test" };
-      const action = actions.getPeerList(payload);
+    test("nodeListReducer", () => {
+      const payload = { nodes: "test" };
+      const action = actions.getNodeList(payload);
 
       const newState = reducers(initialState, action);
-      expect(newState.peerList.rows).toBe("test");
+      expect(newState.nodeList.rows).toBe("test");
     });
 
     test("transactionReducer", () => {
@@ -279,10 +279,10 @@ describe("Tables", () => {
       expect(blockList).toBe("test");
     });
 
-    test("chaincodeListSelector", () => {
-      const state = { tables: { chaincodeList: { rows: "test" } } };
-      const chaincodeList = selectors.chaincodeListSelector(state);
-      expect(chaincodeList).toBe("test");
+    test("contractListSelector", () => {
+      const state = { tables: { contractList: { rows: "test" } } };
+      const contractList = selectors.contractListSelector(state);
+      expect(contractList).toBe("test");
     });
 
     test("channelsSelector", () => {
@@ -291,10 +291,10 @@ describe("Tables", () => {
       expect(channels).toBe("test");
     });
 
-    test("peerListSelector", () => {
-      const state = { tables: { peerList: { rows: "test" } } };
-      const peerList = selectors.peerListSelector(state);
-      expect(peerList).toBe("test");
+    test("nodeListSelector", () => {
+      const state = { tables: { nodeList: { rows: "test" } } };
+      const nodeList = selectors.nodeListSelector(state);
+      expect(nodeList).toBe("test");
     });
 
     test("transactionSelector", () => {

@@ -6,8 +6,9 @@ import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
-import Peers from '../Lists/Peers';
+import Nodes from '../Lists/Nodes';
 import Card from 'material-ui/Card';
+import { IntlProvider, addLocaleData } from 'react-intl';
 
 const styles = theme => ({
   root: {
@@ -47,11 +48,17 @@ export class NetworkView extends Component {
     const { classes } = this.props;
     return (
       <div className="view-fullwidth">
+      <IntlProvider
+          locale={this.props.appLocale.locale}
+          messages={this.props.appLocale.messages}
+          formats={this.props.appLocale.formats}
+        >
         <div className="view-display">
           <Card className="table-card">
-            <Peers peerList={this.props.peerList} />
+            <Nodes nodeList={this.props.nodeList} />
           </Card>
         </div>
+      </IntlProvider>
       </div>
     );
   }
@@ -59,7 +66,7 @@ export class NetworkView extends Component {
 
 NetworkView.propTypes = {
   classes: PropTypes.object.isRequired,
-  peerList: PropTypes.array.isRequired
+  nodeList: PropTypes.array.isRequired
 };
 
 export default compose(
