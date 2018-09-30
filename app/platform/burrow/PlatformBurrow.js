@@ -27,104 +27,90 @@ class PlatformBurrow {
   }
 
   getBlockByNumber(channelName, blockNumber) {
-      try{
-      	return  Platform.getBlockByNumber(this.baseurl,channelName,blockNumber);
-      } catch(err){
-        console.log(err);
-      }
-
+  	let block =  Platform.getBlockByNumber(this.baseurl,channelName,blockNumber);
+    let result = {
+      'blockNum': block.BlockMeta.header.height,
+      'txCount': block.BlockMeta.header.num_txs,
+      'preHash': block.Block.header.last_block_id.hash,
+      'dataHash': block.BlockMeta.header.data_hash,
+      'firstTxTimestamp': block.BlockMeta.header.time,
+      'blockhash': block.BlockMeta.block_id.hash,
+      'genesis_block_hash': block.BlockMeta.header.chain_id,
+      'txs' : block.Block.data.txs,
+      'total_txs' : block.BlockMeta.header.total_txs
+    }
+      
+    return result;
 	}
 
   getChannels(res) {
-  	var channels = [];
-  	var optionsget = {  
-            host : this.host,  
-            port : this.port,  
-            path : '/chain_id',  
-            method : 'get'  
-        };
+  	var optionsget = {   
+      path : '/chain_id' 
+    };
+    let resultdata =  Platform.getChannels(this.baseurl,optionsget.path) 
+    let channels = [];  
     
-    var reqGet = http.request(optionsget, function(resGet) {  
-            resGet.on('data', function(d) {
-            	var resultdata = JSON.parse(d);
-            	channels.push({"channel_id" : resultdata.result.ChainId});
-                var response = {
-                    status: 200 };
-                response["channels"] = [...new Set(channels)];
-                res.send(response);
-            });  
-        });  
-   
-    reqGet.end();  
-   
-    reqGet.on('error', function(e) {  
-            console.error(e);  
-        });    
+    let result = JSON.parse(resultdata);
+    channels.push({"channel_id" : result.result.ChainId});
+    let response = {
+      status: 200 };
+    response["channels"] = [...new Set(channels)];
+    res.send(response);
   }
 
   getCurChannel(res) {  	
-  	var optionsget = {  
-            host : this.host,  
-            port : this.port,  
-            path : '/chain_id',  
-            method : 'get'  
-        };  
-    
-    var reqGet = http.request(optionsget, function(resGet) {  
-            resGet.on('data', function(d) {
-            	var resultdata = JSON.parse(d);
-            	res.send({"currentChannel" : resultdata.result.ChainId});
-            });  
-        });  
-   
-    reqGet.end();  
-   
-    reqGet.on('error', function(e) {  
-            console.error(e);  
-        });    
+  	var optionsget = {   
+      path : '/chain_id'
+    };  
+    let resultdata = JSON.parse( Platform.getCurChannel(this.baseurl,optionsget.path) ) ;
+    res.send({"currentChannel" : resultdata.result.ChainId});   
   }
+          
 
   getStatus() {
-      try{
-      	return Platform.getStatus(this.baseurl);
-      } catch(err){
-        console.log(err);
-      }
+  	let statusdata = JSON.parse(Platform.getStatus(this.baseurl));
+    let result = {
+      "listenaddr": statusdata.result.NodeInfo.ListenAddress,
+      "network" : statusdata.result.NodeInfo.Network,
+      "latestblockheight" : statusdata.result.SyncInfo.LatestBlockHeight,
+
+
+    }
+    return result;
   }
 
   getnetInfo() {
-      try{
-        let path = "/network";
-        
-        return Platform.getnetInfo(this.baseurl,path);
-      } catch(err){
-        console.log(err);
+    let path = "/network";
+    let netinfo = [];
+    let result = JSON.parse(Platform.getnetInfo(this.baseurl, path));
+    let netnodes = result.result.peers;
+    if (netnodes) {
+      for( var i = 0;i < netnodes.length;i++){
+        netinfo.push({
+          "listenaddr": netnodes[i].NodeInfo.ListenAddress,
+          "network" : netnodes[i].NodeInfo.Network
+        })
       }
+    }
+    return netinfo;
   }
 
   getContract(channelName, cb) {
-      try {
-        var ContractArray = [];
-        cb(ContractArray);
-      } catch(err) {
-        logger.error(err)
-        cb([])
-      }
+    Platform.getContract(channelName, cb);
   }
 
   getNodesStatus(channelName,cb){
       try {
       	var nodes = [];
-      	var statusdata = JSON.parse(this.getStatus());
-      	var netinfo = JSON.parse(this.getnetInfo());
+      	var statusdata = this.getStatus();
+      	var netinfo = this.getnetInfo();
       	if(statusdata) {
 
-      		nodes.push({"status": "RUNNING","server_hostname": statusdata.result.NodeInfo.ListenAddress})
+      		nodes.push({"status": "RUNNING","server_hostname": statusdata.listenaddr})
       	}
       	if(netinfo) {
-      		var netnodes = netinfo.result.peers;
-      		for( var i = 0;i < netnodes.length;i++){
-      			nodes.push({"status": "RUNNING","server_hostname": netnodes[i].node_info.listen_addr})
+      		for( var i = 0;i < netinfo.length;i++){
+      			nodes.push({"status": "RUNNING","server_hostname": netinfo[i].listenaddr})
       		}
       	}
        cb(nodes);
@@ -134,8 +120,22 @@ class PlatformBurrow {
         logger.error(err)
         cb([])
     }
- }
+  }
 
+  getLastHeight() {
+      try{
+        let urlre = url.resolve(this.baseurl,"/blocks");
+        let res = request('GET', urlre);
+        let resultdata =JSON.parse(res.getBody().toString()) ;
+        let result = {
+          "lastheight" : resultdata.result.LastHeight,
+          "chainid" : resultdata.result.BlockMetas[0].header.chain_id
+        }
+        return result;
+      } catch(err){
+        console.log(err);
+      }
+  }
 }
 
 

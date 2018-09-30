@@ -1,4 +1,4 @@
 {
 	"persistence": "postgreSQL",
-	"platforms": ["tendermint","burrow"]
+	"platforms": ["burrow"]
 }

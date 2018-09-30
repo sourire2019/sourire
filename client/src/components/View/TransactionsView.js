@@ -55,7 +55,7 @@ export class TransactionsView extends Component {
           <Card className="table-card">
             <Transactions
               currentChannel={this.props.currentChannel}
-              transactionList={this.props.transactionList.rows}
+              transactionList={this.props.transactionList}
               getTransactionList={this.props.getTransactionList}
               transaction={this.props.transaction}
               getTransactionInfo={this.props.getTransactionInfo}

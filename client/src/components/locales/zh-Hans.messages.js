@@ -43,5 +43,6 @@ export default {
   'page.localeProvider.time': '时间',
   'page.localeProvider.transactionsl': '交易',
   'page.localeProvider.blocksl': '块',
+  'page.localeProvider.details' : '显示详情'
   
 };

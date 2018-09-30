@@ -1,119 +1,31 @@
-[2018-09-20 12:19:39.195] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 12:19:39.195] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 12:20:00.138] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:20:50.514] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:21:50.257] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:22:50.259] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:23:50.247] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:24:50.509] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:25:50.532] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:26:50.445] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:27:50.519] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:28:50.546] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:29:50.416] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:30:50.525] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:31:50.419] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:32:50.388] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 12:33:08.485] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 12:33:08.485] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:35:51.998] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:35:51.998] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:37:22.153] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:37:22.153] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:38:40.300] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:38:40.300] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:41:16.156] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:41:16.156] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:42:40.744] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 14:42:40.744] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 15:01:41.670] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 15:01:41.670] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 15:29:28.925] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 15:29:28.925] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:11:47.858] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:11:47.858] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:25:11.696] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:25:11.696] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:26:56.982] [ERROR] synBlockData - TypeError: Cannot read property 'BlockMeta' of undefined
-    at SynBlockData.saveBlockRange (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:85:31)
-    at SynBlockData.getBlockByNumber (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:165:48)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 16:27:16.375] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:27:16.375] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:28:29.397] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 16:29:17.956] [ERROR] synBlockData - TypeError: Cannot read property 'BlockMeta' of undefined
-    at SynBlockData.saveBlockRange (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:85:31)
-    at SynBlockData.getBlockByNumber (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:165:48)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 16:30:18.276] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:30:18.276] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:38:55.217] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:38:55.217] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 16:39:17.916] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 16:39:31.704] [ERROR] metricservice - TypeError: Cannot read property 'length' of null
-    at MetricService.getNodeData (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:36:32)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 16:39:51.733] [ERROR] synBlockData - TypeError: Cannot read property 'BlockMeta' of undefined
-    at SynBlockData.saveBlockRange (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:85:31)
-    at SynBlockData.getBlockByNumber (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:165:48)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
-[2018-09-20 17:52:28.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 17:52:28.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 17:52:28.120] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-09-20 17:58:58.289] [ERROR] synBlockData - TypeError: Cannot read property 'BlockMeta' of undefined
-    at SynBlockData.saveBlockRange (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:85:31)
-    at SynBlockData.getBlockByNumber (/opt/bl/blockchain-explorer/app/explorer/backend/burrow/SynBlockData.js:165:48)
-    at <anonymous>
-    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-30 09:59:26.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:40:10.447] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:40:10.447] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:41:02.731] [ERROR] synBlockData - { Error: connect ECONNREFUSED 127.0.0.1:26658
+    at extractValue (/opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:149:19)
+    at /opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:159:12
+    at request (/opt/bl/blockchain-explorer/node_modules/sync-request/lib/index.js:28:15)
+    at Object.getStatus (/opt/bl/blockchain-explorer/app/platform/Platform.js:30:17)
+    at PlatformBurrow.getStatus (/opt/bl/blockchain-explorer/app/platform/burrow/PlatformBurrow.js:71:41)
+    at SynBlockData.saveChannel (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:177:39)
+    at SynBlockData.syncChannels (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:204:24)
+    at BlockListener.<anonymous> (/opt/bl/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7) code: 'ECONNREFUSED' }
+[2018-09-30 11:41:02.735] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:41:02.735] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:21.211] [ERROR] synBlockData - { Error: connect ECONNREFUSED 127.0.0.1:26658
+    at extractValue (/opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:149:19)
+    at /opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:159:12
+    at request (/opt/bl/blockchain-explorer/node_modules/sync-request/lib/index.js:28:15)
+    at Object.getStatus (/opt/bl/blockchain-explorer/app/platform/Platform.js:30:17)
+    at PlatformBurrow.getStatus (/opt/bl/blockchain-explorer/app/platform/burrow/PlatformBurrow.js:71:41)
+    at SynBlockData.saveChannel (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:177:39)
+    at SynBlockData.syncChannels (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:204:24)
+    at BlockListener.<anonymous> (/opt/bl/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7) code: 'ECONNREFUSED' }
+[2018-09-30 11:42:21.215] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:21.215] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:35.689] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:35.689] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

@@ -37,13 +37,13 @@ class Blocks extends Component {
       data.push({
         txhash: element
       })
-      })
-    // this.state.transactions.push(transactions);
+    })
+    
+    
     this.setState({dialogOpen: true , transactions: data});
   }
 
   handleDialogClose = () => {
-    //this.props.removeTransactionInfo();
     this.setState({dialogOpen: false});
   };
 
@@ -73,6 +73,7 @@ class Blocks extends Component {
     this.props.blockList.forEach(element => {
       selection[element.blocknum] = false;
     });
+    
     this.setState({selection: selection});
   }
 
@@ -203,12 +204,21 @@ class Blocks extends Component {
             <button
               className="partialHash"
               onClick={() => this.handleDialogOpenTransactions(row.value)}
+              disabled= {row.value ? "" : "disabled"}
               href="#/blocks"
             >
               <div className="fullHash" id="showTransactionId">
-                显示详情
+                <FormattedMessage
+                id="page.localeProvider.details"
+                defaultMessage="Details"
+                description="Details"
+                />
               </div>{" "}
-              显示详情
+              <FormattedMessage
+                id="page.localeProvider.details"
+                defaultMessage="Details"
+                description="Details"
+                />
             </button>{" "}
           </span>
         ),

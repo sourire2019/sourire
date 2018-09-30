@@ -15,6 +15,7 @@ import Card from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import {FormattedMessage} from 'react-intl';
+import config from '../config.json'
 
 export class DashboardView extends Component {
   constructor(props) {
@@ -63,6 +64,131 @@ export class DashboardView extends Component {
   };
 
   render() {
+    let status = [], dashboardview = [], nodeshealth = [], chartstatus = [], timelinestream = [];
+    for (let i = 0; i < config.status.length; i++) {
+
+      switch(config.status[i]) {
+        case "blocks" : status.push(
+          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+            <Row>
+              <Col sm= {(12/config.status.length)}>
+                <Avatar className="stat-avatar avatar-block" >
+                  <FontAwesome name="cube" />
+                </Avatar>
+              </Col>
+              <Col sm= {(12/config.status.length)}>
+                <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
+              </Col>
+            </Row>
+             <FormattedMessage
+              id="page.localeProvider.blocks"
+              defaultMessage="BLOCKS"
+              description="BLOCKS"
+              />
+            
+          </div>
+        ); break;
+        case "transactions" : status.push(
+          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+            <Row>
+              <Col sm= {(12/config.status.length)}>
+                <Avatar className="stat-avatar avatar-tx" >
+                  <FontAwesome name="list-alt" />
+                </Avatar>
+              </Col>
+              <Col sm= {(12/config.status.length)}>
+                <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
+              </Col>
+            </Row>
+              <FormattedMessage
+              id="page.localeProvider.transactions"
+              defaultMessage="TRANSACTIONS"
+              description="TRANSACTIONS"
+              />
+            
+         </div>
+        ); break;
+        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+                  <Row>
+                    <Col sm= {(12/config.status.length)}>
+                      <Avatar className="stat-avatar avatar-node" >
+                        <FontAwesome name="users" />
+                      </Avatar>
+                    </Col>
+                    <Col sm= {(12/config.status.length)}>
+                      <h1 className="stat-count">{this.props.dashStats.nodeCount}</h1>
+                    </Col>
+                  </Row>
+                  <FormattedMessage
+                    id="page.localeProvider.nodes"
+                    defaultMessage="NODES"
+                    description="NODES"
+                    />
+                  
+                </div>); break;
+        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+                  <Row>
+                    <Col sm= {(12/config.status.length)}>
+                      <Avatar className="stat-avatar avatar-contract" >
+                        <FontAwesome name="handshake-o" />
+                      </Avatar>
+                    </Col>
+                    <Col sm= {(12/config.status.length)}>
+                      <h1 className="stat-count">{this.props.dashStats.contractCount}</h1>
+                    </Col>
+                  </Row>
+                  <FormattedMessage
+                    id="page.localeProvider.contracts"
+                    defaultMessage="CONTRACTS"
+                    description="CONTRACTS"
+                    />
+                  
+                </div>); break;
+        default: status.push(null); break;
+      }
+    }
+
+    for (let i = 0; i < config.dashboardview.length; i++) {
+      switch(config.dashboardview[i]) {
+        case "status" : dashboardview.push(
+          <Row>
+            <Col sm="12">
+              <Card className="stats-block ">
+                {status}
+              </Card>
+            </Col>
+          </Row>
+        ); break;
+        case "nodeshealth" : nodeshealth.push(
+          <Col sm= {(12/config.dashboardview_middle_num)} >
+            <Card className="dash-section">
+              <NodesHealth
+                nodeStatus={this.props.nodeStatus}
+              />
+            </Card>
+            
+          </Col>
+        ); break;
+        case "chartstatus" : chartstatus.push(
+          <Col sm= {(12/config.dashboardview_middle_num)}>
+            <Card className="dash-section">
+              <ChartStats appLocale= {this.props.appLocale} />
+            </Card>
+          </Col>
+        ); break;
+        case "timelinestream" : timelinestream.push(
+          <Row>
+            <Col sm="12">
+              <Card className="dash-section">
+                <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
+              </Card>
+            </Col>
+          </Row>
+        ); break;
+        default: dashboardview.push(null); break;
+      }
+
+    }
     if (this.state.hasDbError) {
       return (
         <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -78,107 +204,12 @@ export class DashboardView extends Component {
           formats={this.props.appLocale.formats}
         >
         <div className="dash-view" >
+          {dashboardview}
           <Row>
-            <Col sm="12">
-              <Card className="stats-block ">
-
-                <div className="statistic vdivide">
-                  <Row>
-                    <Col sm="4">
-                      <Avatar className="stat-avatar avatar-block" >
-                        <FontAwesome name="cube" />
-                      </Avatar>
-                    </Col>
-                    <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
-                    </Col>
-                  </Row>
-                   <FormattedMessage
-                    id="page.localeProvider.blocks"
-                    defaultMessage="BLOCKS"
-                    description="BLOCKS"
-                    />
-                  
-                </div>
-                <div className="statistic vdivide">
-                  <Row>
-                    <Col sm="4">
-                      <Avatar className="stat-avatar avatar-tx" >
-                        <FontAwesome name="list-alt" />
-                      </Avatar>
-                    </Col>
-                    <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
-                    </Col>
-                  </Row>
-                    <FormattedMessage
-                    id="page.localeProvider.transactions"
-                    defaultMessage="TRANSACTIONS"
-                    description="TRANSACTIONS"
-                    />
-                  
-               </div>
-                <div className="statistic vdivide">
-                  <Row>
-                    <Col sm="4">
-                      <Avatar className="stat-avatar avatar-node" >
-                        <FontAwesome name="users" />
-                      </Avatar>
-                    </Col>
-                    <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.nodeCount}</h1>
-                    </Col>
-                  </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.nodes"
-                    defaultMessage="NODES"
-                    description="NODES"
-                    />
-                  
-                </div>
-                <div className="statistic">
-                  <Row>
-                    <Col sm="4">
-                      <Avatar className="stat-avatar avatar-contract" >
-                        <FontAwesome name="handshake-o" />
-                      </Avatar>
-                    </Col>
-                    <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.contractCount}</h1>
-                    </Col>
-                  </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.contracts"
-                    defaultMessage="CONTRACTS"
-                    description="CONTRACTS"
-                    />
-                  
-                </div>
-              </Card>
-            </Col>
+            {nodeshealth}
+            {chartstatus}
           </Row>
-          <Row>
-            <Col sm="6" >
-              <Card className="dash-section">
-                <NodesHealth
-                  nodeStatus={this.props.nodeStatus}
-                />
-              </Card>
-              
-            </Col>
-            <Col sm="6">
-              <Card className="dash-section">
-                <ChartStats appLocale= {this.props.appLocale} />
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm="12">
-              <Card className="dash-section">
-                <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
-              </Card>
-            </Col>
-          </Row>
+          {timelinestream}
         </div>
         </IntlProvider>
       </div>

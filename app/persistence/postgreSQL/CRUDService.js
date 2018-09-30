@@ -41,6 +41,7 @@ class CRUDService {
         return sql.getRowsBySQlQuery(sqlBlockTxList);
     }
 
+
     async getChannelConfig(channelName) {
         let channelConfig = await sql.getRowsBySQlCase(` select * from channel where name ='${channelName}' `);
         return channelConfig;
@@ -76,7 +77,6 @@ class CRUDService {
     }
 
     async saveBlock(block) {
-
         let c = await sql.getRowByPkOne(`select count(1) as c from blocks where blocknum='${block.blockNum}' and txcount='${block.txCount}'
         and genesis_block_hash='${block.genesis_block_hash}' and prehash='${block.preHash}' and datahash='${block.dataHash}' `)
         if (c.c == 0) {

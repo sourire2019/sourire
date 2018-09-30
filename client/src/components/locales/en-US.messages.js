@@ -43,5 +43,6 @@ export default {
   'page.localeProvider.time': 'Time',
   'page.localeProvider.transactionsl': 'Transactions',
   'page.localeProvider.blocksl': 'Blocks',
+  'page.localeProvider.details' : 'Details'
   
 };

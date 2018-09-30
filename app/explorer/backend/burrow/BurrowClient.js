@@ -5,12 +5,12 @@
 var WebSocketClient = require('websocket').client
 var crypto = require("crypto");
 var config = require("../../../platform/burrow/config.json");
-var SynBlockData = require('./SynBlockData');
-
+var SynBlockData = require('../SynBlockData');
 var  dbBlock = require("../../../persistence/postgreSQL/MetricService");
 
+var PlatformBurrow = require("../../../platform/burrow/PlatformBurrow");
 
-class TenderClient {
+class BurrowClient {
     constructor(platform, persistence, broadcaster) {
         this.addr = "ws://"+ config["host"] + ":" + config["port"] + "/websocket";
         this.platform = platform;
@@ -40,19 +40,13 @@ class TenderClient {
 
           connection.send(str);
 
-          setTimeout(function(){
-            
-            let db = new dbBlock();
-            let dbnum = db.getStatusGenerate("BurrowChain_016017-261E1F");
-          },2000)
-
           console.log('WebSocket client connected');
           connection.on('error', function(error) {
           console.log("Connection Error: " + error.toString());
           });
           connection.on('close', function() {
           console.log('echo-protocol Connection Closed');
-          reconnet = true;
+          reconnect = true;
           myInterval = setInterval(function () {
             console.log('reconnet...................');
             client.connect(addr);          
@@ -61,13 +55,31 @@ class TenderClient {
           connection.on('message', function(message) {
             if (message.type === 'utf8') {
             var blockHeader = JSON.parse(message.utf8Data);
-            if(blockHeader.result.data) {
-              if(blockHeader.result.data.value.header.height) {
-                var height = blockHeader.result.data.value.header.height;
-                blockScanner.syncBlockByNumber(parseInt(height));
+
+            var blockheight = blockHeader.result.LastHeight ;
+            var Interval = setInterval(function(){
+              var platburrow = new  PlatformBurrow();
+              let lastheight = platburrow.getLastHeight();
+              let db = new dbBlock();
+              if(lastheight){
+                db.getLastBlockNum(lastheight.chainid,function(data){
+                  if (parseInt(data.blocknum) == blockheight) {
+                    if (lastheight.lastheight > blockheight) {
+                      blockheight = lastheight.lastheight;
+                      blockScanner.getBlockByNumber(lastheight.chainid,parseInt(data.blocknum)+1, blockheight +1)
+                      
+                    }
+                  }
+                });
+                
               }
-            }
-            console.log("Received: '" + message.utf8Data + "'");
+
+             
+              
+            },20000)
+            
+             
+            // console.log("Received: '" + message.utf8Data + "'");
             }
           });
         });
@@ -76,4 +88,4 @@ class TenderClient {
     }
 }
 
-module.exports = TenderClient;
+module.exports = BurrowClient;

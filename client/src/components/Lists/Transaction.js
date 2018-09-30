@@ -63,9 +63,12 @@ class Transaction extends Component {
 
   componentDidMount() {
     const selection = {};
-    this.props.transaction.forEach(element => {
-      selection[element.blocknum] = false;
-    });
+    if (this.props.transaction.length >0) {
+      this.props.transaction.forEach(element => {
+        selection[element.blocknum] = false;
+      });      
+    }
+
     this.setState({selection: selection});
   }
 

@@ -3,10 +3,8 @@
  */
 
 var WebSocketClient = require('websocket').client
-var crypto = require("crypto");
 var config = require("../../../platform/tendermint/config.json");
-var SynBlockData = require('./SynBlockData');
-
+var SynBlockData = require('../SynBlockData');
 
 class TenderClient {
     constructor(platform, persistence, broadcaster) {
@@ -45,9 +43,9 @@ class TenderClient {
           });
           connection.on('close', function() {
           console.log('echo-protocol Connection Closed');
-          reconnet = true;
+          reconnect = true;
           myInterval = setInterval(function () {
-            console.log('reconnet...................');
+            console.log('reconnect...................');
             client.connect(addr);          
           }, 10000);
           });
@@ -64,6 +62,7 @@ class TenderClient {
             }
           });
         });
+        console.log(reconnect);
         client.connect(addr);
 
     }

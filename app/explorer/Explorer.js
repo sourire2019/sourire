@@ -4,17 +4,17 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var dbroutes = require("./rest/dbroutes.js");
-var tedermintroutes = require("./rest/tedermintroutes.js");
 var explorerconfig = require("./explorerconfig.json");
 var PersistenceFactory = require("../persistence/PersistenceFactory.js");
 var timer = require("./backend/timer.js");
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../../swagger.json');
 var compression = require('compression');
+var routes = require("./rest/routes");
 var TenderClient = require("./backend/tendermint/TenderClient.js");
-var SynBlockData = require("./backend/tendermint/SynBlockData.js");
 var BurrowClient = require("./backend/burrow/BurrowClient.js");
-var burrowroutes = require("./rest/burrowroutes.js");
+var explorerconfig = require("./explorerconfig.json");
+
 
 class Explorer {
     constructor() {
@@ -24,7 +24,6 @@ class Explorer {
         this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
         this.app.use(compression());
         this.persistence = {};
-        this.platforms = explorerconfig["platforms"];
 
     }
 
@@ -37,27 +36,32 @@ class Explorer {
         this.persistence = await PersistenceFactory.create(explorerconfig["persistence"]);
 
         dbroutes(this.app, this.persistence);
-        for (let pltfrm of this.platforms) {
-          if(pltfrm == "tendermint") {
-            console.log("this is tendermint part");
-            await tedermintroutes(this.app, pltfrm);
-            await timer.start(platform, this.persistence, broadcaster);
-            var tenderClient = new TenderClient(platform, this.persistence, broadcaster);
-            tenderClient.connectserver();
-          }else if (pltfrm == "burrow") {
-            console.log("this is burrow part");
-            await burrowroutes(this.app, pltfrm);
-            await timer.start(platform, this.persistence, broadcaster);
-            var burrowClient = new BurrowClient(platform, this.persistence, broadcaster);
-            burrowClient.connectserver();
-          }
+        let platforms = explorerconfig["platforms"];
+        for (let pltfrm of platforms) {
+            
+            
+            if(pltfrm == "tendermint") {
+                console.log("this is tendermint part");
+                await routes(this.app,pltfrm);
+                await timer.start(platform,this.persistence,broadcaster);
+                var client = new TenderClient(platform,this.persistence, broadcaster);
+            }else if (pltfrm == "burrow") {
+                console.log("this is burrow part");
+                await routes(this.app,pltfrm);
+                await timer.start(platform,this.persistence,broadcaster);
+                var client = new BurrowClient(platform,this.persistence, broadcaster);
+                
+            }
+            
+            client.connectserver();
         }
+
     }
-   close() {
-    if (this.persistence) {
-      this.persistence.closeconnection();
-     }
-   }    
+    close() {
+        if (this.persistence) {
+          this.persistence.closeconnection();
+        }
+    }    
 }
 
 module.exports = Explorer;

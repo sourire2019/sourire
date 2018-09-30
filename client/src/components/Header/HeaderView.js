@@ -23,6 +23,7 @@ import {chartOperations, chartSelectors} from "../../state/redux/charts/";
 import {tableOperations, tableSelectors} from "../../state/redux/tables/";
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
+import config  from '../config.json'
 
 const {
   blockPerHour,
@@ -71,6 +72,7 @@ export class HeaderView extends Component {
       langSelectedIndex: 1,
       value : 1
     };
+    
   }
 
   toggle = () => {
@@ -94,7 +96,8 @@ export class HeaderView extends Component {
   componentDidMount() {
     let arr = [];
     let selectedValue ={}
-    this.props.channels.forEach(element => {
+    if (this.props.channels) {
+      this.props.channels.forEach(element => {
       if (element.genesis_block_hash === this.props.currentChannel) {
         selectedValue = {
           value: element.genesis_block_hash,
@@ -107,6 +110,10 @@ export class HeaderView extends Component {
         label: element.channelname
       });
     });
+    }
+    
+    
+
 
     this.setState({
       channels: arr,
@@ -137,30 +144,29 @@ export class HeaderView extends Component {
   componentWillReceiveProps(nextProps) {
     let options = [];
     let selectedValue = {};
-    if (nextProps.channels.length > 0) {
-      nextProps.channels.forEach(element => {
-        options.push({
-          value: element.genesis_block_hash,
-          label: element.channelname
-        });
-        if (
-          nextProps.currentChannel == null ||
-          nextProps.currentChannel == undefined
-        ) {
-          if (element.genesis_block_hash != null) {
-            selectedValue = {
-              "value": element.genesis_block_hash,
-              "label": element.channelname
-            };
-          }
-        } else if (element.genesis_block_hash === nextProps.currentChannel) {
+    nextProps.channels.forEach(element => {
+      options.push({
+        value: element.genesis_block_hash,
+        label: element.channelname
+      });
+      if (
+        nextProps.currentChannel == null ||
+        nextProps.currentChannel == undefined
+      ) {
+        if (element.genesis_block_hash != null) {
           selectedValue = {
-            value: element.genesis_block_hash,
-            label: element.channelname
+            "value": element.genesis_block_hash,
+            "label": element.channelname
           };
         }
-      });
-    }
+      } else if (element.genesis_block_hash === nextProps.currentChannel) {
+        selectedValue = {
+          value: element.genesis_block_hash,
+          label: element.channelname
+        };
+      }
+    });
+    
 
     if (
       nextProps.currentChannel == null ||
@@ -247,6 +253,95 @@ export class HeaderView extends Component {
     const transLink = props => (
       <Link to="/transactions" activeClassName="active" {...props} />
     );
+
+    const header = [];
+    for (let i = 0; i < config.header.length; i++) {
+      switch(config.header[i]) {
+        case "dashboardview" : header.push(<li>
+                  <NavLink
+                    to="/"
+                    exact
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.dashboard"
+                    defaultMessage="DASHBOARD"
+                    description="DASHBOARD"
+                    />
+                  </NavLink>
+                </li> ); break;
+        case "blocksview": header.push( <li>
+                  <NavLink
+                    to="/blocks"
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.blocks"
+                    defaultMessage="BLOCKS"
+                    description="BLOCKS"
+                    />
+                  </NavLink>
+                </li> ); break;
+        case "contractview" : header.push( <li>
+                  <NavLink
+                    to="/contracts"
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.contracts"
+                    defaultMessage="CONTRACTS"
+                    description="CONTRACTS"
+                    />
+                    
+                  </NavLink>
+                </li> ); break;
+        case "channelsview" : header.push( <li>
+                  <NavLink
+                    to="/channels"
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.channels"
+                    defaultMessage="CHANNELS"
+                    description="CHANNELS"
+                    />
+                    
+                  </NavLink>
+                </li> ); break;
+        case "networkview" : header.push( <li>
+                  <NavLink
+                    to="/network"
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.network"
+                    defaultMessage="NETWORK"
+                    description="network"
+                    />
+                  </NavLink>
+                </li> ); break;
+        case "transactionsiew" :header.push( <li>
+                  <NavLink
+                    to="/transactions"
+                    className="dashButtons"
+                    activeClassName="activeTab"
+                  >
+                    <FormattedMessage
+                    id="page.localeProvider.transactions"
+                    defaultMessage="TRANSACTIONS"
+                    description="TRANSACTIONS"
+                    />
+                    
+                  </NavLink>
+                </li> ); break;
+        default: header.push(null); break;
+      }
+    }
     return (
       <div>
         <Websocket
@@ -265,89 +360,9 @@ export class HeaderView extends Component {
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
-                <li>
-                  <NavLink
-                    to="/"
-                    exact
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                   <FormattedMessage
-                    id="page.localeProvider.dashboard"
-                    defaultMessage="DASHBOARD"
-                    description="DASHBOARD"
-                    />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/network"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    <FormattedMessage
-                    id="page.localeProvider.network"
-                    defaultMessage="NETWORK"
-                    description="network"
-                    />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/blocks"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    <FormattedMessage
-                    id="page.localeProvider.blocks"
-                    defaultMessage="BLOCKS"
-                    description="BLOCKS"
-                    />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/transactions"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    <FormattedMessage
-                    id="page.localeProvider.transactions"
-                    defaultMessage="TRANSACTIONS"
-                    description="TRANSACTIONS"
-                    />
-                    
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/contracts"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    <FormattedMessage
-                    id="page.localeProvider.contracts"
-                    defaultMessage="CONTRACTS"
-                    description="CONTRACTS"
-                    />
-                    
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/channels"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    <FormattedMessage
-                    id="page.localeProvider.channels"
-                    defaultMessage="CHANNELS"
-                    description="CHANNELS"
-                    />
-                    
-                  </NavLink>
-                </li>
-                <div>
+
+              {header}
+              <div>
                   <Select
                     className="channel-dropdown"
                     placeholder="Select Channel..."

@@ -39,7 +39,6 @@ const connectionString =
   pgconfig.port +
   "/" +
   pgconfig.database;
-console.log(connectionString);
 logger.info(
   "Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging."
 );
@@ -64,9 +63,6 @@ async function handleDisconnect() {
     await client.connect()
   } catch(err) {
     if (err) {
-      // We introduce a delay before attempting to reconnect,
-      // to avoid a hot loop, and to allow our node script to
-      // process asynchronous requests in the meantime.
       console.log("error when connecting to db:", err);
       setTimeout(handleDisconnect, 2000);
     }
@@ -102,7 +98,7 @@ function saveRow(tablename, columnValues) {
     var updatesqlflagstr = updatesqlflag.join(",");
     var addSql = `INSERT INTO ${tablename}  ( ${updatesqlparmstr} ) VALUES( ${updatesqlflagstr}  ) RETURNING *;`;
     logger.debug(`Insert sql is ${addSql}`);
-    // console.log(`Insert sql is ${addSql}`);
+    console.log(`Insert sql is ${addSql}`);
     client.query(addSql, addSqlParams, (err, res) => {
       if (err) {
         logger.error("[INSERT ERROR] - ", err.message);
@@ -113,7 +109,7 @@ function saveRow(tablename, columnValues) {
       logger.debug(
         "--------------------------INSERT----------------------------"
       );
-      // console.log("INSERT ID:", res.rows[0].id);
+      console.log("INSERT ID:", res.rows[0].id);
       logger.debug(
         "-----------------------------------------------------------------\n\n"
       );
@@ -316,14 +312,12 @@ function getRowByPkOne(sql) {
     client.query(sql, (err, res) => {
       if (err) {
         reject(err);
+      }else{
+        logger.debug(` the getRowByPkOne sql ${sql}`);
+        if (!res.rows || res.rows.length == 0) resolve(null);
+        else resolve(res.rows[0]);
       }
-
-      // console.log(  `The solution is: ${rows.length }  `  );
-      logger.debug(` the getRowByPkOne sql ${sql}`);
-      //(` the getRowByPkOne sql ${sql}`)
-
-      if (!res.rows || res.rows.length == 0) resolve(null);
-      else resolve(res.rows[0]);
+      
     });
   });
 }
@@ -464,10 +458,8 @@ function getRowsBySQlCase(sql) {
       if (err) {
         reject(err);
       }
-
-      // console.log(  `The solution is: ${rows.length }  `  );
       logger.debug(` the getRowsBySQlCase ${sql}`);
-      if (!res.rows || res.rows.length == 0) resolve(null);
+      if (!res.rows || res.rows.length == 0) resolvereturn(null);
       else resolve(res.rows[0]);
     });
   });

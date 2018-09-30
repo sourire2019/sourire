@@ -1,0 +1,13 @@
+{
+	"header" : [
+		"dashboardview", "blocksview", "networkview", "transactionsiew" , "channelsview"
+	],
+	"dashboardview" : [
+		"status" ,"nodeshealth" , "chartstatus" ,"timelinestream"
+	],
+	"status" : [
+		"blocks" , "transactions" , "nodes"
+	],
+	"dashboardview_middle_num" : 2
+	
+} 

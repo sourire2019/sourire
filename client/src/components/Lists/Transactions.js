@@ -34,9 +34,12 @@ class Transactions extends Component {
   };
   componentDidMount() {
     const selection = {};
-    this.props.transactionList.forEach(element => {
-      selection[element.blocknum] = false;
-    });
+    if (this.props.transactionList.length > 0) {
+      this.props.transactionList.forEach(element => {
+        selection[element.blocknum] = false;
+      });      
+    }
+
     this.setState({selection: selection});
   }
 
@@ -158,7 +161,7 @@ class Transactions extends Component {
     return (
       <div>
         <ReactTable
-          data={this.props.transactionList}
+          data={this.props.transactionList.rows}
           columns={columnHeaders}
           defaultPageSize={10}
           className="-striped -highlight"

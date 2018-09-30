@@ -17,7 +17,7 @@ const blockList = (channel) => (dispatch) => {
 
 const contractList = (channel) => (dispatch) => {
  return get(`/api/contract/${channel}`)
-    .then( resp => {
+    .then( resp => {  
       dispatch(actions.getContractList(resp))
     }).catch( error => {
       console.error(error)
@@ -28,11 +28,16 @@ const contractList = (channel) => (dispatch) => {
 const channels = () => (dispatch) => {
   return get('/api/channels/info')
     .then(resp => {
-      resp['channels'].forEach(element => {
-        element.createdat = moment(element.createdat)
-          .tz(moment.tz.guess())
-          .format("M-D-YYYY h:mm A zz");
-      })
+        if(resp['channels']){
+          resp['channels'].forEach(element => {
+          element.createdat = moment(element.createdat)
+            .tz(moment.tz.guess())
+            .format("M-D-YYYY h:mm A zz");
+        })
+        }
+        
+      
+      
 
       dispatch(actions.getChannels(resp))
     }).catch( error => {
@@ -66,6 +71,7 @@ const transactionList = (channel) => (dispatch) => {
           .tz(moment.tz.guess())
           .format("M-D-YYYY h:mm A zz");
       })
+      
 
       dispatch(actions.getTransactionList(resp))
     }).catch( error => {
