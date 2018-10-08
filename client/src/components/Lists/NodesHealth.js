@@ -7,6 +7,7 @@ import { Badge } from 'reactstrap';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import {FormattedMessage} from 'react-intl';
+import config from '../config.json';
 
 class NodesHealth extends Component {
   constructor(props) {
@@ -17,31 +18,38 @@ class NodesHealth extends Component {
 
 
   render() {
+    const columnHeaders = [];
+    for (let i = 0; i < config.nodeshealth.length; i++) {
 
-    const columnHeaders = [
-      {
-        Header: <FormattedMessage
-                    id="page.localeProvider.nodename"
-                    defaultMessage="Node Name"
-                    description="Node Name"
-                    />,
-        accessor: 'server_hostname',
-        filterAll: false,
-        className: 'center-column',
-      },
-      {
-        Header: <FormattedMessage
-                    id="page.localeProvider.status"
-                    defaultMessage="Status"
-                    description="Status"
-                    />,
-        accessor: 'status',
-        filterAll: false,
-        className: 'center-column',
-        Cell: row => <Badge color="success">{row.value}</Badge>
+      switch(config.nodeshealth[i]) {
+        case "nodename" : columnHeaders.push(
+          {
+            Header: <FormattedMessage
+                        id="page.localeProvider.nodename"
+                        defaultMessage="Node Name"
+                        description="Node Name"
+                        />,
+            accessor: 'server_hostname',
+            filterAll: false,
+            className: 'center-column',
+          }
+        );break;
+        case "status" : columnHeaders.push(
+          {
+            Header: <FormattedMessage
+                        id="page.localeProvider.status"
+                        defaultMessage="Status"
+                        description="Status"
+                        />,
+            accessor: 'status',
+            filterAll: false,
+            className: 'center-column',
+            Cell: row => <Badge color="success">{row.value}</Badge>
+          }
+        );break;
+        default : columnHeaders.push(null);break;
       }
-    ];
-
+    }
     return (
       <div>
         <ReactTable

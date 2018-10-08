@@ -64,19 +64,20 @@ export class DashboardView extends Component {
   };
 
   render() {
-    let status = [], dashboardview = [], nodeshealth = [], chartstatus = [], timelinestream = [];
+    let status = [], dashboardview = [], middle = [];
+
     for (let i = 0; i < config.status.length; i++) {
 
       switch(config.status[i]) {
         case "blocks" : status.push(
           <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
             <Row>
-              <Col sm= {(12/config.status.length)}>
+              <Col sm= "4">
                 <Avatar className="stat-avatar avatar-block" >
                   <FontAwesome name="cube" />
                 </Avatar>
               </Col>
-              <Col sm= {(12/config.status.length)}>
+              <Col sm= "4">
                 <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
               </Col>
             </Row>
@@ -91,12 +92,12 @@ export class DashboardView extends Component {
         case "transactions" : status.push(
           <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
             <Row>
-              <Col sm= {(12/config.status.length)}>
+              <Col sm= "4">
                 <Avatar className="stat-avatar avatar-tx" >
                   <FontAwesome name="list-alt" />
                 </Avatar>
               </Col>
-              <Col sm= {(12/config.status.length)}>
+              <Col sm= "4">
                 <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
               </Col>
             </Row>
@@ -110,12 +111,12 @@ export class DashboardView extends Component {
         ); break;
         case "nodes" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
                   <Row>
-                    <Col sm= {(12/config.status.length)}>
+                    <Col sm= "4">
                       <Avatar className="stat-avatar avatar-node" >
                         <FontAwesome name="users" />
                       </Avatar>
                     </Col>
-                    <Col sm= {(12/config.status.length)}>
+                    <Col sm= "4">
                       <h1 className="stat-count">{this.props.dashStats.nodeCount}</h1>
                     </Col>
                   </Row>
@@ -128,12 +129,12 @@ export class DashboardView extends Component {
                 </div>); break;
         case "contracts" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
                   <Row>
-                    <Col sm= {(12/config.status.length)}>
+                    <Col sm= "4">
                       <Avatar className="stat-avatar avatar-contract" >
                         <FontAwesome name="handshake-o" />
                       </Avatar>
                     </Col>
-                    <Col sm= {(12/config.status.length)}>
+                    <Col sm= "4">
                       <h1 className="stat-count">{this.props.dashStats.contractCount}</h1>
                     </Col>
                   </Row>
@@ -148,6 +149,30 @@ export class DashboardView extends Component {
       }
     }
 
+    for (let i = 0; i < config.dashboardview_middle.length; i++) {
+
+      switch(config.dashboardview_middle[i]) {
+        case "nodeshealth" : middle.push(
+          <Col sm= {(12/config.dashboardview_middle.length)} >
+            <Card className="dash-section">
+              <NodesHealth
+                nodeStatus={this.props.nodeStatus}
+              />
+            </Card>
+            
+          </Col>
+        ); break;
+        case "chartstatus" : middle.push(
+          <Col sm= {(12/config.dashboardview_middle.length)}>
+            <Card className="dash-section">
+              <ChartStats appLocale= {this.props.appLocale} />
+            </Card>
+          </Col>
+        ); break;
+        default: middle.push(null); break;
+      }
+    }
+
     for (let i = 0; i < config.dashboardview.length; i++) {
       switch(config.dashboardview[i]) {
         case "status" : dashboardview.push(
@@ -159,24 +184,11 @@ export class DashboardView extends Component {
             </Col>
           </Row>
         ); break;
-        case "nodeshealth" : nodeshealth.push(
-          <Col sm= {(12/config.dashboardview_middle_num)} >
-            <Card className="dash-section">
-              <NodesHealth
-                nodeStatus={this.props.nodeStatus}
-              />
-            </Card>
-            
-          </Col>
-        ); break;
-        case "chartstatus" : chartstatus.push(
-          <Col sm= {(12/config.dashboardview_middle_num)}>
-            <Card className="dash-section">
-              <ChartStats appLocale= {this.props.appLocale} />
-            </Card>
-          </Col>
-        ); break;
-        case "timelinestream" : timelinestream.push(
+        case "dashboardview_middle" : dashboardview.push (<Row>
+            {middle}
+          </Row>
+        ); break
+        case "timelinestream" : dashboardview.push(
           <Row>
             <Col sm="12">
               <Card className="dash-section">
@@ -205,11 +217,6 @@ export class DashboardView extends Component {
         >
         <div className="dash-view" >
           {dashboardview}
-          <Row>
-            {nodeshealth}
-            {chartstatus}
-          </Row>
-          {timelinestream}
         </div>
         </IntlProvider>
       </div>

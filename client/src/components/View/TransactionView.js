@@ -17,6 +17,7 @@ import {
   CardTitle} from "reactstrap";
 
 import {FormattedMessage} from 'react-intl';
+import config from '../config.json'
 
 const styles = theme => ({
   root: {
@@ -53,6 +54,131 @@ export class TransactionView extends Component {
   };
 
   render() {
+
+    const transactionview = [];
+    for (let i = 0; i < config.transactiondetails.length; i++) {
+      switch(config.transactiondetails[i]) {
+        case "transactionid" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.transactionid"
+                defaultMessage="Transaction ID"
+                description="Transaction ID"
+              />
+              :
+            </th>
+            <td>
+              {this.props.transaction.txhash}
+              <button className="copyBtn">
+                <div className="copyMessage">Copy</div>
+                <div className="copiedMessage">Copied</div>
+                <CopyToClipboard text={this.props.transaction.txhash}>
+                  <FontAwesome name="copy" />
+                </CopyToClipboard>
+              </button>
+            </td>
+          </tr>
+        );break;
+        case "validationcode" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.valcode"
+                defaultMessage="Validation Code"
+                description="Validation Code"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.validation_code}</td>
+          </tr>
+        );break;
+        case "payloadproposalhash" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.payprohash"
+                defaultMessage="Payload Proposal Hash"
+                description="Payload Proposal Hash"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.payload_proposal_hash}</td>
+          </tr>
+        );break;
+        case "creatoemsp" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.creatormsp"
+                defaultMessage="Creator MSP"
+                description="Creator MSP"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.creator_msp_id}</td>
+          </tr>
+        );break;
+        case "endoser" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.endoser"
+                defaultMessage="Endoser"
+                description="Endoser"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.endorser_msp_id}</td>
+          </tr>
+        );break;
+        case "contractnsme" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.contractname"
+                defaultMessage="Contract Name"
+                description="Contract Name"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.contractname}</td>
+          </tr>
+        );break;
+        case "type" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.type"
+                defaultMessage="Type"
+                description="Type"
+              />
+              :
+            </th>
+            <td>{this.props.transaction.type}</td>
+          </tr>
+        );break;
+        case "time" : transactionview.push(
+          <tr>
+            <th>
+              <FormattedMessage
+                id="page.localeProvider.time"
+                defaultMessage="Time"
+                description="Time"
+              />
+              :
+            </th>
+            <td>
+              {moment(this.props.transaction.createdt)
+                .tz(moment.tz.guess())
+                .format("M-D-YYYY h:mm A zz")}
+            </td>
+          </tr>
+        );break;
+        default: transactionview.push(null); break;
+      }
+    }
+
     if (this.props.transaction && !this.props.transaction.read_set) {
       return (
         <div className={this.state.toggleClass ? "dark-theme" : ""}>
@@ -99,107 +225,9 @@ export class TransactionView extends Component {
               <CardBody>
                 <Table striped hover responsive className="table-striped">
                   <tbody>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.transactionid"
-                          defaultMessage="Transaction ID"
-                          description="Transaction ID"
-                        />
-                        :
-                      </th>
-                      <td>
-                        {this.props.transaction.txhash}
-                        <button className="copyBtn">
-                          <div className="copyMessage">Copy</div>
-                          <div className="copiedMessage">Copied</div>
-                          <CopyToClipboard text={this.props.transaction.txhash}>
-                            <FontAwesome name="copy" />
-                          </CopyToClipboard>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.valcode"
-                          defaultMessage="Validation Code"
-                          description="Validation Code"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.validation_code}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.payprohash"
-                          defaultMessage="Payload Proposal Hash"
-                          description="Payload Proposal Hash"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.payload_proposal_hash}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.creatormsp"
-                          defaultMessage="Creator MSP"
-                          description="Creator MSP"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.creator_msp_id}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.endoser"
-                          defaultMessage="Endoser"
-                          description="Endoser"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.endorser_msp_id}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.contractname"
-                          defaultMessage="Contract Name"
-                          description="Contract Name"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.contractname}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.type"
-                          defaultMessage="Type"
-                          description="Type"
-                        />
-                        :
-                      </th>
-                      <td>{this.props.transaction.type}</td>
-                    </tr>
-                    <tr>
-                      <th>
-                        <FormattedMessage
-                          id="page.localeProvider.time"
-                          defaultMessage="Time"
-                          description="Time"
-                        />
-                        :
-                      </th>
-                      <td>
-                        {moment(this.props.transaction.createdt)
-                          .tz(moment.tz.guess())
-                          .format("M-D-YYYY h:mm A zz")}
-                      </td>
-                    </tr>
+                  
+                    {transactionview}
+
                   </tbody>
                 </Table>
               </CardBody>

@@ -1,0 +1,37 @@
+[2018-09-30 09:59:26.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:40:10.447] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:40:10.447] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:41:02.731] [ERROR] synBlockData - { Error: connect ECONNREFUSED 127.0.0.1:26658
+    at extractValue (/opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:149:19)
+    at /opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:159:12
+    at request (/opt/bl/blockchain-explorer/node_modules/sync-request/lib/index.js:28:15)
+    at Object.getStatus (/opt/bl/blockchain-explorer/app/platform/Platform.js:30:17)
+    at PlatformBurrow.getStatus (/opt/bl/blockchain-explorer/app/platform/burrow/PlatformBurrow.js:71:41)
+    at SynBlockData.saveChannel (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:177:39)
+    at SynBlockData.syncChannels (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:204:24)
+    at BlockListener.<anonymous> (/opt/bl/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7) code: 'ECONNREFUSED' }
+[2018-09-30 11:41:02.735] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:41:02.735] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:21.211] [ERROR] synBlockData - { Error: connect ECONNREFUSED 127.0.0.1:26658
+    at extractValue (/opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:149:19)
+    at /opt/bl/blockchain-explorer/node_modules/sync-rpc/lib/index.js:159:12
+    at request (/opt/bl/blockchain-explorer/node_modules/sync-request/lib/index.js:28:15)
+    at Object.getStatus (/opt/bl/blockchain-explorer/app/platform/Platform.js:30:17)
+    at PlatformBurrow.getStatus (/opt/bl/blockchain-explorer/app/platform/burrow/PlatformBurrow.js:71:41)
+    at SynBlockData.saveChannel (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:177:39)
+    at SynBlockData.syncChannels (/opt/bl/blockchain-explorer/app/explorer/backend/SynBlockData.js:204:24)
+    at BlockListener.<anonymous> (/opt/bl/blockchain-explorer/app/explorer/backend/BlockListener.js:32:34)
+    at emitNone (events.js:106:13)
+    at BlockListener.emit (events.js:208:7) code: 'ECONNREFUSED' }
+[2018-09-30 11:42:21.215] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:21.215] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:35.689] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 11:42:35.689] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:09:01.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:09:01.116] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:11:57.385] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:11:57.385] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:43:47.545] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-09-30 12:43:47.545] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

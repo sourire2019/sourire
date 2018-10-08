@@ -1,13 +1,41 @@
 {
 	"header" : [
-		"dashboardview", "blocksview", "networkview", "transactionsiew" , "channelsview"
+		"dashboardview", "blocksview", "networkview", "transactionsview" , "channelsview" , "contractview"
 	],
 	"dashboardview" : [
-		"status" ,"nodeshealth" , "chartstatus" ,"timelinestream"
+		"status" , "dashboardview_middle","timelinestream"
 	],
 	"status" : [
-		"blocks" , "transactions" , "nodes"
+		"blocks" , "transactions" , "nodes", "contracts"
 	],
-	"dashboardview_middle_num" : 2
-	
-} 
+	"dashboardview_middle" : [
+		"nodeshealth" , "chartstatus"
+	],
+	"nodeshealth" : [
+		"nodename" , "status" 
+	],
+	"chartstatus" : [
+		"blockshour", "blocksmin", "txhour", "txmin"
+	],
+	"transactionsview" : [
+		"creator", "channelname", "txid", "type", "contract" , "timestamp"
+	],
+	"transactiondetails" : [
+		"transactionid" , "validationcode" , "payloadproposalhash", "creatoemsp", "endoser", "contractnsme", "type", "time"
+	],
+	"blocksview" : [
+		"blocknumber", "channelname", "number_of_tx", "datahash", "blockhash", "prehash", "transactions"
+	],
+	"blockdetails" : [
+		"channelname", "id", "blocknumber", "createat", "number_of_transactions", "blockhash", "datahash", "prehash"
+	],
+	"networkview" : [
+		"nodename", "endpoint_url"
+	],
+	"channelsview" : [
+		"id", "channelname", "channelhash", "blocks", "transactions", "timestamp"
+	],
+	"contractview" : [
+		"contractname", "channelname", "path", "transactions_count", "version"
+	]
+}  

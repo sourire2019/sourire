@@ -9,6 +9,7 @@ var SynBlockData = require('../SynBlockData');
 var  dbBlock = require("../../../persistence/postgreSQL/MetricService");
 
 var PlatformBurrow = require("../../../platform/burrow/PlatformBurrow");
+var Client = require('../Client')
 
 class BurrowClient {
     constructor(platform, persistence, broadcaster) {
@@ -30,28 +31,8 @@ class BurrowClient {
         });
 
         client.on('connect', function(connection) {
-          clearInterval(myInterval);
-
-          if (reconnect) {
-            blockScanner.syncBlock();
-          }
-
           var str = '{"jsonrpc":"2.0","id":"ws-client","method":"blocks","params":{"query":"tm.event=\'NewBlockHeader\'"}}';
-
-          connection.send(str);
-
-          console.log('WebSocket client connected');
-          connection.on('error', function(error) {
-          console.log("Connection Error: " + error.toString());
-          });
-          connection.on('close', function() {
-          console.log('echo-protocol Connection Closed');
-          reconnect = true;
-          myInterval = setInterval(function () {
-            console.log('reconnet...................');
-            client.connect(addr);          
-          }, 10000);
-          });
+          Client(myInterval, str, reconnect, connection, client, addr) ;
           connection.on('message', function(message) {
             if (message.type === 'utf8') {
             var blockHeader = JSON.parse(message.utf8Data);

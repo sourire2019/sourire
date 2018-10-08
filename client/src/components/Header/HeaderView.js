@@ -325,7 +325,7 @@ export class HeaderView extends Component {
                     />
                   </NavLink>
                 </li> ); break;
-        case "transactionsiew" :header.push( <li>
+        case "transactionsview" :header.push( <li>
                   <NavLink
                     to="/transactions"
                     className="dashButtons"

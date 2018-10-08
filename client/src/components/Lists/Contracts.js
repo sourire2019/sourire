@@ -10,6 +10,7 @@ import Dialog from 'material-ui/Dialog';
 import ContractModal from '../View/ContractModal';
 import { Button } from "reactstrap";
 import {FormattedMessage} from 'react-intl';
+import config from '../config.json';
 
 class Contracts extends Component {
   constructor(props) {
@@ -40,92 +41,109 @@ class Contracts extends Component {
   };
 
   reactTableSetup = () => {
-    return [
-      {
-        Header: <FormattedMessage
-                    id="page.localeProvider.contractname"
-                    defaultMessage='Contract Name'
-                    description='Contract Name'
-                    />,
-        accessor: 'contractname',
-        Cell: row => (
-          <a className="hash-hide" onClick={() => this.sourceDialogOpen(row.original)} href="#/contracts" >{row.value}</a>
-        ),
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            { keys: ['contractname'] },
-            { threshold: matchSorter.rankings.SIMPLEMATCH }
-          ),
-        filterAll: true
-      },
-      {
-        Header:<FormattedMessage
-                    id="page.localeProvider.channelname"
-                    defaultMessage='Channel Name'
-                    description='Channel Name'
-                    /> ,
-        accessor: 'channelName',
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            { keys: ['channelName'] },
-            { threshold: matchSorter.rankings.SIMPLEMATCH }
-          ),
-        filterAll: true
-      },
-      {
-        Header:<FormattedMessage
-                    id="page.localeProvider.path"
-                    defaultMessage='Path'
-                    description='Path'
-                    /> ,
-        accessor: 'path',
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            { keys: ['path'] },
-            { threshold: matchSorter.rankings.SIMPLEMATCH }
-          ),
-        filterAll: true
-      },
-      {
-        Header:<FormattedMessage
-                    id="page.localeProvider.txcount"
-                    defaultMessage='Transaction Count'
-                    description='Transaction Count'
-                    /> ,
-        accessor: 'txCount',
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            { keys: ['txCount'] },
-            { threshold: matchSorter.rankings.SIMPLEMATCH }
-          ),
-        filterAll: true
-      },
-      {
-        Header:<FormattedMessage
-                    id="page.localeProvider.version"
-                    defaultMessage='Version'
-                    description='Version'
-                    /> ,
-        accessor: 'version',
-        filterMethod: (filter, rows) =>
-          matchSorter(
-            rows,
-            filter.value,
-            { keys: ['version'] },
-            { threshold: matchSorter.rankings.SIMPLEMATCH }
-          ),
-        filterAll: true
-      }
-    ];
-  };
+    const columnHeaders = [];
+    for (let i = 0; i < config.contractview.length; i++) {
+        switch(config.contractview[i]) {
+            case "contractname" : columnHeaders.push(
+              {
+                Header: <FormattedMessage
+                            id="page.localeProvider.contractname"
+                            defaultMessage='Contract Name'
+                            description='Contract Name'
+                            />,
+                accessor: 'contractname',
+                Cell: row => (
+                  <a className="hash-hide" onClick={() => this.sourceDialogOpen(row.original)} href="#/contracts" >{row.value}</a>
+                ),
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['contractname'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "channelname" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.channelname"
+                            defaultMessage='Channel Name'
+                            description='Channel Name'
+                            /> ,
+                accessor: 'channelName',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['channelName'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "path" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.path"
+                            defaultMessage='Path'
+                            description='Path'
+                            /> ,
+                accessor: 'path',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['path'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "transactions_count" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.txcount"
+                            defaultMessage='Transaction Count'
+                            description='Transaction Count'
+                            /> ,
+                accessor: 'txCount',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['txCount'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "version" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.version"
+                            defaultMessage='Version'
+                            description='Version'
+                            /> ,
+                accessor: 'version',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['version'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+
+            default : columnHeaders.push(null); break;
+
+        }
+    }
+    return columnHeaders;
+  }
 
   render() {
     return (

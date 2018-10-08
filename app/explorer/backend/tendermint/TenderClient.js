@@ -5,6 +5,7 @@
 var WebSocketClient = require('websocket').client
 var config = require("../../../platform/tendermint/config.json");
 var SynBlockData = require('../SynBlockData');
+var Client = require('../Client');
 
 class TenderClient {
     constructor(platform, persistence, broadcaster) {
@@ -26,29 +27,8 @@ class TenderClient {
         });
 
         client.on('connect', function(connection) {
-          clearInterval(myInterval);
-
-          if (reconnect) {
-            blockScanner.syncBlock();
-          }
-
           var str = '{"jsonrpc":"2.0","id":"ws-client","method":"subscribe","params":{"query":"tm.event=\'NewBlockHeader\'"}}';
-
-          connection.send(str);
-
-
-          console.log('WebSocket client connected');
-          connection.on('error', function(error) {
-          console.log("Connection Error: " + error.toString());
-          });
-          connection.on('close', function() {
-          console.log('echo-protocol Connection Closed');
-          reconnect = true;
-          myInterval = setInterval(function () {
-            console.log('reconnect...................');
-            client.connect(addr);          
-          }, 10000);
-          });
+          Client(myInterval, str, reconnect, connection, client, addr) 
           connection.on('message', function(message) {
             if (message.type === 'utf8') {
             var blockHeader = JSON.parse(message.utf8Data);
