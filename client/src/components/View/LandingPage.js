@@ -2,10 +2,10 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { Component } from 'react';
-import Slider from 'react-slick';
-import { connect } from 'react-redux';
-import Logo from '../../static/images/logo.png';
+import React, { Component } from 'react'
+import Slider from 'react-slick'
+import { connect } from 'react-redux'
+import Logo from '../../static/images/logo.png'
 import { chartOperations } from '../../state/redux/charts/'
 import { tableOperations } from '../../state/redux/tables/'
 import { chartSelectors } from '../../state/redux/charts/'
@@ -33,8 +33,8 @@ const {
 const { currentChannelSelector } = chartSelectors
 
 export class LandingPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       settings: {
         dots: false,
@@ -55,13 +55,13 @@ export class LandingPage extends Component {
     }
   }
 
-  async componentDidMount() {
-    await this.props.getChannel();
-    const currentChannel = this.props.currentChannel;
+  async componentDidMount () {
+    await this.props.getChannel()
+    const currentChannel = this.props.currentChannel
 
     let promiseTimeout = setTimeout(() => {
-      this.setState({ hasDbError: true });
-    }, 60000);
+      this.setState({ hasDbError: true })
+    }, 60000)
 
     await Promise.all([
       this.props.getBlockList(currentChannel),
@@ -78,22 +78,22 @@ export class LandingPage extends Component {
       this.props.getTransactionPerHour(currentChannel),
       this.props.getTransactionPerMin(currentChannel)
     ])
-    clearTimeout(promiseTimeout);
-    this.props.updateLoadStatus();
+    clearTimeout(promiseTimeout)
+    this.props.updateLoadStatus()
   }
 
-  render() {
+  render () {
     if (this.state.hasDbError) {
       return (
         <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <h1>Error: One or more components failed to render.</h1>
         </div>
-      );
+      )
     }
     return (
-      <div className="landingBackground">
-        <div className="landing" >
-          <img src={Logo} style={this.state.logoStyle} alt="TrustChain Logo" />
+      <div className='landingBackground'>
+        <div className='landing' >
+          <img src={Logo} style={this.state.logoStyle} alt='TrustChain Logo' />
           <Slider {...this.state.settings}>
             <div><h3>ACCESSING THE NETWORK</h3></div>
             <div><h3>CONNECTING TO CHANNEL</h3></div>
@@ -101,25 +101,25 @@ export class LandingPage extends Component {
           </Slider>
         </div>
       </div>
-    );
+    )
   }
 }
 
 export default connect((state) => ({
-  currentChannel: currentChannelSelector(state),
+  currentChannel: currentChannelSelector(state)
 }), {
-    getBlockList: blockList,
-    getBlocksPerHour: blockPerHour,
-    getBlocksPerMin: blockPerMin,
-    getContractList: contractList,
-    getChannelList: channelList,
-    getChannel: channel,
-    getChannels: channels,
-    getDashStats: dashStats,
-    getNodeList: nodeList,
-    getNodeStatus: nodeStatus,
-    getTransactionByOrg: transactionByOrg,
-    getTransactionList: transactionList,
-    getTransactionPerHour: transactionPerHour,
-    getTransactionPerMin: transactionPerMin,
-  })(LandingPage)
+  getBlockList: blockList,
+  getBlocksPerHour: blockPerHour,
+  getBlocksPerMin: blockPerMin,
+  getContractList: contractList,
+  getChannelList: channelList,
+  getChannel: channel,
+  getChannels: channels,
+  getDashStats: dashStats,
+  getNodeList: nodeList,
+  getNodeStatus: nodeStatus,
+  getTransactionByOrg: transactionByOrg,
+  getTransactionList: transactionList,
+  getTransactionPerHour: transactionPerHour,
+  getTransactionPerMin: transactionPerMin
+})(LandingPage)

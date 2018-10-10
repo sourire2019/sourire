@@ -29,7 +29,6 @@ const getTransaction = (transaction) => ({
   payload: transaction
 })
 
-
 const getTransactionList = (transactionList) => ({
   type: types.TRANSACTION_LIST,
   payload: transactionList

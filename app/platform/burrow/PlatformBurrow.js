@@ -2,32 +2,27 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-var path = require("path");
-var helper = require("../../helper.js");
-var logger = helper.getLogger("platformtender");
-var fs = require("fs-extra");
-var config = require("./config.json");
-var http = require('http');
-var async = require('async');
-var request = require('sync-request');
-var url = require("url");
-var Platform = require("../Platform");
+var helper = require('../../helper.js')
+var logger = helper.getLogger('platformtender')
+var config = require('./config.json')
+var request = require('sync-request')
+var url = require('url')
+var Platform = require('../Platform')
 
 class PlatformBurrow {
-
-  constructor() {
-    this.host = config["host"];
-    this.port = config["port"];
-    this.plf = config["plf"];
+  constructor () {
+    this.host = config['host']
+    this.port = config['port']
+    this.plf = config['plf']
     this.baseurl = url.format({
-    protocol:"http:",
-    host:this.host + ":" + this.port,
-    port:this.port
-   });
+      protocol: 'http:',
+      host: this.host + ':' + this.port,
+      port: this.port
+    })
   }
 
-  getBlockByNumber(channelName, blockNumber) {
-  	let block =  Platform.getBlockByNumber(this.baseurl,channelName,blockNumber);
+  getBlockByNumber (channelName, blockNumber) {
+  	let block = Platform.getBlockByNumber(this.baseurl, channelName, blockNumber)
     let result = {
       'blockNum': block.BlockMeta.header.height,
       'txCount': block.BlockMeta.header.num_txs,
@@ -36,108 +31,96 @@ class PlatformBurrow {
       'firstTxTimestamp': block.BlockMeta.header.time,
       'blockhash': block.BlockMeta.block_id.hash,
       'genesis_block_hash': block.BlockMeta.header.chain_id,
-      'txs' : block.Block.data.txs,
-      'total_txs' : block.BlockMeta.header.total_txs
+      'txs': block.Block.data.txs,
+      'total_txs': block.BlockMeta.header.total_txs
     }
-      
-    return result;
-	}
 
-  getChannels(res) {
-  	var optionsget = {   
-      path : '/chain_id' 
-    };
-    let resultdata =  Platform.getChannels(this.baseurl,optionsget.path) 
-    let channels = [];  
-    
-    let result = JSON.parse(resultdata);
-    channels.push({"channel_id" : result.result.ChainId});
+    return result
+  }
+
+  getChannels (res) {
+    let resultdata = Platform.getChannels(this.baseurl, '/chain_id')
+    let channels = []
+
+    let result = JSON.parse(resultdata)
+    channels.push({ 'channel_id': result.result.ChainId })
     let response = {
-      status: 200 };
-    response["channels"] = [...new Set(channels)];
-    res.send(response);
+      status: 200 }
+    response['channels'] = [...new Set(channels)]
+    res.send(response)
   }
 
-  getCurChannel(res) {  	
-  	var optionsget = {   
-      path : '/chain_id'
-    };  
-    let resultdata = JSON.parse( Platform.getCurChannel(this.baseurl,optionsget.path) ) ;
-    res.send({"currentChannel" : resultdata.result.ChainId});   
+  getCurChannel (res) {
+    let resultdata = JSON.parse(Platform.getCurChannel(this.baseurl, '/chain_id'))
+    res.send({ 'currentChannel': resultdata.result.ChainId })
   }
-          
 
-  getStatus() {
-  	let statusdata = JSON.parse(Platform.getStatus(this.baseurl));
+  getStatus () {
+  	let statusdata = JSON.parse(Platform.getStatus(this.baseurl))
     let result = {
-      "listenaddr": statusdata.result.NodeInfo.ListenAddress,
-      "network" : statusdata.result.NodeInfo.Network,
-      "latestblockheight" : statusdata.result.SyncInfo.LatestBlockHeight,
-
+      'listenaddr': statusdata.result.NodeInfo.ListenAddress,
+      'network': statusdata.result.NodeInfo.Network,
+      'latestblockheight': statusdata.result.SyncInfo.LatestBlockHeight
 
     }
-    return result;
+    return result
   }
 
-  getnetInfo() {
-    let path = "/network";
-    let netinfo = [];
-    let result = JSON.parse(Platform.getnetInfo(this.baseurl, path));
-    let netnodes = result.result.peers;
+  getnetInfo () {
+    let path = '/network'
+    let netinfo = []
+    let result = JSON.parse(Platform.getnetInfo(this.baseurl, path))
+    let netnodes = result.result.peers
     if (netnodes) {
-      for( var i = 0;i < netnodes.length;i++){
+      for (let i = 0; i < netnodes.length; i++) {
         netinfo.push({
-          "listenaddr": netnodes[i].NodeInfo.ListenAddress,
-          "network" : netnodes[i].NodeInfo.Network
+          'listenaddr': netnodes[i].NodeInfo.ListenAddress,
+          'network': netnodes[i].NodeInfo.Network
         })
       }
     }
-    return netinfo;
+    return netinfo
   }
 
-  getContract(channelName, cb) {
-    Platform.getContract(channelName, cb);
+  getContract (channelName, cb) {
+    Platform.getContract(channelName, cb)
   }
 
-  getNodesStatus(channelName,cb){
-      try {
-      	var nodes = [];
-      	var statusdata = this.getStatus();
-      	var netinfo = this.getnetInfo();
-      	if(statusdata) {
-
-      		nodes.push({"status": "RUNNING","server_hostname": statusdata.listenaddr})
+  getNodesStatus (channelName, cb) {
+    try {
+      	let nodes = []
+      	let statusdata = this.getStatus()
+      	let netinfo = this.getnetInfo()
+      	if (statusdata) {
+      		nodes.push({ 'status': 'RUNNING', 'server_hostname': statusdata.listenaddr })
       	}
-      	if(netinfo) {
-      		for( var i = 0;i < netinfo.length;i++){
-      			nodes.push({"status": "RUNNING","server_hostname": netinfo[i].listenaddr})
+      	if (netinfo) {
+      		for (let i = 0; i < netinfo.length; i++) {
+      			nodes.push({ 'status': 'RUNNING', 'server_hostname': netinfo[i].listenaddr })
       		}
       	}
-       cb(nodes);
-
-      } catch(err) {
-        console.log(err);
-        logger.error(err)
-        cb([])
+      cb(nodes)
+    } catch (err) {
+      console.log(err)
+      logger.error(err)
+      cb([])
     }
   }
 
-  getLastHeight() {
-      try{
-        let urlre = url.resolve(this.baseurl,"/blocks");
-        let res = request('GET', urlre);
-        let resultdata =JSON.parse(res.getBody().toString()) ;
-        let result = {
-          "lastheight" : resultdata.result.LastHeight,
-          "chainid" : resultdata.result.BlockMetas[0].header.chain_id
-        }
-        return result;
-      } catch(err){
-        console.log(err);
+  getLastHeight () {
+    try {
+      let urlre = url.resolve(this.baseurl, '/blocks')
+      let res = request('GET', urlre)
+      let resultdata = JSON.parse(res.getBody().toString())
+      let result = {
+        'lastheight': resultdata.result.LastHeight,
+        'chainid': resultdata.result.BlockMetas[0].header.chain_id
       }
+      return result
+    } catch (err) {
+      console.log(err)
+    }
   }
 }
 
-
-
-module.exports = PlatformBurrow;
+module.exports = PlatformBurrow

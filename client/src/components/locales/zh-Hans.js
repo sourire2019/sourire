@@ -1,6 +1,6 @@
-import appLocaleData from 'react-intl/locale-data/zh';
+import appLocaleData from 'react-intl/locale-data/zh'
 // 引入组件的多语言
-import messages from './zh-Hans.messages';
+import messages from './zh-Hans.messages'
 
 window.appLocale = {
   // 合并所有 messages, 加入组件的 messages
@@ -22,14 +22,14 @@ window.appLocale = {
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
-        minute: '2-digit',
-      },
+        minute: '2-digit'
+      }
     },
     // 货币
     money: {
-      currency: 'CNY',
-    },
-  },
-};
+      currency: 'CNY'
+    }
+  }
+}
 
-export default window.appLocale;
+export default window.appLocale

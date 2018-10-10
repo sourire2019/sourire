@@ -30,7 +30,7 @@ export default {
   'page.localeProvider.path': 'Path',
   'page.localeProvider.id': 'ID',
   'page.localeProvider.channelhash': 'Channel Hash',
-  'page.localeProvider.datahash': 'Data Hash',
+  'page.localeProvider.datah': 'Data Hash',
   'page.localeProvider.create': 'Created at',
   'page.localeProvider.txnum': 'Number of Transactions',
   'page.localeProvider.prehash': 'Prehash',
@@ -43,6 +43,6 @@ export default {
   'page.localeProvider.time': 'Time',
   'page.localeProvider.transactionsl': 'Transactions',
   'page.localeProvider.blocksl': 'Blocks',
-  'page.localeProvider.details' : 'Details'
-  
-};
+  'page.localeProvider.details': 'Details'
+
+}

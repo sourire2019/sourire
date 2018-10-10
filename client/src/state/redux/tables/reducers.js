@@ -8,7 +8,7 @@ import types from './types'
 const initialState = {}
 
 const blockListReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.BLOCK_LIST: {
       return ({
         rows: action.payload.rows,
@@ -23,7 +23,7 @@ const blockListReducer = (state = initialState, action) => {
 }
 
 const contractListReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.CONTRACT_LIST: {
       return ({
         rows: action.payload.contract,
@@ -38,7 +38,7 @@ const contractListReducer = (state = initialState, action) => {
 }
 
 const channelsReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.CHANNELS: {
       return ({
         rows: action.payload.channels,
@@ -53,7 +53,7 @@ const channelsReducer = (state = initialState, action) => {
 }
 
 const nodeListReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.NODE_LIST: {
       return ({
         rows: action.payload.nodes,
@@ -68,7 +68,7 @@ const nodeListReducer = (state = initialState, action) => {
 }
 
 const transactionReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.TRANSACTION: {
       return ({
         transaction: action.payload.row,
@@ -83,7 +83,7 @@ const transactionReducer = (state = initialState, action) => {
 }
 
 const transactionListReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case types.TRANSACTION_LIST: {
       return ({
         rows: action.payload,
@@ -97,8 +97,6 @@ const transactionListReducer = (state = initialState, action) => {
   }
 }
 
-
-
 const reducer = combineReducers({
   blockList: blockListReducer,
   contractList: contractListReducer,
@@ -108,4 +106,4 @@ const reducer = combineReducers({
   transactionList: transactionListReducer
 })
 
-export default reducer;
+export default reducer

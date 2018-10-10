@@ -1,6 +1,6 @@
-import appLocaleData from 'react-intl/locale-data/en';
+import appLocaleData from 'react-intl/locale-data/en'
 // 引入组件的多语言
-import messages from './en-US.messages';
+import messages from './en-US.messages'
 
 window.appLocale = {
   // 合并所有 messages, 加入组件的 messages
@@ -21,14 +21,14 @@ window.appLocale = {
         month: '2-digit',
         day: '2-digit',
         hour: '2-digit',
-        minute: '2-digit',
-      },
+        minute: '2-digit'
+      }
     },
     // 货币
     money: {
-      currency: 'USD',
-    },
-  },
-};
+      currency: 'USD'
+    }
+  }
+}
 
-export default window.appLocale;
+export default window.appLocale

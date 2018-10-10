@@ -2,13 +2,13 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { Component } from 'react';
-import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import PropTypes from 'prop-types';
-import Nodes from '../Lists/Nodes';
-import Card from 'material-ui/Card';
-import { IntlProvider, addLocaleData } from 'react-intl';
+import React, { Component } from 'react'
+import compose from 'recompose/compose'
+import { withStyles } from 'material-ui/styles'
+import PropTypes from 'prop-types'
+import Nodes from '../Lists/Nodes'
+import Card from 'material-ui/Card'
+import { IntlProvider } from 'react-intl'
 
 const styles = theme => ({
   root: {
@@ -37,38 +37,33 @@ const styles = theme => ({
     left: 40,
     top: 70
   }
-});
+})
 
 export class NetworkView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { classes } = this.props;
+  render () {
     return (
-      <div className="view-fullwidth">
-      <IntlProvider
+      <div className='view-fullwidth'>
+        <IntlProvider
           locale={this.props.appLocale.locale}
           messages={this.props.appLocale.messages}
           formats={this.props.appLocale.formats}
         >
-        <div className="view-display">
-          <Card className="table-card">
-            <Nodes nodeList={this.props.nodeList} />
-          </Card>
-        </div>
-      </IntlProvider>
+          <div className='view-display'>
+            <Card className='table-card'>
+              <Nodes nodeList={this.props.nodeList} />
+            </Card>
+          </div>
+        </IntlProvider>
       </div>
-    );
+    )
   }
 }
 
 NetworkView.propTypes = {
   classes: PropTypes.object.isRequired,
   nodeList: PropTypes.array.isRequired
-};
+}
 
 export default compose(
   withStyles(styles)
-)(NetworkView);
+)(NetworkView)

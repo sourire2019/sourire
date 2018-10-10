@@ -2,7 +2,7 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import React from "react";
+import React from 'react'
 import {
   ResponsiveContainer,
   ScatterChart,
@@ -11,23 +11,22 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip
-} from "recharts";
-import Card, { CardContent } from "material-ui/Card";
+} from 'recharts'
+import Card, { CardContent } from 'material-ui/Card'
 
 const TimeChart = ({ chartData }) => {
-
   return (
     <div>
       <Card>
-        <CardContent className="CardContent">
-          <ResponsiveContainer width="100%" height={255}>
+        <CardContent className='CardContent'>
+          <ResponsiveContainer width='100%' height={255}>
             <ScatterChart>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="datetime" className="datetime" />
-              <YAxis domain={[0, chartData.dataMax]} dataKey="count" />
-              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <CartesianGrid strokeDasharray='3 3' />
+              <XAxis dataKey='datetime' className='datetime' />
+              <YAxis domain={[0, chartData.dataMax]} dataKey='count' />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
               <Scatter
-                className="datetime"
+                className='datetime'
                 data={chartData.displayData}
                 line={{}}
               />
@@ -36,7 +35,7 @@ const TimeChart = ({ chartData }) => {
         </CardContent>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default TimeChart;
+export default TimeChart

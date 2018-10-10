@@ -2,10 +2,8 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import config from 'react-global-configuration';
+import config from 'react-global-configuration'
 
-config.set({ api: 'web3' });
+config.set({ api: 'web3' })
 
-export default config;
-
-
+export default config

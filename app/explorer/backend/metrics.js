@@ -13,38 +13,38 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-var Stats = require('fast-stats').Stats;
-var helper=require('../../helper.js')
-var logger = helper.getLogger('metrics');
+var Stats = require('fast-stats').Stats
+var helper = require('../../helper.js')
+var logger = helper.getLogger('metrics')
 
 class Metrics {
-    constructor(size=10){
-        this.size=size
-        this.stats=new Stats()
-    }
+  constructor (size = 10) {
+    this.size = size
+    this.stats = new Stats()
+  }
 
-    push(n){
-        while(this.stats.data.length>this.size){
-            this.stats.shift()
-        }
-        this.stats.push(n)
+  push (n) {
+    while (this.stats.data.length > this.size) {
+      this.stats.shift()
     }
+    this.stats.push(n)
+  }
 
-    sum(){
-        logger.debug(this.stats.range())
-        return this.stats.sum
-    }
+  sum () {
+    logger.debug(this.stats.range())
+    return this.stats.sum
+  }
 
-    clean(){
-        this.stats.reset()
-    }
+  clean () {
+    this.stats.reset()
+  }
 }
 
-var txMetrics=new Metrics(2)
-var blockMetrics=new Metrics(2)
-var txnPerSecMeter=new Metrics(2)
+var txMetrics = new Metrics(2)
+var blockMetrics = new Metrics(2)
+var txnPerSecMeter = new Metrics(2)
 
-exports.Metrics=Metrics
-exports.txMetrics=txMetrics
-exports.blockMetrics=blockMetrics
-exports.txnPerSecMeter=txnPerSecMeter
+exports.Metrics = Metrics
+exports.txMetrics = txMetrics
+exports.blockMetrics = blockMetrics
+exports.txnPerSecMeter = txnPerSecMeter

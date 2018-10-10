@@ -3,53 +3,50 @@
  */
 
 import actions from './actions'
-import { get } from '../../../services/request.js';
-import moment from "moment-timezone";
+import { get } from '../../../services/request.js'
+import moment from 'moment-timezone'
 
 const blockList = (channel) => (dispatch) => {
- return get(`/api/blockAndTxList/${channel}/0`)
-    .then( resp => {
+  return get(`/api/blockAndTxList/${channel}/0`)
+    .then(resp => {
       dispatch(actions.getBlockList(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }
 
 const contractList = (channel) => (dispatch) => {
- return get(`/api/contract/${channel}`)
-    .then( resp => {  
+  return get(`/api/contract/${channel}`)
+    .then(resp => {
       dispatch(actions.getContractList(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }
 
-//table channel
+// table channel
 const channels = () => (dispatch) => {
   return get('/api/channels/info')
     .then(resp => {
-        if(resp['channels']){
-          resp['channels'].forEach(element => {
+      if (resp['channels']) {
+        resp['channels'].forEach(element => {
           element.createdat = moment(element.createdat)
             .tz(moment.tz.guess())
-            .format("M-D-YYYY h:mm A zz");
+            .format('M-D-YYYY h:mm A zz')
         })
-        }
-        
-      
-      
+      }
 
       dispatch(actions.getChannels(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }
 
 const nodeList = (channel) => (dispatch) => {
- return get(`/api/nodes/${channel}`)
+  return get(`/api/nodes/${channel}`)
     .then(resp => {
       dispatch(actions.getNodeList(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }
@@ -58,7 +55,7 @@ const transaction = (channel, transactionId) => (dispatch) => {
   return get(`/api/transaction/${channel}/${transactionId}`)
     .then(resp => {
       dispatch(actions.getTransaction(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }
@@ -69,12 +66,11 @@ const transactionList = (channel) => (dispatch) => {
       resp.rows.forEach(element => {
         element.createdt = moment(element.createdt)
           .tz(moment.tz.guess())
-          .format("M-D-YYYY h:mm A zz");
+          .format('M-D-YYYY h:mm A zz')
       })
-      
 
       dispatch(actions.getTransactionList(resp))
-    }).catch( error => {
+    }).catch(error => {
       console.error(error)
     })
 }

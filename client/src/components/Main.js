@@ -2,25 +2,24 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
-import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import BlocksView from './View/BlocksView';
-import NetworkView from './View/NetworkView';
-import TransactionsView from './View/TransactionsView';
-import ContractView from './View/ContractView';
-import DashboardView from './View/DashboardView';
-import ChannelsView from './View/ChannelsView';
+import React from 'react'
+import { connect } from 'react-redux'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import BlocksView from './View/BlocksView'
+import NetworkView from './View/NetworkView'
+import TransactionsView from './View/TransactionsView'
+import ContractView from './View/ContractView'
+import DashboardView from './View/DashboardView'
+import ChannelsView from './View/ChannelsView'
 import { chartSelectors } from '../state/redux/charts/'
 import { tableOperations, tableSelectors } from '../state/redux/tables/'
-import { IntlProvider, addLocaleData } from 'react-intl';
 
 const {
   currentChannelSelector,
   channelListSelector,
   dashStatsSelector,
   nodeStatusSelector,
-  transactionByOrgSelector,
+  transactionByOrgSelector
 } = chartSelectors
 
 const {
@@ -29,13 +28,12 @@ const {
   channelsSelector,
   nodeListSelector,
   transactionSelector,
-  transactionListSelector,
+  transactionListSelector
 } = tableSelectors
 
 const {
-  transaction,
+  transaction
 } = tableOperations
-
 
 export const Main = (props) => {
   const blocksViewProps = {
@@ -47,47 +45,47 @@ export const Main = (props) => {
   }
   const contractViewProps = {
     contractList: props.contractList,
-    appLocale: props.appLocale,
+    appLocale: props.appLocale
   }
 
   const channelsViewProps = {
     channels: props.channels,
-    appLocale: props.appLocale,
+    appLocale: props.appLocale
   }
 
   const dashboardViewProps = {
     blockList: props.blockList,
     dashStats: props.dashStats,
-    nodeStatus : props.nodeStatus,
+    nodeStatus: props.nodeStatus,
     transactionByOrg: props.transactionByOrg,
-    appLocale: props.appLocale,
+    appLocale: props.appLocale
   }
   const networkViewProps = {
     nodeList: props.nodeList,
-    appLocale: props.appLocale,
+    appLocale: props.appLocale
   }
   const transactionsViewProps = {
     currentChannel: props.currentChannel,
     transaction: props.transaction,
     transactionList: props.transactionList,
     getTransaction: props.getTransaction,
-    appLocale: props.appLocale,
+    appLocale: props.appLocale
   }
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <Switch>
-          <Route exact path="/" render={() => <DashboardView {...dashboardViewProps} />} />
-          <Route path="/blocks" render={() => <BlocksView {...blocksViewProps} />} />
-          <Route path="/contracts" render={() => <ContractView {...contractViewProps} />} />
-          <Route path="/channels" render={() => <ChannelsView {...channelsViewProps} />} />
-          <Route path="/network" render={() => <NetworkView  {...networkViewProps} />} />
-          <Route path="/transactions" render={() => <TransactionsView {...transactionsViewProps} />} />
+          <Route exact path='/' render={() => <DashboardView {...dashboardViewProps} />} />
+          <Route path='/blocks' render={() => <BlocksView {...blocksViewProps} />} />
+          <Route path='/contracts' render={() => <ContractView {...contractViewProps} />} />
+          <Route path='/channels' render={() => <ChannelsView {...channelsViewProps} />} />
+          <Route path='/network' render={() => <NetworkView {...networkViewProps} />} />
+          <Route path='/transactions' render={() => <TransactionsView {...transactionsViewProps} />} />
         </Switch>
       </div>
     </Router>
-  );
-};
+  )
+}
 
 export default connect((state) => ({
   blockList: blockListSelector(state),
@@ -102,5 +100,5 @@ export default connect((state) => ({
   transactionByOrg: transactionByOrgSelector(state),
   transactionList: transactionListSelector(state)
 }), {
-    getTransaction: transaction,
-  })(Main);
+  getTransaction: transaction
+})(Main)
