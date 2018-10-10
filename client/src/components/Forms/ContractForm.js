@@ -36,7 +36,6 @@ class ChaincodeForm extends Component {
     const { classes } = this.props
 
     return (
-      // TODO : Replace with liform-react
       <div className={['card', classes.container].join(' ')}>
         <div className='card-header' align='center'>
           <h3>Add Chaincode</h3>

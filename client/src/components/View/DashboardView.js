@@ -13,7 +13,7 @@ import {
 import FontAwesome from 'react-fontawesome';
 import Card from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
-import { IntlProvider, addLocaleData } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import {FormattedMessage} from 'react-intl';
 import config from '../config.json'
 

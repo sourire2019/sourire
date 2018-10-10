@@ -35,7 +35,6 @@ class ChannelForm extends Component {
     const { classes } = this.props
 
     return (
-    // TODO : Replace with liform-react
       <div>
         <form className={classes.container} >
           <TextField

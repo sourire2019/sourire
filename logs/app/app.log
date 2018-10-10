@@ -149,3 +149,5 @@
     at process._tickCallback (internal/process/next_tick.js:188:7)
 [2018-10-10 14:40:15.425] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
 [2018-10-10 14:41:49.578] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-10 15:11:55.992] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-10 17:08:21.182] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
