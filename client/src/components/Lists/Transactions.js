@@ -168,7 +168,115 @@ class Transactions extends Component {
             filterAll: true
           }
         ); break; 
-        default: columnHeaders.push(null); break; 
+        case "txhash" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.txhash"
+                        defaultMessage="Txhash"
+                        description="Txhash"
+                        /> ,
+            accessor: "txhash",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["txhash"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        case "blockid" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.blockid"
+                        defaultMessage="Blockid"
+                        description="Blockid"
+                        /> ,
+            accessor: "blockid",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["blockid"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        case "blocktime" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.blocktime"
+                        defaultMessage="Blocktime"
+                        description="Blocktime"
+                        /> ,
+            accessor: "blocktime",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["blocktime"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        case "from" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.from"
+                        defaultMessage="From"
+                        description="From"
+                        /> ,
+            accessor: "from",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["from"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        case "to" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.to"
+                        defaultMessage="To"
+                        description="To"
+                        /> ,
+            accessor: "to",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["to"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        case "status" : columnHeaders.push(
+          {
+            Header:<FormattedMessage
+                        id="page.localeProvider.status"
+                        defaultMessage="Status"
+                        description="Status"
+                        /> ,
+            accessor: "status",
+            filterMethod: (filter, rows) =>
+              matchSorter(
+                rows,
+                filter.value,
+                {keys: ["status"]},
+                {threshold: matchSorter.rankings.SIMPLEMATCH}
+              ),
+            filterAll: true
+          }
+        ); break; 
+        default: break; 
       }
     }
 

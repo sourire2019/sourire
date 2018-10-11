@@ -249,7 +249,7 @@ class Blocks extends Component {
             filterAll: true
           }
         ); break;
-        default : blocksview.push(null); break;
+        default : break;
       }
     }
     return blocksview

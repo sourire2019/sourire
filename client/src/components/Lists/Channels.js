@@ -129,7 +129,7 @@ class Channels extends Component {
                 filterAll: true
               }
             ); break;
-            default : columnHeaders.push(null); break;
+            default : break;
 
         }
     }

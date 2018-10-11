@@ -47,6 +47,12 @@ export default {
   'page.localeProvider.name': 'Name',
   'page.localeProvider.balance': 'Balance',
   'page.localeProvider.creator_hash': 'Creator Hash',
-  'page.localeProvider.contract_code': 'Contract Code'
+  'page.localeProvider.contract_code': 'Contract Code',
+  'page.localeProvider.txhash': 'TX HAsh',
+  'page.localeProvider.blockid': 'blockid',
+  'page.localeProvider.blocktime': 'blockTime',
+  'page.localeProvider.from': 'from',
+  'page.localeProvider.to': 'to',
+  'page.localeProvider.contract': 'Contract'
 
 }

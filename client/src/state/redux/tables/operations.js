@@ -18,7 +18,6 @@ const blockList = (channel) => (dispatch) => {
 const contractList = (channel) => (dispatch) => {
   return get(`/api/contract/${channel}`)
     .then(resp => {
-      console.log(123, resp)
       dispatch(actions.getContractList(resp))
     }).catch(error => {
       console.error(error)

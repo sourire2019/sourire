@@ -47,6 +47,12 @@ export default {
   'page.localeProvider.name': '合约地址',
   'page.localeProvider.balance': '余额',
   'page.localeProvider.creator_hash': '合约来源',
-  'page.localeProvider.contract_code': '合约代码'
+  'page.localeProvider.contract_code': '合约代码',
+  'page.localeProvider.txhash': '交易哈希',
+  'page.localeProvider.blockid': '块高',
+  'page.localeProvider.blocktime': '块龄',
+  'page.localeProvider.from': '发送方',
+  'page.localeProvider.to': '接收方',
+  'page.localeProvider.contract': '合约'
 
 }

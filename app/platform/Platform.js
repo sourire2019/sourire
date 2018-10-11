@@ -35,7 +35,7 @@ function getStatus (baseurl) {
 
 function getnetInfo (baseurl, path) {
   try {
-    	let urlre = url.resolve(baseurl, path)
+  	let urlre = url.resolve(baseurl, path)
     let res = request('GET', urlre)
     let resultdata = res.getBody().toString()
     return resultdata

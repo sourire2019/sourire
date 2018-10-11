@@ -172,7 +172,7 @@ export class ChartStats extends Component {
           </NavLink>
           </NavItem>
         );break;
-        default : chartstatus.push(null); break;
+        default : break;
       }
     }
     return (

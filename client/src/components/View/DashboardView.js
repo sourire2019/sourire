@@ -145,7 +145,7 @@ export class DashboardView extends Component {
                     />
                   
                 </div>); break;
-        default: status.push(null); break;
+        default:  break;
       }
     }
 
@@ -169,7 +169,7 @@ export class DashboardView extends Component {
             </Card>
           </Col>
         ); break;
-        default: middle.push(null); break;
+        default: break;
       }
     }
 
@@ -197,7 +197,7 @@ export class DashboardView extends Component {
             </Col>
           </Row>
         ); break;
-        default: dashboardview.push(null); break;
+        default: break;
       }
 
     }

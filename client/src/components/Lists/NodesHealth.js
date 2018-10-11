@@ -44,7 +44,7 @@ class NodesHealth extends Component {
             Cell: row => <Badge color='success'>{row.value}</Badge>
           }
         ); break
-        default : columnHeaders.push(null); break
+        default : break
       }
     }
     return (

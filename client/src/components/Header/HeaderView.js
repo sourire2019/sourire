@@ -339,7 +339,7 @@ export class HeaderView extends Component {
                     
                   </NavLink>
                 </li> ); break;
-        default: header.push(null); break;
+        default:  break;
       }
     }
     return (

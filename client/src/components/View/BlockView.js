@@ -169,7 +169,7 @@ class BlockView extends Component {
             </td>
           </tr>
         );break;
-        default: blockview.push(null); break;
+        default: break;
 
       }
     }

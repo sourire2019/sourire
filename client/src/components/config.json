@@ -18,7 +18,7 @@
 		"blockshour", "blocksmin", "txhour", "txmin"
 	],
 	"transactionsview" : [
-		"creator", "channelname", "txid", "type", "contract" , "timestamp"
+		"creator", "channelname", "txid", "type", "contract" , "timestamp", "txhash", "blockid", "blocktime", "from", "to", "status"
 	],
 	"transactiondetails" : [
 		"transactionid" , "validationcode" , "payloadproposalhash", "creatoemsp", "endoser", "contractnsme", "type", "time"
@@ -40,5 +40,14 @@
 	],
 	"contractview" : [
 		"contractname", "channelname", "path", "transactions_count", "version", "name", "balance", "txcount", "creator", "creator_hash", "contract_code"
-	]
+	],
+	"jsta" : {
+		"load_logo" : "load_jsta.png",
+		"logo" : "jsta.png"
+	},
+	"trustchain" : {
+		"load_logo" : "load_trustchain.png",
+		"logo" : "trustchain.png"
+	},
+	"logo" : "jsta"
 }  

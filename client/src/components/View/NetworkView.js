@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 import Nodes from '../Lists/Nodes'
 import Card from 'material-ui/Card'
 import { IntlProvider } from 'react-intl'
-
+// import { RealTimeTradeChart } from './Timtrade'
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -48,6 +48,7 @@ export class NetworkView extends Component {
           messages={this.props.appLocale.messages}
           formats={this.props.appLocale.formats}
         >
+          // <RealTimeTradeChart />
           <div className='view-display'>
             <Card className='table-card'>
               <Nodes nodeList={this.props.nodeList} />

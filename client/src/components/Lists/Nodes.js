@@ -39,7 +39,7 @@ const Nodes = ({ nodeList }) => {
           filterAll: true
         }
       ); break
-      default : columnHeaders.push(null); break
+      default : break
     }
   }
   return (

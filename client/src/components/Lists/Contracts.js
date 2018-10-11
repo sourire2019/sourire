@@ -21,7 +21,6 @@ class Contracts extends Component {
       sourceDialog: false,
       contract: {}
     };
-    console.log(456,props);
   }
 
   handleDialogOpen = () => {
@@ -246,7 +245,7 @@ class Contracts extends Component {
                 filterAll: true
               }
             ); break;
-            default : columnHeaders.push(null); break;
+            default : break;
 
         }
     }
