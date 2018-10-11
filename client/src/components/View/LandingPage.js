@@ -9,6 +9,9 @@ import Logo from '../../static/images/logo.png'
 import { chartOperations } from '../../state/redux/charts/'
 import { tableOperations } from '../../state/redux/tables/'
 import { chartSelectors } from '../../state/redux/charts/'
+import config from '../config.json'
+
+var src = require("../../static.images/" + config[config.logo].loadlogo);
 
 const {
   blockPerHour,
@@ -93,7 +96,7 @@ export class LandingPage extends Component {
     return (
       <div className='landingBackground'>
         <div className='landing' >
-          <img src={Logo} style={this.state.logoStyle} alt='TrustChain Logo' />
+          <img src={src} style={this.state.logoStyle} alt={config.logo} />
           <Slider {...this.state.settings}>
             <div><h3>ACCESSING THE NETWORK</h3></div>
             <div><h3>CONNECTING TO CHANNEL</h3></div>

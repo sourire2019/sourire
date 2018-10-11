@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import { Timeline, TimelineEvent ,TimelineComponent } from 'react-event-timeline';
+import { Timeline, TimelineEvent } from 'react-event-timeline';
 import Dialog from 'material-ui/Dialog';
 import FontAwesome from 'react-fontawesome';
 import Typography from 'material-ui/Typography';
@@ -12,10 +12,6 @@ import Timeago from 'react-timeago';
 import find from 'lodash/find';
 import BlockView from '../View/BlockView';
 import blockOpen from '../../static/images/blockOpen.png';
-import {
-  Row,
-  Col
-} from 'reactstrap';
 import {FormattedMessage} from 'react-intl';
 import { IntlProvider } from 'react-intl';
 
@@ -43,30 +39,13 @@ class TimelineStream extends Component {
     this.setState({ dialogOpenBlockHash: false });
   };
 
-  handlewheel = (event) =>{
-    const ev = window.event || event;
-    ev.preventDefault();  
-            //设置鼠标滚轮滚动时屏幕滚动条的移动步长  
-            var step = 20;  
-            if(ev.deltaY < 0){ 
-                //向上滚动鼠标滚轮，屏幕滚动条左移  
-                document.getElementsByClassName("scrollable-card")[0].scrollLeft -= step;
-            } else {  
-                //向下滚动鼠标滚轮，屏幕滚动条右移   
-                 document.getElementsByClassName("scrollable-card")[0].scrollLeft += step;
-            }  
-
-  }
 
   render() {
     return (
-      <div onWheel= {() =>this.handlewheel()}>
-        <div className="scrollable-card" >
-          
-          <div className= "scroll-div" >
+      <div>
+        <div className="scrollable-card">
+          <Timeline>
             {this.props.notifications.map(item => (
-              <div className= "scoll">
-
               <TimelineEvent
                 key={item.title}
                 title={item.title}
@@ -75,7 +54,7 @@ class TimelineStream extends Component {
                 container="card"
                 className="timeline-event"
                 titleStyle={{ fontWeight: "bold" }}
-                style={{ float : "left", width : "100%"}}
+                style={{ width: "65%" }}
                 cardHeaderStyle={{
                   backgroundColor: "#6283D0",
                   fontSize: "13pt"
@@ -129,9 +108,8 @@ class TimelineStream extends Component {
                   </Badge>
                 </h5>
               </TimelineEvent>
-              </div>
             ))}
-          </div>
+          </Timeline>
         </div>
         <Dialog
           open={this.state.dialogOpenBlockHash}

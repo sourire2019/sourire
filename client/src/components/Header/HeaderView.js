@@ -30,6 +30,7 @@ import {
 } from 'reactstrap';
 import Avatar from 'material-ui/Avatar';
 
+var src = require("../../static/images/" + config[config.logo].logo);
 const {
   blockPerHour,
   blockPerMin,
@@ -63,7 +64,6 @@ const styles = theme => ({
 export class HeaderView extends Component {
   constructor(props) {
     super(props);
-    console.log(123,props)
     this.state = {
       isOpen: false,
       notifyDrawer: false,
@@ -310,6 +310,43 @@ export class HeaderView extends Component {
                     
                   </NavLink>
                 </li> ); break;
+        case "select" : header.push(
+          <div>
+            <Select
+              className="channel-dropdown"
+              placeholder="Select Channel..."
+              required={true}
+              name="form-field-name"
+              isLoading={this.state.isLoading}
+              value={this.state.selectedChannel}
+              onChange={this.handleChange}
+              options={this.state.channels}
+            />
+          </div>
+        ); break; 
+        case "language" : header.push(
+          <div  className="admin-buttons theme-switch" onClick= {() => {
+          this.props.onChange(this.state.value); this.val(this.state.value)}}>
+            <FontAwesome name="language" className="langIcon" />
+          </div>
+        ); break;
+        case "theme" : header.push(
+          <div className="admin-buttons theme-switch">
+            <FontAwesome name="sun-o" className="sunIcon" />
+            <Switch
+              onChange={() => this.handleThemeChange()}
+              checked={themeIcon}
+            />
+            <FontAwesome name="moon-o" className="moonIcon" />
+          </div>
+        ); break;
+        case "github" : header.push(
+          <div  className="admin-buttons theme-switch" >
+            <NavbarBrand href="https://github.com/DSiSc/justitia">
+              <FontAwesome name="github" className="github" />
+            </NavbarBrand>
+          </div>
+        ); break;
         default:  break;
       }
     }
@@ -407,46 +444,20 @@ export class HeaderView extends Component {
             <Navbar className="navbar-header" expand="md" fixed="top">
               <NavbarBrand href="/">
                 {" "}
-                <img src={Logo} className="logo" alt="Trustchain Logo" />
+                <img src={src} className="logo" alt={config.logo} />
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
-
-              {header}
-              <div>
-                  <Select
-                    className="channel-dropdown"
-                    placeholder="Select Channel..."
-                    required={true}
-                    name="form-field-name"
-                    isLoading={this.state.isLoading}
-                    value={this.state.selectedChannel}
-                    onChange={this.handleChange}
-                    options={this.state.channels}
-                  />
-                </div>
-                <div  className="admin-buttons theme-switch" onClick= {() => {
-                this.props.onChange(this.state.value); this.val(this.state.value)}}>
-                  <FontAwesome name="language" className="langIcon" />
-                </div>
-                <div className="admin-buttons theme-switch">
-                  <FontAwesome name="sun-o" className="sunIcon" />
-                  <Switch
-                    onChange={() => this.handleThemeChange()}
-                    checked={themeIcon}
-                  />
-                  <FontAwesome name="moon-o" className="moonIcon" />
-                </div>
-                <div  className="admin-buttons theme-switch" >
-                  <NavbarBrand href="https://github.com/DSiSc/justitia">
-                    <FontAwesome name="github" className="github" />
-                  </NavbarBrand>
-                </div>
+                <Row>
+                  {header}
+                </Row>
+                <Row>
+                  {status}
+                </Row>
+                
+                
               </Nav>
             </Navbar>
-            <div>
-              {status}
-            </div>
             <Drawer
               anchor="right"
               open={this.state.adminDrawer}

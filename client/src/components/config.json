@@ -1,15 +1,15 @@
 {
 	"header" : [
-		"dashboardview", "blocksview", "networkview", "transactionsview" , "channelsview" , "contractview"
+		"dashboardview", "blocksview", "networkview", "transactionsview" , "channelsview" , "contractview" , "select", "language", "theme", "github"
 	],
 	"dashboardview" : [
-		"dashboardview_middle","timelinestream"
+		"dashboardview_middle","nodeshealth"
 	],
 	"status" : [
 		"blocks" , "transactions" , "nodes", "contracts"
 	],
 	"dashboardview_middle" : [
-		"nodeshealth" , "chartstatus"
+		"timelinestream" , "chartstatus"
 	],
 	"nodeshealth" : [
 		"nodename" , "status" 
@@ -42,11 +42,11 @@
 		"contractname", "channelname", "path", "transactions_count", "version", "name", "balance", "txcount", "creator", "creator_hash", "contract_code"
 	],
 	"jsta" : {
-		"load_logo" : "load_jsta.png",
+		"loadlogo" : "load_jsta.png",
 		"logo" : "jsta.png"
 	},
 	"trustchain" : {
-		"load_logo" : "load_trustchain.png",
+		"loadlogo" : "load_trustchain.png",
 		"logo" : "trustchain.png"
 	},
 	"logo" : "jsta"

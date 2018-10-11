@@ -88,6 +88,13 @@ export class DashboardView extends Component {
             </Card>
           </Col>
         ); break;
+        case "timelinestream" : middle.push(
+          <Col sm={(12/config.dashboardview_middle.length)}>
+            <Card className="dash-section">
+              <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
+            </Card>
+          </Col>
+        ); break;
         default: break;
       }
     }
@@ -104,6 +111,17 @@ export class DashboardView extends Component {
             <Col sm="12">
               <Card className="dash-section">
                 <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
+              </Card>
+            </Col>
+          </Row>
+        ); break;
+        case "nodeshealth" : dashboardview.push(
+          <Row>
+            <Col sm="12">
+              <Card className="dash-section">
+                <NodesHealth
+                  nodeStatus={this.props.nodeStatus}
+                />
               </Card>
             </Col>
           </Row>
