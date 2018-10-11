@@ -39,6 +39,9 @@ class Explorer {
       let platform = await PlatformBuilder.build(pltfrm)
       await routes(this.app, pltfrm, platform)
       await timer.start(platform, this.persistence, broadcaster)
+      if (pltfrm === 'justitia') {
+        //todo
+      }
       if (pltfrm === 'tendermint') {
         console.log('this is tendermint part')
         var client = new TenderClient(platform, this.persistence, broadcaster)
