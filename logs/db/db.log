@@ -34651,3 +34651,840 @@
           left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
           group by 1
           order by 1 
+[2018-10-11 17:06:57.846] [INFO] pgservice - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-11 17:06:58.604] [DEBUG] pgservice -  the getRowByPkOne sql select count(1) as c from channel where name='chain-fN90fA' and genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:06:58.605] [DEBUG] pgservice - update sql is :  update channel set blocks='5',trans='10',channel_hash='chain-fN90fA' where name='chain-fN90fA'and genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:06:58.606] [DEBUG] pgservice -  the getRowByPkOne sql select count(1) as c from node where genesis_block_hash='chain-fN90fA' and requests='192.167.10.2:26656' 
+[2018-10-11 17:06:58.607] [DEBUG] pgservice -  the getRowByPkOne sql select count(1) as c from node where genesis_block_hash='chain-fN90fA' and requests='192.167.10.4:26656' 
+[2018-10-11 17:06:58.612] [DEBUG] pgservice -  the getRowByPkOne sql select count(1) as c from node where genesis_block_hash='chain-fN90fA' and requests='192.167.10.3:26656' 
+[2018-10-11 17:06:58.613] [DEBUG] pgservice -  the getRowByPkOne sql select count(1) as c from node where genesis_block_hash='chain-fN90fA' and requests='192.167.10.5:26656' 
+[2018-10-11 17:06:58.614] [DEBUG] pgservice -  the getRowsBySQlCase select max(blocknum) as blocknum from blocks  where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:06:59.248] [DEBUG] pgservice - --------------------------UPDATE----------------------------
+[2018-10-11 17:06:59.248] [DEBUG] pgservice -  update result : undefined
+[2018-10-11 17:06:59.248] [DEBUG] pgservice - -----------------------------------------------------------------
+
+
+[2018-10-11 17:07:02.932] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:07:02.942] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:07:02.947] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:07:02.951] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:07:02.957] [DEBUG] pgservice -  the getRowsBySQlNoCondtion  select c.id as id,c.name as channelname,c.blocks as blocks ,c.genesis_block_hash as genesis_block_hash,c.trans as transactions,c.createdt as createdat,c.channel_hash as channel_hash from channel c
+        group by c.id ,c.name ,c.blocks  ,c.trans ,c.createdt ,c.channel_hash,c.genesis_block_hash order by c.name 
+[2018-10-11 17:07:02.962] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:07:02.965] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:07:02.974] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:07:02.978] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:07:02.981] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:07:02.984] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:07:02.989] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:07:02.993] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:07:03.008] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:07:03.014] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.148] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:08:03.151] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:08:03.155] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.156] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:08:03.157] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:08:03.159] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:08:03.165] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:08:03.165] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:08:03.166] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:08:03.167] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:08:03.175] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:08:03.179] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:08:03.182] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.187] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.196] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:08:03.201] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.208] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:08:03.230] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.162] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:09:03.165] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:09:03.168] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.169] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:09:03.171] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:09:03.172] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:09:03.173] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:09:03.174] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:09:03.175] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:09:03.176] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:09:03.194] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:09:03.196] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:09:03.198] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.201] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.216] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:09:03.218] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.221] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:09:03.250] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.147] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:10:03.151] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:10:03.156] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.159] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:03.163] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:03.165] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:03.168] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:03.169] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:03.178] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:03.179] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:10:03.183] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:03.187] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:10:03.191] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.195] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.202] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:10:03.217] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.220] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:03.240] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:05.301] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:10:05.525] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:10:05.535] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:05.556] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:05.567] [DEBUG] pgservice -  the getRowsBySQlNoCondtion  select c.id as id,c.name as channelname,c.blocks as blocks ,c.genesis_block_hash as genesis_block_hash,c.trans as transactions,c.createdt as createdat,c.channel_hash as channel_hash from channel c
+        group by c.id ,c.name ,c.blocks  ,c.trans ,c.createdt ,c.channel_hash,c.genesis_block_hash order by c.name 
+[2018-10-11 17:10:05.585] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:05.588] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:05.603] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:05.625] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:05.627] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:10:05.632] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:10:05.649] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:05.654] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:05.669] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:05.676] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:20.248] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:10:20.386] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:10:20.396] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:20.415] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:20.422] [DEBUG] pgservice -  the getRowsBySQlNoCondtion  select c.id as id,c.name as channelname,c.blocks as blocks ,c.genesis_block_hash as genesis_block_hash,c.trans as transactions,c.createdt as createdat,c.channel_hash as channel_hash from channel c
+        group by c.id ,c.name ,c.blocks  ,c.trans ,c.createdt ,c.channel_hash,c.genesis_block_hash order by c.name 
+[2018-10-11 17:10:20.424] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:20.436] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:20.443] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:20.447] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:20.450] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:10:20.467] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:10:20.473] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:10:20.476] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:10:20.494] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:10:20.497] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.663] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:11:20.666] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:11:20.670] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.673] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:20.675] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:11:20.676] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:20.677] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:20.678] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:20.691] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:20.691] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:11:20.693] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:11:20.695] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:11:20.701] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.703] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.722] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:11:20.723] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.725] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:20.755] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:50.728] [DEBUG] pgservice -  the getRowsBySQlQuery  select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = 'chain-fN90fA' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='chain-fN90fA' and blocknum >= 0
+         order by blocks.blocknum desc
+[2018-10-11 17:11:50.733] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1 hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join BLOCKS on date_trunc('min', BLOCKS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1  
+[2018-10-11 17:11:50.736] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join BLOCKS on date_trunc('hour', BLOCKS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:50.809] [DEBUG] pgservice -  the getRowsBySQlQuery  select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:50.815] [DEBUG] pgservice -  the getRowsBySQlNoCondtion  select c.id as id,c.name as channelname,c.blocks as blocks ,c.genesis_block_hash as genesis_block_hash,c.trans as transactions,c.createdt as createdat,c.channel_hash as channel_hash from channel c
+        group by c.id ,c.name ,c.blocks  ,c.trans ,c.createdt ,c.channel_hash,c.genesis_block_hash order by c.name 
+[2018-10-11 17:11:50.821] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from contracts where genesis_block_hash='chain-fN90fA' 
+[2018-10-11 17:11:50.826] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:50.831] [DEBUG] pgservice -  the getRowsBySQlNoCondtion select channel.name as channelname,c.requests as requests,c.genesis_block_hash as genesis_block_hash ,c.server_hostname as server_hostname from node as c inner join  channel on c.genesis_block_hash=channel.genesis_block_hash where c.genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:50.834] [DEBUG] pgservice -  the getRowsBySQlQuery  select count(creator_msp_id), creator_msp_id
+      from transactions
+      where genesis_block_hash ='chain-fN90fA'
+      group by  creator_msp_id
+[2018-10-11 17:11:50.839] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from transactions where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:50.841] [DEBUG] pgservice -  the getRowsBySQlQuery  select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= 0 and t.id >= 0 and
+        t.genesis_block_hash = 'chain-fN90fA'  order by  t.id desc
+[2018-10-11 17:11:50.849] [DEBUG] pgservice -  the getRowsBySQlQuery  with hours as (
+            select generate_series(
+              date_trunc('hour', now()) - '1day'::interval,
+              date_trunc('hour', now()),
+              '1 hour'::interval
+            ) as datetime
+          )
+          select
+            hours.datetime,
+            count(createdt)
+          from hours
+          left join TRANSACTIONS on date_trunc('hour', TRANSACTIONS.createdt) = hours.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:50.854] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from blocks where genesis_block_hash='chain-fN90fA'
+[2018-10-11 17:11:50.857] [DEBUG] pgservice -  the getRowsBySQlQuery  with minutes as (
+            select generate_series(
+              date_trunc('min', now()) - '1hour'::interval,
+              date_trunc('min', now()),
+              '1 min'::interval
+            ) as datetime
+          )
+          select
+            minutes.datetime,
+            count(createdt)
+          from minutes
+          left join TRANSACTIONS on date_trunc('min', TRANSACTIONS.createdt) = minutes.datetime and genesis_block_hash ='chain-fN90fA'
+          group by 1
+          order by 1 
+[2018-10-11 17:11:50.861] [DEBUG] pgservice -  the getRowsBySQlCase select count(1) c from node where genesis_block_hash='chain-fN90fA' 
