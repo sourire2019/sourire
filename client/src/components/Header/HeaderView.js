@@ -23,7 +23,12 @@ import {chartOperations, chartSelectors} from "../../state/redux/charts/";
 import {tableOperations, tableSelectors} from "../../state/redux/tables/";
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import config  from '../config.json'
+import config  from '../config.json';
+import {
+  Row,
+  Col
+} from 'reactstrap';
+import Avatar from 'material-ui/Avatar';
 
 const {
   blockPerHour,
@@ -38,7 +43,7 @@ const {
 
 const {blockList, contractList, nodeList, transactionList} = tableOperations;
 
-const {currentChannelSelector} = chartSelectors;
+const {currentChannelSelector, dashStatsSelector} = chartSelectors;
 const {channelsSelector} = tableSelectors;
 
 const styles = theme => ({
@@ -58,6 +63,7 @@ const styles = theme => ({
 export class HeaderView extends Component {
   constructor(props) {
     super(props);
+    console.log(123,props)
     this.state = {
       isOpen: false,
       notifyDrawer: false,
@@ -111,10 +117,6 @@ export class HeaderView extends Component {
       });
     });
     }
-    
-    
-
-
     this.setState({
       channels: arr,
       isLoading: false,
@@ -138,6 +140,7 @@ export class HeaderView extends Component {
       this.props.getTransactionPerHour(currentChannel),
       this.props.getTransactionPerMin(currentChannel)
     ]);
+    this.dashStats = this.props.getDashStats(currentChannel);
     this.handleClose();
   }
 
@@ -202,38 +205,6 @@ export class HeaderView extends Component {
     this.setState({modalOpen: false});
   };
 
-  handleDrawOpen = drawer => {
-    switch (drawer) {
-      case "notifyDrawer": {
-        this.setState({notifyDrawer: true});
-        this.setState({notifyCount: 0});
-        break;
-      }
-      case "adminDrawer": {
-        this.setState({adminDrawer: true});
-        break;
-      }
-      default: {
-        break;
-      }
-    }
-  };
-
-  handleDrawClose = drawer => {
-    switch (drawer) {
-      case "notifyDrawer": {
-        this.setState({notifyDrawer: false});
-        break;
-      }
-      case "adminDrawer": {
-        this.setState({adminDrawer: false});
-        break;
-      }
-      default: {
-        break;
-      }
-    }
-  };
 
   handleThemeChange = () => {
     const theme =
@@ -254,7 +225,7 @@ export class HeaderView extends Component {
       <Link to="/transactions" activeClassName="active" {...props} />
     );
 
-    const header = [];
+    const header = [], status = [];
     for (let i = 0; i < config.header.length; i++) {
       switch(config.header[i]) {
         case "dashboardview" : header.push(<li>
@@ -342,6 +313,88 @@ export class HeaderView extends Component {
         default:  break;
       }
     }
+    for (let i = 0; i < config.status.length; i++) {
+
+      switch(config.status[i]) {
+        case "blocks" : status.push(
+          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+            <Row>
+              <Col sm= "4">
+                <Avatar className="stat-avatar avatar-block" >
+                  <FontAwesome name="cube" />
+                </Avatar>
+              </Col>
+              <Col sm= "4">
+                <h1 className="stat-count">{this.props.dashStat.latestBlock}</h1>
+              </Col>
+            </Row>
+             <FormattedMessage
+              id="page.localeProvider.blocks"
+              defaultMessage="BLOCKS"
+              description="BLOCKS"
+              />
+            
+          </div>
+        ); break;
+        case "transactions" : status.push(
+          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+            <Row>
+              <Col sm= "4">
+                <Avatar className="stat-avatar avatar-tx" >
+                  <FontAwesome name="list-alt" />
+                </Avatar>
+              </Col>
+              <Col sm= "4">
+                <h1 className="stat-count">{this.props.dashStat.txCount}</h1>
+              </Col>
+            </Row>
+              <FormattedMessage
+              id="page.localeProvider.transactions"
+              defaultMessage="TRANSACTIONS"
+              description="TRANSACTIONS"
+              />
+            
+         </div>
+        ); break;
+        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+                  <Row>
+                    <Col sm= "4">
+                      <Avatar className="stat-avatar avatar-node" >
+                        <FontAwesome name="users" />
+                      </Avatar>
+                    </Col>
+                    <Col sm= "4">
+                      <h1 className="stat-count">{this.props.dashStat.nodeCount}</h1>
+                    </Col>
+                  </Row>
+                  <FormattedMessage
+                    id="page.localeProvider.nodes"
+                    defaultMessage="NODES"
+                    description="NODES"
+                    />
+                  
+                </div>); break;
+        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+                  <Row>
+                    <Col sm= "4">
+                      <Avatar className="stat-avatar avatar-contract" >
+                        <FontAwesome name="handshake-o" />
+                      </Avatar>
+                    </Col>
+                    <Col sm= "4">
+                      <h1 className="stat-count">{this.props.dashStat.contractCount}</h1>
+                    </Col>
+                  </Row>
+                  <FormattedMessage
+                    id="page.localeProvider.contracts"
+                    defaultMessage="CONTRACTS"
+                    description="CONTRACTS"
+                    />
+                  
+                </div>); break;
+        default:  break;
+      }
+    }
     return (
       <div>
         <Websocket
@@ -349,8 +402,6 @@ export class HeaderView extends Component {
           onMessage={this.handleData.bind(this)}
           reconnect={true}
         />
-         
-
         <Router>
           <div>
             <Navbar className="navbar-header" expand="md" fixed="top">
@@ -387,13 +438,15 @@ export class HeaderView extends Component {
                   <FontAwesome name="moon-o" className="moonIcon" />
                 </div>
                 <div  className="admin-buttons theme-switch" >
-                  <NavbarBrand href="https://github.com/trustchain-tech/blockchain-explorer">
+                  <NavbarBrand href="https://github.com/DSiSc/justitia">
                     <FontAwesome name="github" className="github" />
                   </NavbarBrand>
                 </div>
               </Nav>
             </Navbar>
-            
+            <div>
+              {status}
+            </div>
             <Drawer
               anchor="right"
               open={this.state.adminDrawer}
@@ -418,7 +471,8 @@ export class HeaderView extends Component {
               </Dialog>
           </div>
         </Router>
-        </div>
+        
+      </div>
     );
   }
 }
@@ -428,7 +482,8 @@ export default compose(
   connect(
     state => ({
       currentChannel: currentChannelSelector(state),
-      channels: channelsSelector(state)
+      channels: channelsSelector(state),
+      dashStat: dashStatsSelector(state)
     }),
     {
       getBlockList: blockList,

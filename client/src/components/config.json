@@ -3,7 +3,7 @@
 		"dashboardview", "blocksview", "networkview", "transactionsview" , "channelsview" , "contractview"
 	],
 	"dashboardview" : [
-		"status" , "dashboardview_middle","timelinestream"
+		"dashboardview_middle","timelinestream"
 	],
 	"status" : [
 		"blocks" , "transactions" , "nodes", "contracts"

@@ -134,7 +134,7 @@ class App extends Component {
         >
         <div>
           
-            <HeaderView refresh={this.refreshComponent.bind(this)} onChange={(index) => { this.onChange(index); }}/>
+            <HeaderView refresh={this.refreshComponent.bind(this)} onChange={(index) => { this.onChange(index); }} dashStat = {dashStats}/>
           
             <Main  appLocale= {getLocale(this.state.lang)}/>
             <div class="footerView">
