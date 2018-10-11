@@ -54,7 +54,9 @@ export class BlocksView extends Component {
                 blockList={this.props.blockList}
                 currentChannel={this.props.currentChannel}
                 transaction={this.props.transaction}
-                getTransaction={this.props.getTransaction} />
+                getTransaction={this.props.getTransaction} 
+                appLocale = {this.props.appLocale}
+                />
             </Card>
           </div>
         </IntlProvider>

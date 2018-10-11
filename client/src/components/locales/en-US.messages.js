@@ -43,6 +43,10 @@ export default {
   'page.localeProvider.time': 'Time',
   'page.localeProvider.transactionsl': 'Transactions',
   'page.localeProvider.blocksl': 'Blocks',
-  'page.localeProvider.details': 'Details'
+  'page.localeProvider.details': 'Details',
+  'page.localeProvider.name': 'Name',
+  'page.localeProvider.balance': 'Balance',
+  'page.localeProvider.creator_hash': 'Creator Hash',
+  'page.localeProvider.contract_code': 'Contract Code'
 
 }

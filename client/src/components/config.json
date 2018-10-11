@@ -30,12 +30,15 @@
 		"channelname", "id", "blocknumber", "createat", "number_of_transactions", "blockhash", "datahash", "prehash"
 	],
 	"networkview" : [
+		"network_map" , "network_table","nodename", "endpoint_url"
+	],
+	"network_table" : [
 		"nodename", "endpoint_url"
 	],
 	"channelsview" : [
 		"id", "channelname", "channelhash", "blocks", "transactions", "timestamp"
 	],
 	"contractview" : [
-		"contractname", "channelname", "path", "transactions_count", "version"
+		"contractname", "channelname", "path", "transactions_count", "version", "name", "balance", "txcount", "creator", "creator_hash", "contract_code"
 	]
 }  

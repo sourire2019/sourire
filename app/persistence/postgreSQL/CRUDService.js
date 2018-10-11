@@ -18,9 +18,14 @@ class CRUDService {
   }
 
   getTxList (channelName, blockNum, txid) {
-    let sqlTxList = ` select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= ${blockNum} and t.id >= ${txid} and
+    let sqlTxList = ` select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= ${blockNum} and t.id >= ${txid} and
         t.genesis_block_hash = '${channelName}'  order by  t.id desc`
     return sql.getRowsBySQlQuery(sqlTxList)
+  }
+
+  getContract (channelName) {
+    let sqlcontract = ` select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='${channelName}'`
+    return sql.getRowsBySQlQuery(sqlcontract)
   }
 
   getBlockAndTxList (channelName, blockNum) {

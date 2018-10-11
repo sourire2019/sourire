@@ -74,3 +74,15 @@ DROP INDEX IF EXISTS channel_channel_hash_idx;
 CREATE INDEX ON channel (channel_hash);
 
 ALTER TABLE IF EXISTS Transaction RENAME TO Transactions;
+
+ALTER TABLE contracts ADD COLUMN balance character varying(256) DEFAULT NULL,
+ADD COLUMN creator character varying(256) DEFAULT NULL,
+ADD COLUMN creator_hash character varying(256) DEFAULT NULL,
+ADD COLUMN contract_code character varying(256) DEFAULT NULL
+;
+
+ALTER TABLE transactions 
+ADD COLUMN blocktime character varying(256) DEFAULT NULL,
+ADD COLUMN transaction_from character varying(256) DEFAULT NULL,
+ADD COLUMN transaction_to character varying(256) DEFAULT NULL
+;

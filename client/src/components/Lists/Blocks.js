@@ -2,17 +2,18 @@
  *    SPDX-License-Identifier: Apache-2.0
  */
 
-import React, {Component} from "react";
-import Dialog from "material-ui/Dialog";
-import TransactionView from "../View/TransactionView";
-import BlockView from "../View/BlockView";
-import ReactTable from "react-table";
-import "react-table/react-table.css";
-import matchSorter from "match-sorter";
-import FontAwesome from "react-fontawesome";
-import find from "lodash/find";
-import {FormattedMessage} from 'react-intl';
+import React, {Component} from "react"
+import Dialog from "material-ui/Dialog"
+import TransactionView from "../View/TransactionView"
+import BlockView from "../View/BlockView"
+import ReactTable from "react-table"
+import "react-table/react-table.css"
+import matchSorter from "match-sorter"
+import FontAwesome from "react-fontawesome"
+import find from "lodash/find"
+import {FormattedMessage} from 'react-intl'
 import Transaction from "./Transaction"
+import { IntlProvider } from 'react-intl'
 import config from '../config.json'
 
 class Blocks extends Component {

@@ -43,6 +43,10 @@ export default {
   'page.localeProvider.time': '时间',
   'page.localeProvider.transactionsl': '交易',
   'page.localeProvider.blocksl': '块',
-  'page.localeProvider.details': '显示详情'
+  'page.localeProvider.details': '显示详情',
+  'page.localeProvider.name': '合约地址',
+  'page.localeProvider.balance': '余额',
+  'page.localeProvider.creator_hash': '合约来源',
+  'page.localeProvider.contract_code': '合约代码'
 
 }

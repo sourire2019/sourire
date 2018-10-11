@@ -35,19 +35,19 @@ const Routes = async function (app, pltfrm, platform) {
     res.send({ 'currentChannel': channelName })
   })
 
-  app.get('/api/contract/:channel', function (req, res) {
-    let channelName = req.params.channel
-    if (channelName) {
-      platform.getContract(channelName, async function (data) {
-        res.send({
-          status: 200,
-          contract: data
-        })
-      })
-    } else {
-      return requtil.invalidRequest(req, res)
-    }
-  })
+  // app.get('/api/contract/:channel', function (req, res) {
+  //   let channelName = req.params.channel
+  //   if (channelName) {
+  //     platform.getContract(channelName, async function (data) {
+  //       res.send({
+  //         status: 200,
+  //         contract: data
+  //       })
+  //     })
+  //   } else {
+  //     return requtil.invalidRequest(req, res)
+  //   }
+  // })
 
   // app.get("/api/nodesStatus/:channel", function (req, res) {
   //   let channelName = req.params.channel;

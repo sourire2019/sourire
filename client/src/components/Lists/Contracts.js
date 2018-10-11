@@ -21,6 +21,7 @@ class Contracts extends Component {
       sourceDialog: false,
       contract: {}
     };
+    console.log(456,props);
   }
 
   handleDialogOpen = () => {
@@ -137,14 +138,121 @@ class Contracts extends Component {
                 filterAll: true
               }
             ); break;
-
+            case "name" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.name"
+                            defaultMessage='name'
+                            description='name'
+                            /> ,
+                accessor: 'name',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['name'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "balance" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.balance"
+                            defaultMessage='balance'
+                            description='balance'
+                            /> ,
+                accessor: 'balance',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['balance'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "txcount" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.txcount"
+                            defaultMessage='txcount'
+                            description='txcount'
+                            /> ,
+                accessor: 'txcount',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['txcount'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "creator" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.creator"
+                            defaultMessage='creator'
+                            description='creator'
+                            /> ,
+                accessor: 'creator',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['creator'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "creator_hash" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.creator_hash"
+                            defaultMessage='Creator Hash'
+                            description='Creator Hash'
+                            /> ,
+                accessor: 'creator_hash',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['creator_hash'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
+            case "contract_code" : columnHeaders.push(
+              {
+                Header:<FormattedMessage
+                            id="page.localeProvider.contract_code"
+                            defaultMessage='Contract Code'
+                            description='Contract Code'
+                            /> ,
+                accessor: 'contract_code',
+                filterMethod: (filter, rows) =>
+                  matchSorter(
+                    rows,
+                    filter.value,
+                    { keys: ['contract_code'] },
+                    { threshold: matchSorter.rankings.SIMPLEMATCH }
+                  ),
+                filterAll: true
+              }
+            ); break;
             default : columnHeaders.push(null); break;
 
         }
     }
     return columnHeaders;
   }
-
+  
   render() {
     return (
       <div > 

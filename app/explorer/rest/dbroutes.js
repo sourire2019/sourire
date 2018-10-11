@@ -234,6 +234,27 @@ const dbroutes = (app, persist) => {
       return requtil.invalidRequest(req, res)
     }
   })
+
+  app.get('/api/contract/:channel', function (req, res) {
+    let channelName = req.params.channel
+    if (channelName) {
+      crudService.getContract(channelName).then(rows => {
+        if (rows) {
+          res.send({
+            status: 200,
+            contract: rows
+          })
+        } else {
+          res.send({
+            status : 200,
+            contract : {}
+          })
+        }
+      })
+    } else {
+      return requtil.invalidRequest(req, res)
+    }
+  })
 }
 
 module.exports = dbroutes
