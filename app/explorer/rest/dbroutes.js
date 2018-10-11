@@ -247,7 +247,7 @@ const dbroutes = (app, persist) => {
         } else {
           res.send({
             status : 200,
-            contract : {}
+            contract : []
           })
         }
       })

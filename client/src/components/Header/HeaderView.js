@@ -386,6 +386,11 @@ export class HeaderView extends Component {
                   />
                   <FontAwesome name="moon-o" className="moonIcon" />
                 </div>
+                <div  className="admin-buttons theme-switch" >
+                  <NavbarBrand href="https://github.com/trustchain-tech/blockchain-explorer">
+                    <FontAwesome name="github" className="github" />
+                  </NavbarBrand>
+                </div>
               </Nav>
             </Navbar>
             

@@ -88,88 +88,11 @@ const option = {
     label: {
       emphasis: {
         show: false,
-      },
-    },
-    itemStyle: {
-      normal: {
-        areaColor: '#022548',
-        borderColor: '#0DABEA',
-      },
-      emphasis: {
-        areaColor: '#011B34',
-      },
-    },
-  },
-  series: [
-    {
-      type: 'lines',
-      zlevel: 2,
-      effect: {
-        show: true,
-        period: 6,
-        trailLength: 0.1,
-        color: '#FFB973',
-        symbol: planePath,
-        symbolSize: 5,
-      },
-      lineStyle: {
-        normal: {
-          color: '#FFB973',
-          width: 0,
-          opacity: 0.2,
-          curveness: 0,
-        },
-      },
-      data: formtGCData(geoCoordMap, data, '中国 · 浙江兰溪', true),
-    },
-    {
-      type: 'lines',
-      zlevel: 2,
-      effect: {
-        show: true,
-        period: 6,
-        trailLength: 0.1,
-        color: '#9CE6FE',
-        symbol: planePath,
-        symbolSize: 5,
-      },
-      lineStyle: {
-        normal: {
-          color: '#65A2C2',
-          width: 0,
-          opacity: 0.4,
-          curveness: 0,
-        },
-      },
-      data: formtGCData(geoCoordMap, data, '中国 · 浙江兰溪', false),
-    },
-    {
-      type: 'effectScatter',
-      coordinateSystem: 'geo',
-      zlevel: 2,
-      rippleEffect: {
-        period: 4,
-        scale: 4,
-        brushType: 'stroke',
-      },
-      label: {
-        normal: {
-          show: false,
-          position: 'right',
-          formatter: '{b}',
-        },
-      },
-      symbolSize: 5,
-      itemStyle: {
-        normal: {
-          color: '#fff',
-          borderColor: 'gold',
-        },
-      },
-      data: formtVData(geoCoordMap, data, '中国 · 浙江兰溪'),
-    },
-  ],
-};
+      }
+    }
+  }
+
+}
 
 
 export default class RealTimeTradeChart extends Component {
@@ -210,7 +133,7 @@ export default class RealTimeTradeChart extends Component {
           <p style={styles.subTitle}>今日交易额</p>
           <p style={styles.sum}>16828234</p>
         </div>
-        <ReactEcharts option={option} style={{ height: '500px' }} />
+        <ReactEcharts option={option} style={{ height: '300px' }} />
       </IceContainer>
     );
   }
@@ -229,7 +152,7 @@ const styles = {
     margin: '15px 0 25px',
   },
   subTitle: {
-    width: '200px',
+    width: '100px',
     lineHeight: '24px',
     margin: '0 auto',
     color: '#F8BC38',

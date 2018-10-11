@@ -32,8 +32,11 @@ class Contracts extends Component {
   };
 
   sourceDialogOpen = contract => {
+
     this.setState({ contract: contract });
     this.setState({ sourceDialog: true });
+
+    
   };
 
   sourceDialogClose = () => {
