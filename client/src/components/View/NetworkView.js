@@ -48,7 +48,7 @@ export class NetworkView extends Component {
           messages={this.props.appLocale.messages}
           formats={this.props.appLocale.formats}
         >
-          <div>
+          <div className='view-display'>
             <RealTimeTradeChart />
             <div className='view-display'>
               <Card className='table-card'>

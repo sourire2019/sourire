@@ -355,7 +355,7 @@ export default class RealTimeTradeChart extends Component {
           <p style={styles.subTitle}>今日交易额</p>
           <p style={styles.sum}>16828234,00亿元</p>
         </div>
-        <ReactEcharts option={option} style={{ height: '500px' }} />
+        <ReactEcharts option={option} style={{ height: '100px' }} />
       </IceContainer>
     );
   }
@@ -367,28 +367,28 @@ const styles = {
     color: '#fff',
   },
   title: {
-    fontSize: '32px',
+    fontSize: '8px',
   },
   time: {
-    fontSize: '18px',
-    margin: '15px 0 25px',
+    fontSize: '3px',
+    margin: '3px 0 5px',
   },
   subTitle: {
-    width: '200px',
-    lineHeight: '24px',
+    width: '40px',
+    lineHeight: '4px',
     margin: '0 auto',
     color: '#F8BC38',
     backgroundColor: '#1A484E',
-    fontSize: '14px',
+    fontSize: '3px',
   },
   sum: {
-    margin: '15px 0 0',
-    lineHeight: '30px',
-    fontSize: '38px',
+    margin: '3px 0 0',
+    lineHeight: '6px',
+    fontSize: '7px',
     color: 'rgb(255, 246, 0)',
     fontWeight: 'bold',
   },
   timeIcon: {
-    marginRight: '8px',
+    marginRight: '2px',
   },
 };
