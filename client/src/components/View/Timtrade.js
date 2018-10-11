@@ -345,15 +345,13 @@ export default class RealTimeTradeChart extends Component {
 
   render() {
     return (
-      <IceContainer style={{ background: '#000' }}>
+      <IceContainer style={{  }}>
         <div style={styles.info}>
           <h1 style={styles.title}>某某某品牌 电商实时状况</h1>
           <p style={styles.time}>
             <Icon type="time" size="small" style={styles.timeIcon} />
             {this.state.date}
           </p>
-          <p style={styles.subTitle}>今日交易额</p>
-          <p style={styles.sum}>16828234,00亿元</p>
         </div>
         <ReactEcharts option={option} style={{ height: '100px' }} />
       </IceContainer>
