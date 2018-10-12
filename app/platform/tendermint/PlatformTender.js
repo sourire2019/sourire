@@ -119,6 +119,24 @@ class PlatformTender {
       cb([])
     }
   }
+
+  getJustNode (res) {
+    try {
+      let url = 'http://127.0.0.1:47768'
+      
+      var result = request('POST', url, {
+         json: {"jsonrpc":"2.0","method":"net_channelInfo","params":[],"id":1},
+      });
+
+      let data = JSON.parse(result.getBody().toString())
+      res.send(data)
+      // return Platform.getnetInfo(this.baseurl,path);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
 }
 
 module.exports = PlatformTender

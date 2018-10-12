@@ -22,6 +22,7 @@ const Routes = async function (app, pltfrm, platform) {
 
   app.get('/api/channels', function (req, res) {
     res.setHeader('Content-Type', 'application/json')
+
     platform.getChannels(res)
   })
 
