@@ -95,15 +95,18 @@ export class LandingPage extends Component {
       )
     }
     return (
-      <div className='landingBackground'>
-        <div className='landing' >
-          <img src={src} style={this.state.logoStyle} alt={config.logo} />
-          <Slider {...this.state.settings}>
-            <div><h3>ACCESSING THE NETWORK</h3></div>
-            <div><h3>CONNECTING TO CHANNEL</h3></div>
-            <div><h3>LOADING BLOCKS</h3></div>
-          </Slider>
+      <div id="loading-screen" class="container">
+        <div class="cube">
+          <div class="sides">
+            <div class="top"></div>
+            <div class="right"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
         </div>
+        <div class="text">Downloading Dependencies...</div>
       </div>
     )
   }
