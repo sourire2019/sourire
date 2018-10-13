@@ -11,7 +11,8 @@ import { tableOperations } from '../../state/redux/tables/'
 import { chartSelectors } from '../../state/redux/charts/'
 import config from '../config.json'
 
-var src = require("../../static.images/" + config[config.logo].loadlogo);
+const landlogo = config[config.logo].loadlogo
+var src = require("../../static/images/" + landlogo);
 
 const {
   blockPerHour,

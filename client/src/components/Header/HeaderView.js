@@ -29,8 +29,9 @@ import {
   Col
 } from 'reactstrap';
 import Avatar from 'material-ui/Avatar';
+const logo = config[config.logo].logo;
+var src = require("../../static/images/" + logo );
 
-var src = require("../../static/images/" + config[config.logo].logo);
 const {
   blockPerHour,
   blockPerMin,
@@ -440,24 +441,19 @@ export class HeaderView extends Component {
           reconnect={true}
         />
         <Router>
-          <div>
-            <Navbar className="navbar-header" expand="md" fixed="top">
+          <div className="navbar-header" expand="md" fixed="top">
+            <Navbar >
               <NavbarBrand href="/">
                 {" "}
                 <img src={src} className="logo" alt={config.logo} />
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
-                <Row>
-                  {header}
-                </Row>
-                <Row>
-                  {status}
-                </Row>
-                
-                
+                {header}
               </Nav>
+              
             </Navbar>
+              {status}
             <Drawer
               anchor="right"
               open={this.state.adminDrawer}
