@@ -28,6 +28,10 @@ class MetricService {
     return sql.getRowsBySQlCase(`select count(1) c from blocks where genesis_block_hash='${channelName}'`)
   }
 
+  getNChannelCount (channelName) {
+    return sql.getRowsBySQlCase(`select count(1) c from channel where genesis_block_hash='${channelName}' `)
+  }
+
   getLastBlock (channelName) {
     let sqlLastBlock = ` select blocks.blocknum from blocks where blocks.genesis_block_hash ='${channelName}'order by id DESC limit 1`
     return sql.getRowByPkOne(sqlLastBlock)
@@ -86,8 +90,10 @@ class MetricService {
     var nodeCount = await this.getNodelistCount(channelName)
     if (!nodeCount) nodeCount = 0
     nodeCount.c = nodeCount.c ? nodeCount.c : 0
-
-    return { 'contractCount': contractCount.c, 'txCount': txCount.c, 'latestBlock': blockCount.c, 'nodeCount': nodeCount.c }
+    var channelCount = await this.getChannelCount(channelName)
+    if (!channelCount) channelCount = 0
+    channelCount.c = channelCount.c ? channelCount.c : 0
+    return { 'contractCount': contractCount.c, 'txCount': txCount.c, 'latestBlock': blockCount.c, 'nodeCount': nodeCount.c, 'channelCount' : channelCount.c }
   }
 
   async getLastBlockNum (channelName, cb) {
