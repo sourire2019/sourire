@@ -1,5 +1,5 @@
 	{
 	"host": "localhost",
-	"port": "25657",
+	"port": "26657",
 	"plf": "tendermint"
 	}

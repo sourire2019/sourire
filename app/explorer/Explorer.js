@@ -41,7 +41,8 @@ class Explorer {
       await timer.start(platform, this.persistence, broadcaster)
       if (pltfrm === 'justitia') {
         //todo
-      }
+        console.log('this is justitia part')
+      } else {
       if (pltfrm === 'tendermint') {
         console.log('this is tendermint part')
         var client = new TenderClient(platform, this.persistence, broadcaster)
@@ -51,6 +52,7 @@ class Explorer {
       }
 
       client.connectserver()
+      }
     }
   }
   close () {

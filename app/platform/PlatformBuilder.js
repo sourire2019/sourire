@@ -4,6 +4,7 @@
 
 var PlatformTender = require('./tendermint/PlatformTender.js')
 var PlatformBurrow = require('./burrow/PlatformBurrow.js')
+var PlatformJustitia = require('./justitia/PlatformJustitia.js')
 
 class PlatformBuilder {
   static async build (pltfrm) {
@@ -12,6 +13,9 @@ class PlatformBuilder {
       return platform
     } else if (pltfrm === 'burrow') {
       	platform = new PlatformBurrow()
+      return platform
+    } else if (pltfrm === 'justitia') {
+        platform = new PlatformJustitia()
       return platform
     }
     throw ('Invalid Platform')
