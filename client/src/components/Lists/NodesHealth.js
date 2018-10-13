@@ -44,6 +44,19 @@ class NodesHealth extends Component {
             Cell: row => <Badge color='success'>{row.value}</Badge>
           }
         ); break
+        case 'blockhash' : columnHeaders.push(
+          {
+            Header: <FormattedMessage
+              id='page.localeProvider.blockhash'
+              defaultMessage='Block Hash'
+              description='Block Hash'
+            />,
+            accessor: 'blockhash',
+            filterAll: false,
+            className: 'center-column',
+            Cell: row => <Badge color='success'>{row.value}</Badge>
+          }
+        ); break
         default : break
       }
     }

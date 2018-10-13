@@ -14,11 +14,11 @@ font-weight: 300;
     height: 75px;
 }
 .dashButtons{
-    color:#000000!important;
+    color:#ffffff!important;
     font-size:1.05rem !important;
-     font-weight:800!important;
-     height: 50px!important;
-     margin: 10px;
+    font-weight:800!important;
+    height: 50px!important;
+    margin: 10px;
  }
  .ml-auto li{
     height:50px;
@@ -45,8 +45,8 @@ font-weight: 300;
 }
 .activeTab{
 
-    color:#ffffff!important;
-    background-color:#808080!important;
+    color:#FF9966!important;
+    /*background-color:#808080!important;*/
     height: 60px!important;
     margin-top: 20px;
     padding:10px!important
@@ -86,8 +86,9 @@ div.menuItems > nav{
     border-bottom: 2px #000000 solid;
 }
 .logo{
-     width: 365px;
+     /*width: 365px;*/
     height: 70px; 
+    margin-left: 100px;
     /*width: 260px;
     height: 50px;*/
 }
@@ -202,6 +203,10 @@ word-wrap: break-word;
 .fixed-header thead >tr{
     position: relative;
 }
+.timetrade{
+    background : #f0f5f9;
+    margin-top: -100px;
+}
 /* Landing page css */
 .landing{
 
@@ -211,6 +216,7 @@ word-wrap: break-word;
 .landingBackground{
     background-color:#F0F5F9!important;
 }
+.
 .landing > h1{
     font-size: 40pt;
 }
@@ -313,14 +319,15 @@ svg.custom path.link {
 }
 .view-fullwidth{
     width: 100%;
-    margin-top:105px;
+    margin-top:275px;
     background-color: #F0F5F9;
 }
 .view-display{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 50%;
+    text-align: center;
     /* width: 30px; */
 }
 /* .app-header{
@@ -421,7 +428,7 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
 
 .blockOpen{
     height: 35px;
-margin-top:-10px;
+    margin-top:-10px;
     background-color:transparent;
 }
 /* Light Theme Dash  */
@@ -441,7 +448,7 @@ margin-top:-10px;
     background-color: #ffffff!important;
 }
 .vdivide::after {
-   border-right:2px #DFF1FE solid;
+   /*border-right:2px #DFF1FE solid;*/
    display: block;
    height: 45%;
    bottom: 55%;
@@ -449,7 +456,7 @@ margin-top:-10px;
    position: relative;
 }
 .nodes-health{
-    height: 335px;
+    height: 200px;
     overflow-y: scroll;
 }
 .center-column{
@@ -467,7 +474,7 @@ margin-top:-10px;
 
 }
 .dash-view{
-   padding-top: 85px;
+   padding-top: 275px;
     padding-left: 0px!important;
     width: 80%;
     margin-left:10%;
@@ -483,7 +490,12 @@ margin-top:-10px;
 
 }
 .navbar-header{
-    background-color: #E8E8E8!important;
+    background-color: #111113;
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 .footer{
     background-color: #E8E8E8;
@@ -499,16 +511,29 @@ margin-top:-10px;
 .statistic{
     display: block;
     float: left;
-    height: 100%;
-    /* border: 3px #DFF1FE solid; */
-    /*width: 25%;*/
-    text-align: center;
-    font-size: 18pt;
-    color:#000000
+    padding: 16px 10px 10px 13px;
+    margin-right: 10px;
+    /*text-align: center;*/
+    font-size: 14px;
+    font-family: ClanProNews;
+    background-color: #29292d;
+    border-radius: 3px;
+    height: 80px;
 }
-
+.count {
+    margin: 0;
+    margin-top: 10px;
+}
 .stat-count{
-    margin-top:55%;
+    color: rgb(113,212,121);
+}
+.stat-name{
+    color: #b2b6be;
+}
+.stat {
+    margin-left: 20%;
+    margin-bottom: 20px;
+    width: 1250px;
 }
 .stat-avatar{
     justify-content: center;
@@ -543,7 +568,11 @@ margin-top:-10px;
 .langIcon {
     display: inline-block;
     margin-top: 15px;
-    color: grey;
+    color: #ffffff;
+}
+.githubIcon {
+    display: inline-block;
+    color: #ffffff;
 }
 /*Time Chart and Chart stats */
 .recharts-layer{

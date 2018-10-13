@@ -48,8 +48,6 @@ const Nodes = ({ nodeList }) => {
         data={nodeList}
         columns={columnHeaders}
         defaultPageSize={5}
-        className='-striped -highlight'
-        filterable
         minRows={0}
         showPagination={!(nodeList.length < 5)}
 

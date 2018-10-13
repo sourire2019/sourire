@@ -54,7 +54,7 @@ class TimelineStream extends Component {
                 container="card"
                 className="timeline-event"
                 titleStyle={{ fontWeight: "bold" }}
-                style={{ width: "65%" }}
+                style={{ width: "85%" }}
                 cardHeaderStyle={{
                   backgroundColor: "#6283D0",
                   fontSize: "13pt"
@@ -81,13 +81,13 @@ class TimelineStream extends Component {
                 <Typography variant="body1">
                   <b className="timeLineText"> 
                     <FormattedMessage
-                      id="page.localeProvider.datah"
-                      defaultMessage="Data Hash"
-                      description="Data Hash"
+                      id="page.localeProvider.blockhash"
+                      defaultMessage="Block Hash"
+                      description="Block Hash"
                       />:
                     </b>
                     <br />
-                    {item.datahash === "" ? (<br/>): (item.datahash)}{""}
+                    {item.blockhash === "" ? (<br/>): (item.blockhash)}{""}
                     <br />
                   <b className="timeLineText"> 
                     <FormattedMessage

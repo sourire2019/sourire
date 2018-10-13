@@ -102,12 +102,12 @@ class Blocks extends Component {
             width: 150
           }
         ); break;
-        case "channelname" : blocksview.push(
+        case "chainname" : blocksview.push(
           {
             Header: <FormattedMessage
-                        id="page.localeProvider.channelname"
-                        defaultMessage="Channel Name"
-                        description="Channel Name"
+                        id="page.localeProvider.chainname"
+                        defaultMessage="Chain Name"
+                        description="Chain Name"
                         />,
             accessor: "channelname",
             filterMethod: (filter, rows) =>
@@ -262,8 +262,6 @@ class Blocks extends Component {
           data={this.props.blockList}
           columns={this.reactTableSetup()}
           defaultPageSize={10}
-          className="-striped -highlight"
-          filterable
           minRows={0}
           showPagination={this.props.blockList.length < 5 ? false : true}
         />

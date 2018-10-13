@@ -270,30 +270,30 @@ export class HeaderView extends Component {
                     
                   </NavLink>
                 </li> ); break;
-        case "channelsview" : header.push( <li>
+        case "chainview" : header.push( <li>
                   <NavLink
                     to="/channels"
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
                     <FormattedMessage
-                    id="page.localeProvider.channels"
-                    defaultMessage="CHANNELS"
-                    description="CHANNELS"
+                    id="page.localeProvider.chain"
+                    defaultMessage="CHAIN"
+                    description="CHAIN"
                     />
                     
                   </NavLink>
                 </li> ); break;
-        case "networkview" : header.push( <li>
+        case "nodesview" : header.push( <li>
                   <NavLink
                     to="/network"
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
                     <FormattedMessage
-                    id="page.localeProvider.network"
-                    defaultMessage="NETWORK"
-                    description="network"
+                    id="page.localeProvider.nodes"
+                    defaultMessage="NODES"
+                    description="NODES"
                     />
                   </NavLink>
                 </li> ); break;
@@ -344,7 +344,7 @@ export class HeaderView extends Component {
         case "github" : header.push(
           <div  className="admin-buttons theme-switch" >
             <NavbarBrand href="https://github.com/DSiSc/justitia">
-              <FontAwesome name="github" className="github" />
+              <FontAwesome name="github" className="github githubIcon" />
             </NavbarBrand>
           </div>
         ); break;
@@ -355,80 +355,83 @@ export class HeaderView extends Component {
 
       switch(config.status[i]) {
         case "blocks" : status.push(
-          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+          <div className="statistic vdivide" style={{ width: "18%" }}>
             <Row>
               <Col sm= "4">
-                <Avatar className="stat-avatar avatar-block" >
+                <span className="stat-count">{this.props.dashStat.latestBlock}</span>
+              </Col>
+              <Col sm= "4">
+                <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
                   <FontAwesome name="cube" />
                 </Avatar>
               </Col>
-              <Col sm= "4">
-                <h1 className="stat-count">{this.props.dashStat.latestBlock}</h1>
-              </Col>
             </Row>
-             <FormattedMessage
-              id="page.localeProvider.blocks"
-              defaultMessage="BLOCKS"
-              description="BLOCKS"
-              />
-            
+            <span className="stat-name">
+              <FormattedMessage
+                id="page.localeProvider.blocks"
+                defaultMessage="BLOCKS"
+                description="BLOCKS"
+                />
+              </span>
           </div>
         ); break;
         case "transactions" : status.push(
-          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+          <div className="statistic vdivide" style={{ width: "18%" }}>
             <Row>
-              <Col sm= "4">
-                <Avatar className="stat-avatar avatar-tx" >
-                  <FontAwesome name="list-alt" />
-                </Avatar>
-              </Col>
-              <Col sm= "4">
-                <h1 className="stat-count">{this.props.dashStat.txCount}</h1>
+              <Col sm= "12">
+                <span className="stat-count">{this.props.dashStat.txCount}</span>
               </Col>
             </Row>
+            <span className="stat-name">
               <FormattedMessage
               id="page.localeProvider.transactions"
               defaultMessage="TRANSACTIONS"
               description="TRANSACTIONS"
               />
-            
+            </span>
          </div>
         ); break;
-        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
                   <Row>
-                    <Col sm= "4">
-                      <Avatar className="stat-avatar avatar-node" >
-                        <FontAwesome name="users" />
-                      </Avatar>
-                    </Col>
-                    <Col sm= "4">
-                      <h1 className="stat-count">{this.props.dashStat.nodeCount}</h1>
+                    <Col sm= "12">
+                      <span className="stat-count">{this.props.dashStat.nodeCount}</span>
                     </Col>
                   </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.nodes"
-                    defaultMessage="NODES"
-                    description="NODES"
-                    />
-                  
+                  <span className="stat-name">
+                    <FormattedMessage
+                      id="page.localeProvider.nodes"
+                      defaultMessage="NODES"
+                      description="NODES"
+                      />
+                  </span>
                 </div>); break;
-        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
+        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
                   <Row>
-                    <Col sm= "4">
-                      <Avatar className="stat-avatar avatar-contract" >
-                        <FontAwesome name="handshake-o" />
-                      </Avatar>
-                    </Col>
-                    <Col sm= "4">
-                      <h1 className="stat-count">{this.props.dashStat.contractCount}</h1>
+                    <Col sm= "12">
+                      <span className="stat-count">{this.props.dashStat.contractCount}</span>
                     </Col>
                   </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.contracts"
-                    defaultMessage="CONTRACTS"
-                    description="CONTRACTS"
-                    />
-                  
+                  <span className="stat-name">
+                    <FormattedMessage
+                      id="page.localeProvider.contracts"
+                      defaultMessage="CONTRACTS"
+                      description="CONTRACTS"
+                      />
+                  </span>
+                </div>); break;
+          case "chains" : status.push(<div className="statistic vdivide" style={{ width: '18%' }}>
+                  <Row>
+                    <Col sm= "12">
+                      <span className="stat-count">{this.props.dashStat.channelCount}</span>
+                    </Col>
+                  </Row>
+                  <span className="stat-name">
+                    <FormattedMessage
+                      id="page.localeProvider.chains"
+                      defaultMessage="chain"
+                      description="chain"
+                      />
+                  </span>
                 </div>); break;
         default:  break;
       }
@@ -441,8 +444,8 @@ export class HeaderView extends Component {
           reconnect={true}
         />
         <Router>
-          <div className="navbar-header" expand="md" fixed="top">
-            <Navbar >
+          <div class="navbar-header" >
+            <Navbar expand="md">
               <NavbarBrand href="/">
                 {" "}
                 <img src={src} className="logo" alt={config.logo} />
@@ -450,10 +453,17 @@ export class HeaderView extends Component {
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
                 {header}
+                <br />
+                
               </Nav>
               
             </Navbar>
-              {status}
+            <div className="stat" >
+              <Row>
+                {status}
+                {" "}
+              </Row>
+            </div>
             <Drawer
               anchor="right"
               open={this.state.adminDrawer}

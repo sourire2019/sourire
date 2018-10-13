@@ -116,8 +116,6 @@ class Transaction extends Component {
           data={this.props.transaction}
           columns={this.reactTableSetup()}
           defaultPageSize={10}
-          className="-striped -highlight"
-          filterable
           minRows={0}
         />
 

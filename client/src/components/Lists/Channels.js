@@ -16,8 +16,8 @@ class Channels extends Component {
 
   reactTableSetup = () => {
     const columnHeaders = [];
-    for (let i = 0; i < config.channelsview.length; i++) {
-        switch(config.channelsview[i]) {
+    for (let i = 0; i < config.chainsview.length; i++) {
+        switch(config.chainsview[i]) {
             case "id" : columnHeaders.push(
               {
                 Header: <FormattedMessage
@@ -37,12 +37,12 @@ class Channels extends Component {
                 width: 100
               }
             ); break;
-            case "channelname" : columnHeaders.push(
+            case "chainname" : columnHeaders.push(
               {
                 Header: <FormattedMessage
-                            id="page.localeProvider.channelname"
-                            defaultMessage='Channel Name'
-                            description='Channel Name'
+                            id="page.localeProvider.chainname"
+                            defaultMessage='Chain Name'
+                            description='Chain Name'
                             />,
                 accessor: 'channelname',
                 filterMethod: (filter, rows) =>
@@ -143,8 +143,6 @@ class Channels extends Component {
           data={this.props.channels}
           columns={this.reactTableSetup()}
           defaultPageSize={5}
-          className="-striped -highlight"
-          filterable
           minRows={0}
           showPagination={this.props.channels.length < 5 ? false : true}
         />

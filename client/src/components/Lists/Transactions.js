@@ -63,12 +63,12 @@ class Transactions extends Component {
             ),
           filterAll: true
         }); break; 
-        case "channelname": columnHeaders.push(
+        case "chainname": columnHeaders.push(
           {
             Header:<FormattedMessage
-                        id="page.localeProvider.channelname"
-                        defaultMessage="Channel Name"
-                        description="Channel Name"
+                        id="page.localeProvider.chainname"
+                        defaultMessage="Chain Name"
+                        description="Chain Name"
                         /> ,
             accessor: "channelname",
             filterMethod: (filter, rows) =>
@@ -286,8 +286,6 @@ class Transactions extends Component {
           data={this.props.transactionList.rows}
           columns={columnHeaders}
           defaultPageSize={10}
-          className="-striped -highlight"
-          filterable
           minRows={0}
           showPagination={this.props.transactionList.length < 5 ? false : true}
         />
