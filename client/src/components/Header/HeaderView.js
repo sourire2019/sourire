@@ -378,8 +378,13 @@ export class HeaderView extends Component {
         case "transactions" : status.push(
           <div className="statistic vdivide" style={{ width: "18%" }}>
             <Row>
-              <Col sm= "12">
+              <Col sm= "4">
                 <span className="stat-count">{this.props.dashStat.txCount}</span>
+              </Col>
+              <Col sm= "4">
+                <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
+                  <FontAwesome name="list-alt" />
+                </Avatar>
               </Col>
             </Row>
             <span className="stat-name">
@@ -393,8 +398,13 @@ export class HeaderView extends Component {
         ); break;
         case "nodes" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
                   <Row>
-                    <Col sm= "12">
+                    <Col sm= "4">
                       <span className="stat-count">{this.props.dashStat.nodeCount}</span>
+                    </Col>
+                    <Col sm= "4">
+                      <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
+                        <FontAwesome name="users" />
+                      </Avatar>
                     </Col>
                   </Row>
                   <span className="stat-name">
@@ -407,8 +417,13 @@ export class HeaderView extends Component {
                 </div>); break;
         case "contracts" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
                   <Row>
-                    <Col sm= "12">
+                    <Col sm= "4">
                       <span className="stat-count">{this.props.dashStat.contractCount}</span>
+                    </Col>
+                    <Col sm= "4">
+                      <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
+                        <FontAwesome name="linode" />
+                      </Avatar>
                     </Col>
                   </Row>
                   <span className="stat-name">
