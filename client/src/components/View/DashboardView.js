@@ -45,7 +45,7 @@ export class DashboardView extends Component {
     if (blockList !== undefined) {
       for (
         let i = 0;
-        i < 6 && blockList && blockList[i];
+        i < blockList.length && blockList && blockList[i];
         i++
       ) {
         const block = blockList[i];

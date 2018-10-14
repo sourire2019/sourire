@@ -195,8 +195,8 @@ export default class RealTimeTradeChart extends Component {
 
   render() {
     return (
-      <IceContainer className = "timetrade" style = {{background : '#f0f5f9'}}>
-        <ReactEcharts option={option} style={{ height: '500px' }} />
+      <IceContainer className = "timetrade" style = {{background : '#f0f5f9' , padding : "20px", margin: "0px"}}>
+        <ReactEcharts option={option} style={{ height: '500px' ,opacity : '0.7' }} />
       </IceContainer>
     );
   }

@@ -1,4 +1,17 @@
-[2018-10-13 10:51:29.266] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-10-13 10:56:39.630] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-10-13 11:01:41.724] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
-[2018-10-13 12:22:04.276] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-14 10:12:27.411] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-14 10:12:38.729] [ERROR] metricservice - TypeError: this.getChannelCount is not a function
+    at MetricService.getStatusGenerate (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:93:35)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-14 10:14:38.558] [ERROR] metricservice - TypeError: this.getChannelCount is not a function
+    at MetricService.getStatusGenerate (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:93:35)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-14 10:14:58.128] [ERROR] metricservice - TypeError: this.getChannelCount is not a function
+    at MetricService.getStatusGenerate (/opt/bl/blockchain-explorer/app/persistence/postgreSQL/MetricService.js:93:35)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-14 10:16:10.720] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-14 10:22:01.852] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-14 15:29:57.415] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.
+[2018-10-14 15:35:08.729] [INFO] main - Please set logger.setLevel to DEBUG in ./app/helper.js to log the debugging.

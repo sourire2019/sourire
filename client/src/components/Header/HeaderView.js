@@ -355,7 +355,7 @@ export class HeaderView extends Component {
 
       switch(config.status[i]) {
         case "blocks" : status.push(
-          <div className="statistic vdivide" style={{ width: "18%" }}>
+          <div className="statistic vdivide" style={{ width: "19%" }}>
             <Row>
               <Col sm= "4">
                 <span className="stat-count">{this.props.dashStat.latestBlock}</span>
@@ -376,7 +376,7 @@ export class HeaderView extends Component {
           </div>
         ); break;
         case "transactions" : status.push(
-          <div className="statistic vdivide" style={{ width: "18%" }}>
+          <div className="statistic vdivide" style={{ width: "19%" }}>
             <Row>
               <Col sm= "4">
                 <span className="stat-count">{this.props.dashStat.txCount}</span>
@@ -396,7 +396,7 @@ export class HeaderView extends Component {
             </span>
          </div>
         ); break;
-        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
+        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: "19%" }}>
                   <Row>
                     <Col sm= "4">
                       <span className="stat-count">{this.props.dashStat.nodeCount}</span>
@@ -415,14 +415,14 @@ export class HeaderView extends Component {
                       />
                   </span>
                 </div>); break;
-        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: "18%" }}>
+        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: "19%" }}>
                   <Row>
                     <Col sm= "4">
                       <span className="stat-count">{this.props.dashStat.contractCount}</span>
                     </Col>
                     <Col sm= "4">
                       <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
-                        <FontAwesome name="linode" />
+                        <FontAwesome name="handshake-o" />
                       </Avatar>
                     </Col>
                   </Row>
@@ -434,10 +434,15 @@ export class HeaderView extends Component {
                       />
                   </span>
                 </div>); break;
-          case "chains" : status.push(<div className="statistic vdivide" style={{ width: '18%' }}>
+          case "chains" : status.push(<div className="statistic vdivide" style={{ width: '19%' }}>
                   <Row>
-                    <Col sm= "12">
+                    <Col sm= "4">
                       <span className="stat-count">{this.props.dashStat.channelCount}</span>
+                    </Col>
+                    <Col sm= "4">
+                      <Avatar className="stat-avatar avatar-block "  style={{ margin: "0px 0px 0px 40px", padding : "0" }}>
+                        <FontAwesome name="linode" />
+                      </Avatar>
                     </Col>
                   </Row>
                   <span className="stat-name">

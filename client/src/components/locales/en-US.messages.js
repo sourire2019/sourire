@@ -54,9 +54,10 @@ export default {
   'page.localeProvider.from': 'from',
   'page.localeProvider.to': 'to',
   'page.localeProvider.contract': 'Contract',
-  'page.localeProvider.chain': 'CHAIN',
+  'page.localeProvider.chain': 'CHAINS',
   'page.localeProvider.chainl': 'chain',
   'page.localeProvider.chainname': 'Chain Name',
   'page.localeProvider.jsta' : 'justitia {foot}',
-  'page.localeProvider.chains': 'CHAINS'
+  'page.localeProvider.chains': 'CHAINS',
+  'page.localeProvider.location': 'location'
 }

@@ -15,10 +15,11 @@ font-weight: 300;
 }
 .dashButtons{
     color:#ffffff!important;
-    font-size:1.05rem !important;
-    font-weight:800!important;
+    /*font-size:1.05rem !important;*/
+    font-weight:400!important;
     height: 50px!important;
     margin: 10px;
+    font-family: ClanProNews;
  }
  .ml-auto li{
     height:50px;
@@ -43,20 +44,30 @@ font-weight: 300;
     border: none;
     box-shadow: 0px 9px 10px  rgba(0,0,0,0.05)
 }
+.timeLineText {
+    font-family: ClanProNews;
+    font-color : #89898f !important;
+    font-size: 12px;
+}
 .activeTab{
 
     color:#FF9966!important;
     /*background-color:#808080!important;*/
-    height: 60px!important;
-    margin-top: 20px;
-    padding:10px!important
+    height: 50px!important;
+    margin: 10px;
+    /*padding:10px!important;*/
+    font-weight: 400;
+    font-family: ClanProNews;
 }
 
 /*Channel Drop-Down*/
 .Select-control{
     background-color:#E8E8E8!important;
 }
-
+.nav-item {
+    font-family: ClanProNews;
+    font-size: 12px;
+}
 .cog, .bell{
     margin-top: 36px;
     color: #5F6164;
@@ -136,8 +147,11 @@ word-wrap: break-word;
     padding: 5px;
 }
 .scrollable-card{
-    height: 340px;
+    height: 530px;
     overflow-y: scroll;
+}
+.chartCard {
+    height: 530px;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -319,15 +333,33 @@ svg.custom path.link {
 }
 .view-fullwidth{
     width: 100%;
-    margin-top:275px;
+    margin-top:205px;
     background-color: #F0F5F9;
+    font-family: ClanProNews;
+    font-size:12px;
+    margin-left: 10%;
+
+}
+#showTransactionId {
+    border: none;
+    background-color: primary;
+}
+.table-card{
+    margin-left: -14%;
+    margin-right: 14%;
+}
+.node-table-card {
+    margin : 0 !important;
 }
 .view-display{
     display: block;
-    margin-left: auto;
+    margin-left: 14%;
     margin-right: auto;
-    width: 50%;
+    width: 1250px;
+    /*margin-left: 14%;*/
     text-align: center;
+    font-color : grey;
+    color: grey;
     /* width: 30px; */
 }
 /* .app-header{
@@ -474,10 +506,10 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
 
 }
 .dash-view{
-   padding-top: 275px;
+   padding-top: 205px;
     padding-left: 0px!important;
-    width: 80%;
-    margin-left:10%;
+    width: 1250px;
+    margin-left:14%;
     margin-right:10%;
     overflow: hidden;
     /* padding-top: 85px;
@@ -531,7 +563,8 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
     color: #b2b6be;
 }
 .stat {
-    margin-left: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-bottom: 20px;
     width: 1250px;
 }
@@ -584,9 +617,14 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
  }
  /*Hiding/Showing hash tooltip on hover*/
  .partialHash{
-     text-align:center;
+    text-align:center;
+    border: none;
+    background: none;
  }
 
+.echarts-for-react  div {
+    margin-left: -200px !important;
+}
 .partialHash:hover  .fullHash{
 display:block;
 position:absolute!important;
@@ -616,13 +654,13 @@ opacity:0.7
     font-size:10px;
     margin-top:-10px;
      }
-     .copyBtn:active copiedMessage{
-        display:block;
-        position:absolute!important;
-        padding:0 ;
-        background-color: transparent;
-        margin-top:-30px;
-     }
+.copyBtn:active copiedMessage{
+    display:block;
+    position:absolute!important;
+    padding:0 ;
+    background-color: transparent;
+    margin-top:-30px;
+}
 /* Change Channel Loader */
 .channel-loader{
     text-align: center;
@@ -641,4 +679,10 @@ opacity:0.7
     height: 200px;
     width: 2000px;
     overflow: hidden;
+}
+.ReactTable .rt-thead .rt-tr{
+    background-color: rgb(241,241,242);
+    color : #89898f;
+    font-style: italic !important;
+    font-weight: 700 !important;
 }

@@ -142,7 +142,7 @@ class Channels extends Component {
         <ReactTable
           data={this.props.channels}
           columns={this.reactTableSetup()}
-          defaultPageSize={5}
+          defaultPageSize={20}
           minRows={0}
           showPagination={this.props.channels.length < 5 ? false : true}
         />

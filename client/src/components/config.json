@@ -3,7 +3,7 @@
 		"dashboardview", "blocksview", "nodesview", "transactionsview" , "chainview" , "contractview" , "language", "github"
 	],
 	"dashboardview" : [
-		"dashboardview_middle","nodeshealth"
+		"dashboardview_middle"
 	],
 	"status" : [
 		"blocks" , "transactions" , "nodes", "contracts", "chains"
@@ -33,7 +33,7 @@
 		"network_map" , "network_table","nodename", "endpoint_url"
 	],
 	"network_table" : [
-		"nodename", "endpoint_url"
+		"nodename", "status", "endpoint_url" , "location"
 	],
 	"chainsview" : [
 		"id", "chainname", "blocks", "transactions", "timestamp"

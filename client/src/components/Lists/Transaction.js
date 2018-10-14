@@ -115,7 +115,7 @@ class Transaction extends Component {
         <ReactTable
           data={this.props.transaction}
           columns={this.reactTableSetup()}
-          defaultPageSize={10}
+          defaultPageSize={20}
           minRows={0}
         />
 

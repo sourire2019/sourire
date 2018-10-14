@@ -58,5 +58,5 @@ export default {
   'page.localeProvider.chainl': '链',
   'page.localeProvider.chainname': '链名称',
   'page.localeProvider.chains': '链',
-
+  'page.localeProvider.location': '位置'
 }

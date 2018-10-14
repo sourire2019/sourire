@@ -12,7 +12,7 @@ import { chartSelectors } from '../../state/redux/charts/'
 import config from '../config.json'
 
 const landlogo = config[config.logo].loadlogo
-var src = require("../../static/images/" + landlogo);
+var src = require('../../static/images/' + landlogo);
 
 const {
   blockPerHour,
@@ -95,18 +95,18 @@ export class LandingPage extends Component {
       )
     }
     return (
-      <div id="loading-screen" class="container">
-        <div class="cube">
-          <div class="sides">
-            <div class="top"></div>
-            <div class="right"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-            <div class="front"></div>
-            <div class="back"></div>
+      <div id = 'loading-screen' class='container'>
+        <div class = 'cube'>
+          <div class = 'sides'>
+            <div class = 'top'></div>
+            <div class = 'right'></div>
+            <div class = 'bottom'></div>
+            <div class = 'left'></div>
+            <div class = 'front'></div>
+            <div class = 'back'></div>
           </div>
         </div>
-        <div class="text">Downloading Dependencies...</div>
+        <div class='text'>Downloading Dependencies...</div>
       </div>
     )
   }

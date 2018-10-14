@@ -52,7 +52,7 @@ export class NetworkView extends Component {
             <RealTimeTradeChart />
             {""}
           
-            <div className='view-display'>
+            <div className='view-display node-table-card'>
               <Card className='table-card'>
                 <Nodes nodeList={this.props.nodeList} />
               </Card>

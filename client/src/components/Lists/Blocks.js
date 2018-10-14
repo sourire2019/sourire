@@ -261,7 +261,7 @@ class Blocks extends Component {
         <ReactTable
           data={this.props.blockList}
           columns={this.reactTableSetup()}
-          defaultPageSize={10}
+          defaultPageSize={20}
           minRows={0}
           showPagination={this.props.blockList.length < 5 ? false : true}
         />
