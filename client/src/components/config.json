@@ -3,13 +3,13 @@
 		"dashboardview", "blocksview", "nodesview", "transactionsview" , "chainview" , "contractview" , "language", "github"
 	],
 	"dashboardview" : [
-		"dashboardview_middle"
+		"timelinestream" ,"dashboardview_middle"
 	],
 	"status" : [
 		"blocks" , "transactions" , "nodes", "contracts", "chains"
 	],
 	"dashboardview_middle" : [
-		"timelinestream" , "chartstatus"
+		"chartstatus", "nodeshealth"
 	],
 	"nodeshealth" : [
 		"nodename" , "status" 
@@ -18,13 +18,13 @@
 		"blockshour", "blocksmin", "txhour", "txmin"
 	],
 	"transactionsview" : [
-		"chainname", "txid", "type", "contract" , "timestamp", "txhash", "block" ,"from", "to"
+		"chainname", "txid", "type", "contract" , "txhash", "block" ,"from", "to", "timestamp"
 	],
 	"transactiondetails" : [
 		"transactionid" , "contractnsme", "type", "time"
 	],
 	"blocksview" : [
-		"blocknumber", "chainname", "number_of_tx", "datahash", "blockhash", "prehash", "transactions"
+		"blocknumber", "chainname", "number_of_tx",  "blockhash", "prehash", "datahash","transactions"
 	],
 	"blockdetails" : [
 		"chainname", "id", "blocknumber", "createat", "number_of_transactions", "blockhash", "datahash", "prehash"
@@ -39,7 +39,7 @@
 		"id", "chainname", "blocks", "transactions", "timestamp"
 	],
 	"contractview" : [
-		"name", "balance", "txcount", "creator", "creator_hash", "contract_code"
+		"name", "balance", "txcount", "creator", "creator_hash"
 	],
 	"jsta" : {
 		"loadlogo" : "load_jsta.png",

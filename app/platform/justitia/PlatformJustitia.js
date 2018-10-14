@@ -86,8 +86,8 @@ class PlatformJustitia {
         txCount = data.result.transactions.length
       }
       var blockNum = parseInt(data.result.number,16)
-      var myDate = new Date();
-      var timestamp = myDate.toLocaleString()
+      var timetemp = parseInt(data.result.timestamp,16)
+      var timestamp = new Date(timetemp * 1000)
       let res = {
       'blockNum': blockNum,
       'txCount': txCount,

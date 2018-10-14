@@ -271,7 +271,7 @@ class MetricService {
   getBlocksByHour (channelName, days) {
     let sqlPerHour = ` with hours as (
             select generate_series(
-              date_trunc('hour', now()) - '${days}day' + '0.3days'::interval,
+              date_trunc('hour', now()) - '${days}day'::interval,
               date_trunc('hour', now()),
               '1 hour'::interval
             ) as datetime

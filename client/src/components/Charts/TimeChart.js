@@ -19,12 +19,12 @@ const TimeChart = ({ chartData }) => {
     <div>
       <Card>
         <CardContent className='CardContent'>
-          <ResponsiveContainer width='100%' height={455}>
+          <ResponsiveContainer width='100%' height={225}>
             <ScatterChart>
-              <CartesianGrid strokeDasharray='5 5' />
+              <CartesianGrid strokeDasharray='3 3' />
               <XAxis dataKey='datetime' className='datetime' />
               <YAxis domain={[0, chartData.dataMax]} dataKey='count' />
-              <Tooltip cursor={{ strokeDasharray: '5 5' }} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
               <Scatter
                 className='datetime'
                 data={chartData.displayData}

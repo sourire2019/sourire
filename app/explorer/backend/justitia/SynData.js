@@ -42,8 +42,7 @@ class SynData {
   };
 
   async saveTransactions (block, channelName) {
-    var myDate = new Date();
-    var timestamp = myDate.toLocaleString()
+    var timestamp = new Date(block.firstTxTimestamp)
     let txLen = block.txCount
     if (parseInt(txLen) > 0) {
       for (let i = 0; i < txLen; i++) {

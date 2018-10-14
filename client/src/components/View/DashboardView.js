@@ -72,7 +72,7 @@ export class DashboardView extends Component {
 
       switch(config.dashboardview_middle[i]) {
         case "nodeshealth" : middle.push(
-          <Col sm= {(12/config.dashboardview_middle.length)} >
+          <Col sm= '12' >
             <Card className="dash-section">
               <NodesHealth
                 nodeStatus={this.props.nodeStatus}
@@ -82,14 +82,14 @@ export class DashboardView extends Component {
           </Col>
         ); break;
         case "chartstatus" : middle.push(
-          <Col sm= {(12/config.dashboardview_middle.length)}>
+          <Col sm= '12'>
             <Card className="dash-section">
               <ChartStats appLocale= {this.props.appLocale} />
             </Card>
           </Col>
         ); break;
         case "timelinestream" : middle.push(
-          <Col sm={(12/config.dashboardview_middle.length)}>
+          <Col sm='12'>
             <Card className="dash-section">
               <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
             </Card>
@@ -102,18 +102,18 @@ export class DashboardView extends Component {
     for (let i = 0; i < config.dashboardview.length; i++) {
       switch(config.dashboardview[i]) {
         
-        case "dashboardview_middle" : dashboardview.push (<Row>
+        case "dashboardview_middle" : dashboardview.push (<Col sm='6'>
             {middle}
-          </Row>
+          </Col>
         ); break
         case "timelinestream" : dashboardview.push(
-          <Row>
+          <Col sm='6'>
             <Col sm="12">
               <Card className="dash-section">
                 <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
               </Card>
             </Col>
-          </Row>
+          </Col>
         ); break;
         case "nodeshealth" : dashboardview.push(
           <Row>
@@ -145,7 +145,9 @@ export class DashboardView extends Component {
           formats={this.props.appLocale.formats}
         >
         <div className="dash-view" >
-          {dashboardview}
+          <Row>
+            {dashboardview}
+          </Row>
         </div>
         </IntlProvider>
       </div>

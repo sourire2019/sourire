@@ -64,6 +64,7 @@ function formtVData(geoData, vData, srcNam) {
       normal: {
         color: '#4DFFFF',
         borderColor: '#fff',
+        opacity : '1 !import'
       },
     },
   });
@@ -87,6 +88,7 @@ const option = {
       normal: {
         areaColor: '#022548',
         borderColor: '#0DABEA',
+        opacity : '0.2'
       },
       emphasis: {
         areaColor: '#011B34',
@@ -196,7 +198,7 @@ export default class RealTimeTradeChart extends Component {
   render() {
     return (
       <IceContainer className = "timetrade" style = {{background : '#f0f5f9' , padding : "20px", margin: "0px"}}>
-        <ReactEcharts option={option} style={{ height: '500px' ,opacity : '0.7' }} />
+        <ReactEcharts option={option} style={{ height: '500px'  }} />
       </IceContainer>
     );
   }

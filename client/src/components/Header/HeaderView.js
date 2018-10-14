@@ -470,6 +470,9 @@ export class HeaderView extends Component {
                 {" "}
                 <img src={src} className="logo" alt={config.logo} />
               </NavbarBrand>
+              <NavbarBrand>
+                <span className = 'dashButtons'>Trust Chain Explorer</span>
+              </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Nav className="ml-auto " navbar>
                 {header}

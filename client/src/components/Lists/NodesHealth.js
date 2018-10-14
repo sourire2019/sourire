@@ -67,6 +67,7 @@ class NodesHealth extends Component {
           columns={columnHeaders}
           className='-striped -highlight nodes-health'
           minRows={0}
+          className = "nodeshealth"
           showPagination={false}
         />
       </div>
