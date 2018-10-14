@@ -44,7 +44,7 @@ const Nodes = ({ nodeList }) => {
       case 'status' : columnHeaders.push(
         {
           Header: <FormattedMessage
-            id='page.localeProvider.status'
+            id='page.localeProvider.status_u'
             defaultMessage='status'
             description='status'
           />,
@@ -64,8 +64,8 @@ const Nodes = ({ nodeList }) => {
           />,
           accessor: 'requests',
           Cell: row => (
-            <span>Beijing<span style = {{color : "red"}}>•</span>
-            China<img src = {cn} style = {{width : "30px"}} /></span>
+            <span><img src = {cn} style = {{width : "30px"}} /> Beijing <span style = {{color : "red"}}>• </span>
+            China</span>
 
             
           ),

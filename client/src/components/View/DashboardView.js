@@ -102,12 +102,12 @@ export class DashboardView extends Component {
     for (let i = 0; i < config.dashboardview.length; i++) {
       switch(config.dashboardview[i]) {
         
-        case "dashboardview_middle" : dashboardview.push (<Col sm='6'>
+        case "dashboardview_middle" : dashboardview.push (<Col sm='6' className = 'padding'>
             {middle}
           </Col>
         ); break
         case "timelinestream" : dashboardview.push(
-          <Col sm='6'>
+          <Col sm='6' className = 'padding'>
             <Col sm="12">
               <Card className="dash-section">
                 <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>

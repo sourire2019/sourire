@@ -13,6 +13,9 @@ font-weight: 300;
     padding-bottom: 0px;
     height: 75px;
 }
+.padding {
+	padding : 0;
+}
 .dashButtons{
     color:#ffffff!important;
     /*font-size:1.05rem !important;*/

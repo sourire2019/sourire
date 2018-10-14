@@ -59,5 +59,6 @@ export default {
   'page.localeProvider.chainname': '链名称',
   'page.localeProvider.jsta' : 'Justitia {foot}',
   'page.localeProvider.chains': '链',
-  'page.localeProvider.location': '位置'
+  'page.localeProvider.location': '位置',
+  'page.localProvider.status_u' : '状态'
 }
