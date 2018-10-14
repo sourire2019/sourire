@@ -54,7 +54,7 @@ class TimelineStream extends Component {
                 container="card"
                 className="timeline-event"
                 titleStyle={{ fontWeight: "400" }}
-                style={{ width: "85%" }}
+                style={{ width: "100%" }}
                 cardHeaderStyle={{
                   backgroundColor: "#6283D0",
                   fontSize: "11pt"

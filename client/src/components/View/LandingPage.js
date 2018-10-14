@@ -106,7 +106,7 @@ export class LandingPage extends Component {
             <div class = 'back'></div>
           </div>
         </div>
-        <div class='text'>Downloading Dependencies...</div>
+        <div class='text'>Downloading ...</div>
       </div>
     )
   }

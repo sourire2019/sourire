@@ -64,7 +64,10 @@ const Nodes = ({ nodeList }) => {
           />,
           accessor: 'requests',
           Cell: row => (
-            <img src = {cn} style = {{width : "30px"}} />
+            <span>Beijing<span style = {{color : "red"}}>•</span>
+            China<img src = {cn} style = {{width : "30px"}} /></span>
+
+            
           ),
           filterMethod: (filter, rows) =>
             matchSorter(rows, filter.value, { keys: ['requests'] }, { threshold: matchSorter.rankings.SIMPLEMATCH }),

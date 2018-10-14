@@ -21,6 +21,7 @@ font-weight: 300;
     margin: 10px;
     font-family: ClanProNews;
  }
+ html,body{height: 100%;}
  .ml-auto li{
     height:50px;
     line-height: 50px;
@@ -33,7 +34,10 @@ font-weight: 300;
     padding-top:0px;
     margin-top:0px
 }
-
+.CardContent{
+    margin-left: -30px;
+    font-size : 12px;
+}
 .button{
     background-color:#afeeee;
     font-size: 16px;
@@ -537,12 +541,14 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
 .footer{
     background-color: #E8E8E8;
     text-align: center;
-/*    bottom: 0;
     position: fixed;
+    bottom: 0;
+
     left: 0;
-    right: 0;*/
+    right: 0;
   }
 .footerView{
+    margin-top: 2%;
     /*margin:2%!important;*/
  }
 .statistic{
