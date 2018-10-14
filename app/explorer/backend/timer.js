@@ -26,7 +26,7 @@ if (platform.plf === 'justitia') {
     setInterval(function () {
       console.log('justitia timer')
       blockListener.emit('syncBlock')
-    }, 30000)
+    }, 10000)
   } else {
     blockListener.emit('syncBlock')
   }

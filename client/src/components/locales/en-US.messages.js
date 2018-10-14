@@ -57,7 +57,7 @@ export default {
   'page.localeProvider.chain': 'CHAINS',
   'page.localeProvider.chainl': 'chain',
   'page.localeProvider.chainname': 'Chain Name',
-  'page.localeProvider.jsta' : 'justitia {foot}',
+  'page.localeProvider.jsta' : 'Justitia {foot}',
   'page.localeProvider.chains': 'CHAINS',
   'page.localeProvider.location': 'location'
 }

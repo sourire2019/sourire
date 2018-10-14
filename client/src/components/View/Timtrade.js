@@ -62,7 +62,7 @@ function formtVData(geoData, vData, srcNam) {
     symbolSize: 8,
     itemStyle: {
       normal: {
-        color: '#4DFFFF',
+        color: '#f70404',
         borderColor: '#fff',
         opacity : '1 !import'
       },
