@@ -113,6 +113,22 @@ class CRUDService {
     return curBlockNum
   }
 
+  async getCurTxNum (channelName) {
+    try {
+      var row = await sql.getRowsBySQlCase(`select count(*) as txnum from transactions  where genesis_block_hash='${channelName}'`)
+    } catch (err) {
+      logger.error(err)
+      return -1
+    }
+    let curTxNum
+
+    if (row == null || row.txnum == null) {
+      curTxNum = -1
+    } else {
+      curTxNum = parseInt(row.txnum)
+    }
+    return curTxNum
+  }
   // ====================contracts=====================================
   async saveContract (contract) {
     let c = await sql.getRowByPkOne(`select count(1) as c from contracts where name='${contract.name}' and genesis_block_hash='${contract.genesis_block_hash}' and version='${contract.version}' and path='${contract.path}'`)

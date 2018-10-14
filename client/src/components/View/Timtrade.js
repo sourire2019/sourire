@@ -6,27 +6,18 @@ import 'echarts/lib/chart/map';
 import 'echarts/map/js/world';
 
 const geoCoordMap = {
-  '中国 · 浙江兰溪': [119.133, 29.12],
-  尼日利亚仓: [-4.388361, 11.186148],
-  美国洛杉矶仓: [-118.24311, 34.052713],
-  香港邦泰仓: [114.195466, 22.282751],
-  美国芝加哥仓: [-87.801833, 41.870975]
+  '中国 · 北京': [116.20, 39.58]
 };
 
 const data = [
   {
-    name: '中国 · 浙江兰溪',
+    name: '中国 · 北京',
     value: 10,
   }
 ];
-
 const v = [
-  3,
-  3,
-  3,
-  3,
- 
-];
+  3
+]
 
 function formtGCData(geoData, gcData, srcNam, dest) {
   const tGeoDt = [];
@@ -73,11 +64,14 @@ function formtVData(geoData, vData, srcNam) {
       normal: {
         color: '#4DFFFF',
         borderColor: '#fff',
+        opacity : '1 !import'
       },
     },
   });
   return tGeoDt;
 }
+
+// var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
 const planePath = 'arrow';
 
 const option = {
@@ -88,13 +82,93 @@ const option = {
     label: {
       emphasis: {
         show: false,
-      }
-    }
-  }
+      },
+    },
+    itemStyle: {
+      normal: {
+        areaColor: '#022548',
+        borderColor: '#0DABEA',
+        opacity : '0.2'
+      },
+      emphasis: {
+        areaColor: '#011B34',
+      },
+    },
+  },
+  series: [
+    {
+      type: 'lines',
+      zlevel: 2,
+      effect: {
+        show: true,
+        period: 6,
+        trailLength: 0.1,
+        color: '#FFB973',
+        symbol: planePath,
+        symbolSize: 5,
+      },
+      lineStyle: {
+        normal: {
+          color: '#FFB973',
+          width: 0,
+          opacity: 0.2,
+          curveness: 0,
+        },
+      },
+      data: formtGCData(geoCoordMap, data, '中国 · 北京', true),
+    },
+    {
+      type: 'lines',
+      zlevel: 2,
+      effect: {
+        show: true,
+        period: 6,
+        trailLength: 0.1,
+        color: '#9CE6FE',
+        symbol: planePath,
+        symbolSize: 5,
+      },
+      lineStyle: {
+        normal: {
+          color: '#65A2C2',
+          width: 0,
+          opacity: 0.4,
+          curveness: 0,
+        },
+      },
+      data: formtGCData(geoCoordMap, data, '中国 · 北京', false),
+    },
+    {
+      type: 'effectScatter',
+      coordinateSystem: 'geo',
+      zlevel: 2,
+      rippleEffect: {
+        period: 4,
+        scale: 4,
+        brushType: 'stroke',
+      },
+      label: {
+        normal: {
+          show: false,
+          position: 'right',
+          formatter: '{b}',
+        },
+      },
+      symbolSize: 5,
+      itemStyle: {
+        normal: {
+          color: '#fff',
+          borderColor: 'gold',
+        },
+      },
+      data: formtVData(geoCoordMap, data, '中国 · 北京'),
+    },
+  ],
+};
 
-}
-
-
+/**
+ * 图例参考：http://gallery.echartsjs.com/editor.html?c=xS197j1RtM
+ */
 export default class RealTimeTradeChart extends Component {
   static displayName = 'RealTimeTradeChart';
 
@@ -123,17 +197,8 @@ export default class RealTimeTradeChart extends Component {
 
   render() {
     return (
-      <IceContainer style={{ background: '#000' }}>
-        <div style={styles.info}>
-          <h1 style={styles.title}>TEST</h1>
-          <p style={styles.time}>
-            <Icon type="time" size="small" style={styles.timeIcon} />
-            {this.state.date}
-          </p>
-          <p style={styles.subTitle}>今日交易额</p>
-          <p style={styles.sum}>16828234</p>
-        </div>
-        <ReactEcharts option={option} style={{ height: '300px' }} />
+      <IceContainer className = "timetrade" style = {{background : '#f0f5f9' , padding : "20px", margin: "0px"}}>
+        <ReactEcharts option={option} style={{ height: '500px'  }} />
       </IceContainer>
     );
   }
@@ -142,31 +207,28 @@ export default class RealTimeTradeChart extends Component {
 const styles = {
   info: {
     textAlign: 'center',
-    color: '#fff',
   },
   title: {
-    fontSize: '32px',
+    fontSize: '40px',
   },
   time: {
-    fontSize: '18px',
+    fontSize: '15px',
     margin: '15px 0 25px',
   },
   subTitle: {
-    width: '100px',
-    lineHeight: '24px',
+    width: '200px',
+    lineHeight: '20px',
     margin: '0 auto',
-    color: '#F8BC38',
-    backgroundColor: '#1A484E',
-    fontSize: '14px',
+    fontSize: '15px',
   },
   sum: {
     margin: '15px 0 0',
     lineHeight: '30px',
-    fontSize: '38px',
+    fontSize: '35px',
     color: 'rgb(255, 246, 0)',
     fontWeight: 'bold',
   },
   timeIcon: {
-    marginRight: '8px',
+    marginRight: '10px',
   },
 };

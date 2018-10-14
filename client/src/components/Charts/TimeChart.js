@@ -19,7 +19,7 @@ const TimeChart = ({ chartData }) => {
     <div>
       <Card>
         <CardContent className='CardContent'>
-          <ResponsiveContainer width='100%' height={255}>
+          <ResponsiveContainer width='100%' height={225}>
             <ScatterChart>
               <CartesianGrid strokeDasharray='3 3' />
               <XAxis dataKey='datetime' className='datetime' />

@@ -53,6 +53,10 @@ export default {
   'page.localeProvider.blocktime': '块龄',
   'page.localeProvider.from': '发送方',
   'page.localeProvider.to': '接收方',
-  'page.localeProvider.contract': '合约'
-
+  'page.localeProvider.contract': '合约',
+  'page.localeProvider.chain': '链',
+  'page.localeProvider.chainl': '链',
+  'page.localeProvider.chainname': '链名称',
+  'page.localeProvider.chains': '链',
+  'page.localeProvider.location': '位置'
 }

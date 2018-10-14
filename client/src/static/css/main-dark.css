@@ -6,7 +6,7 @@
 .dark-theme .logo{
     /* width: 365px;
     height: 70px; */
-    width: 260px;
+    /*width: 260px;*/
     height: 50px;
 
 }
@@ -18,7 +18,9 @@
 .dark-theme .landingBackground{
     background-color:#F0F5F9!important;
 }
-
+.dark-theme .timetrade{
+    background : #F0F5F9;
+}
 .dark-theme .activeTab{
     font-size:100px!important;
     color:#ffffff!important;
@@ -148,7 +150,7 @@
 }
 .dark-theme .view-fullwidth{
     width: 100%;
-    margin-top:105px;
+    margin-top:275px;
     background-color:rgb(36, 32, 54)!important;
 }
 .dark-theme .view-display{
@@ -331,7 +333,7 @@ margin-top:-10px;
     box-shadow:1px 2px 2px rgb(215, 247, 247)!important;
 }
 .dark-theme .vdivide::after {
-   border-right:2px rgb(40, 36, 61) solid;
+   border-right:2px #DFF1FE solid;
    display: block;
    height: 45%;
    bottom: 55%;
@@ -361,7 +363,7 @@ margin-top:-10px;
             color:#ffffff!important
         }
 .dark-theme .dash-view{
-   padding-top: 85px;
+   padding-top: 275px;
     padding-left: 0px!important;
     width: 80%;
     margin-left:10%;
@@ -382,7 +384,7 @@ margin-top:-10px;
 .dark-theme .statistic{
     display: block;
     float: left;
-    height: 100%;
+    /*height: 100%;*/
     /* border: 3px #DFF1FE solid; */
     /*width: 25%;*/
     text-align: center;

@@ -14,6 +14,7 @@ import FooterView from "../Header/footerView";
 import LandingPage from "../View/LandingPage";
 import "../../static/css/main.css";
 import "../../static/css/main-dark.css";
+import "../../static/css/load.css";
 import chartsOperations from '../../state/redux/charts/operations'
 import tablesOperations from '../../state/redux/tables/operations'
 import { IntlProvider, addLocaleData } from 'react-intl';
@@ -134,7 +135,7 @@ class App extends Component {
         >
         <div>
           
-            <HeaderView refresh={this.refreshComponent.bind(this)} onChange={(index) => { this.onChange(index); }}/>
+            <HeaderView refresh={this.refreshComponent.bind(this)} onChange={(index) => { this.onChange(index); }} dashStat = {dashStats}/>
           
             <Main  appLocale= {getLocale(this.state.lang)}/>
             <div class="footerView">

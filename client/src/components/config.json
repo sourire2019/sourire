@@ -1,15 +1,15 @@
 {
 	"header" : [
-		"dashboardview", "blocksview", "networkview", "transactionsview" , "channelsview" , "contractview"
+		"dashboardview", "blocksview", "nodesview", "transactionsview" , "chainview" , "contractview" , "language", "github"
 	],
 	"dashboardview" : [
-		"status" , "dashboardview_middle","timelinestream"
+		"timelinestream" ,"dashboardview_middle"
 	],
 	"status" : [
-		"blocks" , "transactions" , "nodes", "contracts"
+		"blocks" , "transactions" , "nodes", "contracts", "chains"
 	],
 	"dashboardview_middle" : [
-		"nodeshealth" , "chartstatus"
+		"chartstatus", "nodeshealth"
 	],
 	"nodeshealth" : [
 		"nodename" , "status" 
@@ -18,36 +18,38 @@
 		"blockshour", "blocksmin", "txhour", "txmin"
 	],
 	"transactionsview" : [
-		"creator", "channelname", "txid", "type", "contract" , "timestamp", "txhash", "blockid", "blocktime", "from", "to", "status"
+		"chainname", "txid", "type", "contract" , "txhash", "block" ,"from", "to", "timestamp"
 	],
 	"transactiondetails" : [
-		"transactionid" , "validationcode" , "payloadproposalhash", "creatoemsp", "endoser", "contractnsme", "type", "time"
+		"transactionid" , "contractnsme", "type", "time"
 	],
 	"blocksview" : [
-		"blocknumber", "channelname", "number_of_tx", "datahash", "blockhash", "prehash", "transactions"
+		"blocknumber", "chainname", "number_of_tx",  "blockhash", "prehash", "datahash","transactions"
 	],
 	"blockdetails" : [
-		"channelname", "id", "blocknumber", "createat", "number_of_transactions", "blockhash", "datahash", "prehash"
+		"chainname", "id", "blocknumber", "createat", "number_of_transactions", "blockhash", "datahash", "prehash"
 	],
 	"networkview" : [
 		"network_map" , "network_table","nodename", "endpoint_url"
 	],
 	"network_table" : [
-		"nodename", "endpoint_url"
+		"nodename", "status", "endpoint_url" , "location"
 	],
-	"channelsview" : [
-		"id", "channelname", "channelhash", "blocks", "transactions", "timestamp"
+	"chainsview" : [
+		"id", "chainname", "blocks", "transactions", "timestamp"
 	],
 	"contractview" : [
-		"contractname", "channelname", "path", "transactions_count", "version", "name", "balance", "txcount", "creator", "creator_hash", "contract_code"
+		"name", "balance", "txcount", "creator", "creator_hash"
 	],
 	"jsta" : {
-		"load_logo" : "load_jsta.png",
+		"loadlogo" : "load_jsta.png",
 		"logo" : "jsta.png"
 	},
 	"trustchain" : {
-		"load_logo" : "load_trustchain.png",
+		"loadlogo" : "load_trustchain.png",
 		"logo" : "trustchain.png"
 	},
-	"logo" : "jsta"
+	"logo" : "jsta",
+	"foot" : "jsta",
+	"foot_id" : "page.localeProvider.jsta"
 }  

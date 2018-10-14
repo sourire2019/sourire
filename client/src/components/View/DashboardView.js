@@ -45,7 +45,7 @@ export class DashboardView extends Component {
     if (blockList !== undefined) {
       for (
         let i = 0;
-        i < 6 && blockList && blockList[i];
+        i < blockList.length && blockList && blockList[i];
         i++
       ) {
         const block = blockList[i];
@@ -64,96 +64,15 @@ export class DashboardView extends Component {
   };
 
   render() {
-    let status = [], dashboardview = [], middle = [];
+    let  dashboardview = [], middle = [];
 
-    for (let i = 0; i < config.status.length; i++) {
-
-      switch(config.status[i]) {
-        case "blocks" : status.push(
-          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
-            <Row>
-              <Col sm= "4">
-                <Avatar className="stat-avatar avatar-block" >
-                  <FontAwesome name="cube" />
-                </Avatar>
-              </Col>
-              <Col sm= "4">
-                <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
-              </Col>
-            </Row>
-             <FormattedMessage
-              id="page.localeProvider.blocks"
-              defaultMessage="BLOCKS"
-              description="BLOCKS"
-              />
-            
-          </div>
-        ); break;
-        case "transactions" : status.push(
-          <div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
-            <Row>
-              <Col sm= "4">
-                <Avatar className="stat-avatar avatar-tx" >
-                  <FontAwesome name="list-alt" />
-                </Avatar>
-              </Col>
-              <Col sm= "4">
-                <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
-              </Col>
-            </Row>
-              <FormattedMessage
-              id="page.localeProvider.transactions"
-              defaultMessage="TRANSACTIONS"
-              description="TRANSACTIONS"
-              />
-            
-         </div>
-        ); break;
-        case "nodes" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
-                  <Row>
-                    <Col sm= "4">
-                      <Avatar className="stat-avatar avatar-node" >
-                        <FontAwesome name="users" />
-                      </Avatar>
-                    </Col>
-                    <Col sm= "4">
-                      <h1 className="stat-count">{this.props.dashStats.nodeCount}</h1>
-                    </Col>
-                  </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.nodes"
-                    defaultMessage="NODES"
-                    description="NODES"
-                    />
-                  
-                </div>); break;
-        case "contracts" : status.push(<div className="statistic vdivide" style={{ width: (100/config.status.length) +'%' }}>
-                  <Row>
-                    <Col sm= "4">
-                      <Avatar className="stat-avatar avatar-contract" >
-                        <FontAwesome name="handshake-o" />
-                      </Avatar>
-                    </Col>
-                    <Col sm= "4">
-                      <h1 className="stat-count">{this.props.dashStats.contractCount}</h1>
-                    </Col>
-                  </Row>
-                  <FormattedMessage
-                    id="page.localeProvider.contracts"
-                    defaultMessage="CONTRACTS"
-                    description="CONTRACTS"
-                    />
-                  
-                </div>); break;
-        default:  break;
-      }
-    }
+    
 
     for (let i = 0; i < config.dashboardview_middle.length; i++) {
 
       switch(config.dashboardview_middle[i]) {
         case "nodeshealth" : middle.push(
-          <Col sm= {(12/config.dashboardview_middle.length)} >
+          <Col sm= '12' >
             <Card className="dash-section">
               <NodesHealth
                 nodeStatus={this.props.nodeStatus}
@@ -163,9 +82,16 @@ export class DashboardView extends Component {
           </Col>
         ); break;
         case "chartstatus" : middle.push(
-          <Col sm= {(12/config.dashboardview_middle.length)}>
+          <Col sm= '12'>
             <Card className="dash-section">
               <ChartStats appLocale= {this.props.appLocale} />
+            </Card>
+          </Col>
+        ); break;
+        case "timelinestream" : middle.push(
+          <Col sm='12'>
+            <Card className="dash-section">
+              <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
             </Card>
           </Col>
         ); break;
@@ -175,24 +101,27 @@ export class DashboardView extends Component {
 
     for (let i = 0; i < config.dashboardview.length; i++) {
       switch(config.dashboardview[i]) {
-        case "status" : dashboardview.push(
-          <Row>
-            <Col sm="12">
-              <Card className="stats-block ">
-                {status}
-              </Card>
-            </Col>
-          </Row>
-        ); break;
-        case "dashboardview_middle" : dashboardview.push (<Row>
+        
+        case "dashboardview_middle" : dashboardview.push (<Col sm='6'>
             {middle}
-          </Row>
+          </Col>
         ); break
         case "timelinestream" : dashboardview.push(
-          <Row>
+          <Col sm='6'>
             <Col sm="12">
               <Card className="dash-section">
                 <TimelineStream notifications={this.state.notifications} blockList={this.props.blockList} appLocale = {this.props.appLocale}/>
+              </Card>
+            </Col>
+          </Col>
+        ); break;
+        case "nodeshealth" : dashboardview.push(
+          <Row>
+            <Col sm="12">
+              <Card className="dash-section">
+                <NodesHealth
+                  nodeStatus={this.props.nodeStatus}
+                />
               </Card>
             </Col>
           </Row>
@@ -216,7 +145,9 @@ export class DashboardView extends Component {
           formats={this.props.appLocale.formats}
         >
         <div className="dash-view" >
-          {dashboardview}
+          <Row>
+            {dashboardview}
+          </Row>
         </div>
         </IntlProvider>
       </div>

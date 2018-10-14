@@ -43,13 +43,13 @@ class BlockView extends Component {
     const blockview = [];
     for (let i = 0; i < config.blockdetails.length; i++) {
       switch(config.blockdetails[i]) {
-        case "channelname" : blockview.push(
+        case "chainname" : blockview.push(
           <tr>
             <th>
               <FormattedMessage
-                id="page.localeProvider.channelname"
-                defaultMessage="Channel name"
-                description="Channel name"
+                id="page.localeProvider.chainname"
+                defaultMessage="Chain name"
+                description="Chain name"
               />
             </th>
             <td>{blockHash.channelname}</td>
@@ -199,7 +199,7 @@ class BlockView extends Component {
               <CardTitle className="dialogTitle">
                 <FontAwesome name="cube" className="cubeIcon" />
                   <FormattedMessage
-                    id="page.localeProvider.datah"
+                    id="page.localeProvider.blockhash"
                     defaultMessage="Block Details"
                     description="Block Details"
                   />

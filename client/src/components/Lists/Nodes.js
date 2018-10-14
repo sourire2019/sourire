@@ -8,11 +8,13 @@ import 'react-table/react-table.css'
 import matchSorter from 'match-sorter'
 import { FormattedMessage } from 'react-intl'
 import config from '../config.json'
+import cn from '../../static/images/cn.svg'
+import { Badge } from 'reactstrap'
 
 const Nodes = ({ nodeList }) => {
   const columnHeaders = []
-  for (let i = 0; i < config.networkview.length; i++) {
-    switch (config.networkview[i]) {
+  for (let i = 0; i < config.network_table.length; i++) {
+    switch (config.network_table[i]) {
       case 'nodename' : columnHeaders.push(
         {
           Header: <FormattedMessage
@@ -38,6 +40,36 @@ const Nodes = ({ nodeList }) => {
             matchSorter(rows, filter.value, { keys: ['requests'] }, { threshold: matchSorter.rankings.SIMPLEMATCH }),
           filterAll: true
         }
+      );break
+      case 'status' : columnHeaders.push(
+        {
+          Header: <FormattedMessage
+            id='page.localeProvider.status'
+            defaultMessage='status'
+            description='status'
+          />,
+          accessor: 'requests',
+          Cell: row => (<Badge color='success'>success</Badge>),
+          filterMethod: (filter, rows) =>
+            matchSorter(rows, filter.value, { keys: ['requests'] }, { threshold: matchSorter.rankings.SIMPLEMATCH }),
+          filterAll: true
+        }
+        );break
+        case 'location' : columnHeaders.push(
+        {
+          Header: <FormattedMessage
+            id='page.localeProvider.location'
+            defaultMessage='location'
+            description='location'
+          />,
+          accessor: 'requests',
+          Cell: row => (
+            <img src = {cn} style = {{width : "30px"}} />
+          ),
+          filterMethod: (filter, rows) =>
+            matchSorter(rows, filter.value, { keys: ['requests'] }, { threshold: matchSorter.rankings.SIMPLEMATCH }),
+          filterAll: true
+        }
       ); break
       default : break
     }
@@ -47,9 +79,7 @@ const Nodes = ({ nodeList }) => {
       <ReactTable
         data={nodeList}
         columns={columnHeaders}
-        defaultPageSize={5}
-        className='-striped -highlight'
-        filterable
+        defaultPageSize={20}
         minRows={0}
         showPagination={!(nodeList.length < 5)}
 

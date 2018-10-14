@@ -261,9 +261,7 @@ class Contracts extends Component {
         <ReactTable
           data={this.props.contractList}
           columns={this.reactTableSetup()}
-          defaultPageSize={5}
-          className="-striped -highlight"
-          filterable
+          defaultPageSize={20}
           minRows={0}
           showPagination={ this.props.contractList.length < 5  ?  false : true }
         />

@@ -6,6 +6,7 @@ import 'react-select/dist/react-select.css';
 import React, { Component } from 'react';
 import clientJson from '../../../package.json';
 import {FormattedMessage} from 'react-intl';
+import config from '../config.json';
 
 export class FooterView extends Component {
   handleChange = (selectedOption) => {
@@ -23,13 +24,13 @@ export class FooterView extends Component {
       <div>
         <div class="footer">
           <FormattedMessage
-            id="page.localeProvider.trustchain"
+            id={config.foot_id}
             values= {
               {
-                foot : "Copyright © 2018 sjclian.com | A | All rights reserved"
+                foot : "Copyright © 2018 "+ config.foot+" | All rights reserved"
               }
             }
-            defaultMessage="Trust chain {foot}"
+            defaultMessage= "trustchain {foot}"
             description="footer"
             />
           {""}

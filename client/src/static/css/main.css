@@ -14,11 +14,12 @@ font-weight: 300;
     height: 75px;
 }
 .dashButtons{
-    color:#000000!important;
-    font-size:1.05rem !important;
-     font-weight:800!important;
-     height: 50px!important;
-     margin: 10px;
+    color:#ffffff!important;
+    /*font-size:1.05rem !important;*/
+    font-weight:400!important;
+    height: 50px!important;
+    margin: 10px;
+    font-family: ClanProNews;
  }
  .ml-auto li{
     height:50px;
@@ -43,20 +44,30 @@ font-weight: 300;
     border: none;
     box-shadow: 0px 9px 10px  rgba(0,0,0,0.05)
 }
+.timeLineText {
+    font-family: ClanProNews;
+    font-color : #89898f !important;
+    font-size: 12px;
+}
 .activeTab{
 
-    color:#ffffff!important;
-    background-color:#808080!important;
-    height: 60px!important;
-    margin-top: 20px;
-    padding:10px!important
+    color:#FF9966!important;
+    /*background-color:#808080!important;*/
+    height: 50px!important;
+    margin: 10px;
+    /*padding:10px!important;*/
+    font-weight: 400;
+    font-family: ClanProNews;
 }
 
 /*Channel Drop-Down*/
 .Select-control{
     background-color:#E8E8E8!important;
 }
-
+.nav-item {
+    font-family: ClanProNews;
+    font-size: 12px;
+}
 .cog, .bell{
     margin-top: 36px;
     color: #5F6164;
@@ -86,8 +97,9 @@ div.menuItems > nav{
     border-bottom: 2px #000000 solid;
 }
 .logo{
-     width: 365px;
+     /*width: 365px;*/
     height: 70px; 
+    margin-left: 100px;
     /*width: 260px;
     height: 50px;*/
 }
@@ -135,9 +147,11 @@ word-wrap: break-word;
     padding: 5px;
 }
 .scrollable-card{
-    height: 180px;
-    overflow: hidden;
-    overflow-x: scroll;
+    height: 530px;
+    overflow-y: scroll;
+}
+.chartCard {
+    height: 230px;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -203,6 +217,10 @@ word-wrap: break-word;
 .fixed-header thead >tr{
     position: relative;
 }
+.timetrade{
+    background : #f0f5f9;
+    margin-top: -100px;
+}
 /* Landing page css */
 .landing{
 
@@ -212,6 +230,7 @@ word-wrap: break-word;
 .landingBackground{
     background-color:#F0F5F9!important;
 }
+.
 .landing > h1{
     font-size: 40pt;
 }
@@ -314,14 +333,33 @@ svg.custom path.link {
 }
 .view-fullwidth{
     width: 100%;
-    margin-top:105px;
+    margin-top:210px;
     background-color: #F0F5F9;
+    font-family: ClanProNews;
+    font-size:12px;
+    margin-left: 10%;
+
+}
+#showTransactionId {
+    border: none;
+    background-color: primary;
+}
+.table-card{
+    margin-left: -14%;
+    margin-right: 14%;
+}
+.node-table-card {
+    margin : 0 !important;
 }
 .view-display{
     display: block;
-    margin-left: auto;
+    margin-left: 14%;
     margin-right: auto;
-    width: 60%;
+    width: 1250px;
+    /*margin-left: 14%;*/
+    text-align: center;
+    font-color : grey;
+    color: grey;
     /* width: 30px; */
 }
 /* .app-header{
@@ -422,7 +460,7 @@ text-shadow: 1px 1px 2px rgba(129, 129, 129, 0.753);
 
 .blockOpen{
     height: 35px;
-margin-top:-10px;
+    margin-top:-10px;
     background-color:transparent;
 }
 /* Light Theme Dash  */
@@ -442,7 +480,7 @@ margin-top:-10px;
     background-color: #ffffff!important;
 }
 .vdivide::after {
-   border-right:2px #DFF1FE solid;
+   /*border-right:2px #DFF1FE solid;*/
    display: block;
    height: 45%;
    bottom: 55%;
@@ -450,7 +488,7 @@ margin-top:-10px;
    position: relative;
 }
 .nodes-health{
-    height: 335px;
+    height: 200px;
     overflow-y: scroll;
 }
 .center-column{
@@ -460,6 +498,10 @@ margin-top:-10px;
 .dash-section{
     margin-bottom: 1%;
 }
+.nodeshealth{
+    margin-top: 17%;
+    height: 200px;
+}
 .org-pie{
    padding-left:10%;
 }
@@ -468,12 +510,13 @@ margin-top:-10px;
 
 }
 .dash-view{
-   padding-top: 85px;
+   /*padding-top: 205px;*/
     padding-left: 0px!important;
-    width: 80%;
-    margin-left:10%;
+    width: 1250px;
+    margin-left:14%;
     margin-right:10%;
     overflow: hidden;
+    margin-top: 210px;
     /* padding-top: 85px;
     padding-left: 0px!important;
     width: 100%; */
@@ -484,32 +527,51 @@ margin-top:-10px;
 
 }
 .navbar-header{
-    background-color: #E8E8E8!important;
+    background-color: #111113;
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 .footer{
     background-color: #E8E8E8;
     text-align: center;
-    bottom: 0;
+/*    bottom: 0;
     position: fixed;
     left: 0;
-    right: 0;
+    right: 0;*/
   }
 .footerView{
-    margin:2%!important;
+    /*margin:2%!important;*/
  }
 .statistic{
     display: block;
     float: left;
-    height: 100%;
-    /* border: 3px #DFF1FE solid; */
-    /*width: 25%;*/
-    text-align: center;
-    font-size: 18pt;
-    color:#000000
+    padding: 16px 10px 10px 13px;
+    margin-right: 10px;
+    /*text-align: center;*/
+    font-size: 14px;
+    font-family: ClanProNews;
+    background-color: #29292d;
+    border-radius: 3px;
+    height: 80px;
 }
-
+.count {
+    margin: 0;
+    margin-top: 10px;
+}
 .stat-count{
-    margin-top:55%;
+    color: rgb(113,212,121);
+}
+.stat-name{
+    color: #b2b6be;
+}
+.stat {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 20px;
+    width: 1250px;
 }
 .stat-avatar{
     justify-content: center;
@@ -544,7 +606,11 @@ margin-top:-10px;
 .langIcon {
     display: inline-block;
     margin-top: 15px;
-    color: grey;
+    color: #ffffff;
+}
+.githubIcon {
+    display: inline-block;
+    color: #ffffff;
 }
 /*Time Chart and Chart stats */
 .recharts-layer{
@@ -556,9 +622,14 @@ margin-top:-10px;
  }
  /*Hiding/Showing hash tooltip on hover*/
  .partialHash{
-     text-align:center;
+    text-align:center;
+    border: none;
+    background: none;
  }
 
+.echarts-for-react  div {
+    margin-left: -200px !important;
+}
 .partialHash:hover  .fullHash{
 display:block;
 position:absolute!important;
@@ -588,13 +659,13 @@ opacity:0.7
     font-size:10px;
     margin-top:-10px;
      }
-     .copyBtn:active copiedMessage{
-        display:block;
-        position:absolute!important;
-        padding:0 ;
-        background-color: transparent;
-        margin-top:-30px;
-     }
+.copyBtn:active copiedMessage{
+    display:block;
+    position:absolute!important;
+    padding:0 ;
+    background-color: transparent;
+    margin-top:-30px;
+}
 /* Change Channel Loader */
 .channel-loader{
     text-align: center;
@@ -613,4 +684,10 @@ opacity:0.7
     height: 200px;
     width: 2000px;
     overflow: hidden;
+}
+.ReactTable .rt-thead .rt-tr{
+    background-color: rgb(241,241,242);
+    color : #89898f;
+    font-style: italic !important;
+    font-weight: 700 !important;
 }

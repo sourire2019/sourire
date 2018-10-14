@@ -107,7 +107,7 @@ const dbroutes = (app, persist) => {
         } else {
           return res.send({
             status: 200,
-            rows: {}
+            rows: []
           })
         }
       })
