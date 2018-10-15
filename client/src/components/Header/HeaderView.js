@@ -44,7 +44,7 @@ const {
 } = chartOperations;
 
 const {blockList, contractList, nodeList, transactionList} = tableOperations;
-
+const channel = tableOperations.channels;
 const {currentChannelSelector, dashStatsSelector} = chartSelectors;
 const {channelsSelector} = tableSelectors;
 
@@ -124,7 +124,7 @@ export class HeaderView extends Component {
       selectedChannel: selectedValue
     });
 
-    setInterval(() => this.syncData(this.props.currentChannel), 60000);
+    setInterval(() => this.syncData(this.props.currentChannel), 5000);
   }
 
   async syncData(currentChannel) {
@@ -139,9 +139,11 @@ export class HeaderView extends Component {
       this.props.getTransactionByOrg(currentChannel),
       this.props.getTransactionList(currentChannel),
       this.props.getTransactionPerHour(currentChannel),
-      this.props.getTransactionPerMin(currentChannel)
+      this.props.getTransactionPerMin(currentChannel),
+      this.props.getChannels()
     ]);
     this.dashStats = this.props.getDashStats(currentChannel);
+    this.channels = this.props.getChannels();
     this.handleClose();
   }
 
@@ -522,7 +524,7 @@ export default compose(
   connect(
     state => ({
       currentChannel: currentChannelSelector(state),
-      channels: channelsSelector(state),
+      channels : channelsSelector(state),
       dashStat: dashStatsSelector(state)
     }),
     {
@@ -537,7 +539,8 @@ export default compose(
       getTransactionByOrg: transactionByOrg,
       getTransactionList: transactionList,
       getTransactionPerHour: transactionPerHour,
-      getTransactionPerMin: transactionPerMin
+      getTransactionPerMin: transactionPerMin,
+      getChannels : channel
     }
   )
 )(HeaderView);

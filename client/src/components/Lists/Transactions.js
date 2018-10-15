@@ -285,7 +285,7 @@ class Transactions extends Component {
         <ReactTable
           data={this.props.transactionList.rows}
           columns={columnHeaders}
-          defaultPageSize={10}
+          defaultPageSize={20}
           minRows={0}
           showPagination={this.props.transactionList.length < 5 ? false : true}
         />

@@ -60,5 +60,6 @@ export default {
   'page.localeProvider.jsta' : 'Justitia {foot}',
   'page.localeProvider.chains': '链',
   'page.localeProvider.location': '位置',
-  'page.localProvider.status_u' : '状态'
+  'page.localProvider.status_u' : '状态',
+  'page.localProvider.blocks_l' : '块'
 }

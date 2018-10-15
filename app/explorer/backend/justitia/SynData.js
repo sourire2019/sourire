@@ -48,7 +48,7 @@ class SynData {
       for (let i = 0; i < txLen; i++) {
         var tx = block.txs[i]
         var type = 0
-        var contractname
+        var contractname = ''
         var to = tx.to
         if (!to) {
           to = ''
@@ -166,6 +166,21 @@ class SynData {
   };
 
   async syncChannels () {
+    var chain_id = await this.getCurChannelName()
+    var nums = 0   
+    var total_txs = 0
+
+    var myDate = new Date();
+    var timestamp = myDate.toLocaleString()
+    var channel = {
+      blocks: parseInt(nums),
+      trans: parseInt(total_txs),
+      name: chain_id,
+      createdt: timestamp,
+      channel_hash: chain_id,
+      genesis_block_hash: chain_id
+    }
+    this.crudService.saveChannel(channel)
   };
 
   async saveNodelist () {

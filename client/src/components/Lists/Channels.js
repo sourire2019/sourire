@@ -76,7 +76,7 @@ class Channels extends Component {
             case "blocks" : columnHeaders.push(
               {
                 Header: <FormattedMessage
-                            id="page.localeProvider.blocks"
+                            id="page.localeProvider.blocks_l"
                             defaultMessage='Blocks'
                             description='Blocks'
                             />,

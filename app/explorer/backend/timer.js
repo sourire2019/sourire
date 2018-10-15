@@ -21,7 +21,7 @@ if (platform.plf === 'justitia') {
 
   blockListener = new BlockListener(blockScanner)
 
-if (platform.plf === 'justitia') {
+ if (platform.plf === 'justitia') {
   console.log('justitia timer')
     setInterval(function () {
       console.log('justitia timer')

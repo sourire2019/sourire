@@ -48,7 +48,7 @@ export default {
   'page.localeProvider.balance': 'Balance',
   'page.localeProvider.creator_hash': 'Creator Hash',
   'page.localeProvider.contract_code': 'Contract Code',
-  'page.localeProvider.txhash': 'TX HAsh',
+  'page.localeProvider.txhash': 'TX Hash',
   'page.localeProvider.blockid': 'blockid',
   'page.localeProvider.blocktime': 'blockTime',
   'page.localeProvider.from': 'From',
@@ -60,5 +60,6 @@ export default {
   'page.localeProvider.jsta' : 'Justitia {foot}',
   'page.localeProvider.chains': 'CHAINS',
   'page.localeProvider.location': 'Location',
-  'page.localeProvider.status_u' : 'Status'
+  'page.localeProvider.status_u' : 'Status',
+  'page.localeProvider.blocks_l' : 'Blocks'
 }

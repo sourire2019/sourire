@@ -15,7 +15,7 @@
 		"nodename" , "status" 
 	],
 	"chartstatus" : [
-		"blockshour", "blocksmin", "txhour", "txmin"
+		"blocksmin", "blockshour", "txmin", "txhour"
 	],
 	"transactionsview" : [
 		"chainname", "txid", "type", "contract" , "txhash", "block" ,"from", "to", "timestamp"
