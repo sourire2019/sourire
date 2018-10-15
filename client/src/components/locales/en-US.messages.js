@@ -51,14 +51,14 @@ export default {
   'page.localeProvider.txhash': 'TX HAsh',
   'page.localeProvider.blockid': 'blockid',
   'page.localeProvider.blocktime': 'blockTime',
-  'page.localeProvider.from': 'from',
-  'page.localeProvider.to': 'to',
+  'page.localeProvider.from': 'From',
+  'page.localeProvider.to': 'To',
   'page.localeProvider.contract': 'Contract',
   'page.localeProvider.chain': 'CHAINS',
   'page.localeProvider.chainl': 'chain',
   'page.localeProvider.chainname': 'Chain Name',
   'page.localeProvider.jsta' : 'Justitia {foot}',
   'page.localeProvider.chains': 'CHAINS',
-  'page.localeProvider.location': 'LOCATION',
-  'page.localeProvider.status_u' : 'STATUS'
+  'page.localeProvider.location': 'Location',
+  'page.localeProvider.status_u' : 'Status'
 }
