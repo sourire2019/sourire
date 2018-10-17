@@ -12,9 +12,10 @@ rm -rf /tmp/fabric-client-kvs_peerOrg*
 
 mkdir -p ./logs/app & mkdir -p ./logs/db & mkdir -p ./logs/console
 
+node syncData.js >>logs/console/console1.log-"$(date +%Y-%m-%d)" 2>&1 &\
+
+sleep 5s
+
 node main.js >>logs/console/console.log-"$(date +%Y-%m-%d)" 2>&1 &
 
 find ./logs/app -mtime +7 -type f -delete & find ./logs/db -mtime +7 -type f -delete & find ./logs/console -mtime +7 -type f -delete
-
-
-

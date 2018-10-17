@@ -7,15 +7,17 @@ var logger = helper.getLogger('synData')
 var crypto = require('crypto')
 
 class SynData {
-  constructor (platform, persistence, broadcaster) {
+  constructor (platform, persistence) {
     this.platform = platform
     this.crudService = persistence.getCrudService()
-    this.broadcaster = broadcaster
   }
 
   async syncBlock () {
     try {
       console.log('this is  SynBlockData')
+      var myDate = new Date();
+      var timetest = myDate.toLocaleString()
+      console.log(timetest)
       var curBlockNum
       var genesisBlockHash = ''
       var channelName = ''
@@ -31,6 +33,11 @@ class SynData {
       }
       await this.getBlockByNumber(channelName, curBlockNum + 1, maxBlockNum + 1)
       await this.syncJustChannels()
+      var myDate = new Date();
+      var timetest = myDate.toLocaleString()
+      console.log('jieshu')
+      console.log(timetest)
+      return true
     } catch (err) {
       console.log(err)
     }
@@ -219,3 +226,4 @@ class SynData {
 }
 
 module.exports = SynData
+

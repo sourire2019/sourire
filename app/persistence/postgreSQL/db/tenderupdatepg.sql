@@ -53,7 +53,7 @@ DROP INDEX IF EXISTS blocks_createdt_idx;
 CREATE INDEX ON Blocks (createdt);
 
 DROP INDEX IF EXISTS transaction_txhash_idx;
-CREATE INDEX ON Transaction (txhash);
+CREATE UNIQUE INDEX ON Transaction (txhash);
 
 DROP INDEX IF EXISTS transaction_genesis_block_hash_idx;
 CREATE INDEX ON Transaction (genesis_block_hash);
@@ -80,9 +80,13 @@ ADD COLUMN creator character varying(256) DEFAULT NULL,
 ADD COLUMN creator_hash character varying(256) DEFAULT NULL,
 ADD COLUMN contract_code character varying(256) DEFAULT NULL
 ;
+DROP INDEX IF EXISTS contracts_name_idx;
+CREATE UNIQUE INDEX ON contracts (name);
 
 ALTER TABLE transactions 
 ADD COLUMN blocktime character varying(256) DEFAULT NULL,
 ADD COLUMN transaction_from character varying(256) DEFAULT NULL,
 ADD COLUMN transaction_to character varying(256) DEFAULT NULL
 ;
+
+ALTER DATABASE tendermintexplorer SET timezone='PRC';

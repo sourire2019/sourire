@@ -102,7 +102,7 @@ function saveRow (tablename, columnValues) {
       if (err) {
         logger.error('[INSERT ERROR] - ', err.message)
         console.log(err.stack)
-        reject(err)
+ //       reject(err)
       }
 
       logger.debug(
@@ -113,7 +113,7 @@ function saveRow (tablename, columnValues) {
         '-----------------------------------------------------------------\n\n'
       )
 
-      resolve(res.rows[0].id)
+      resolve()
     })
   })
 }

@@ -38,7 +38,7 @@ class Explorer {
     for (let pltfrm of platforms) {
       let platform = await PlatformBuilder.build(pltfrm)
       await routes(this.app, pltfrm, platform)
-      await timer.start(platform, this.persistence, broadcaster)
+      await timer.start(platform, this.persistence)
       if (pltfrm === 'justitia') {
         //todo
         console.log('this is justitia part')
@@ -63,3 +63,4 @@ class Explorer {
 }
 
 module.exports = Explorer
+

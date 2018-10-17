@@ -7,10 +7,9 @@ var logger = helper.getLogger('synBlockData')
 var crypto = require('crypto')
 
 class SynBlockData {
-  constructor (platform, persistence, broadcaster) {
+  constructor (platform, persistence) {
     this.platform = platform
     this.crudService = persistence.getCrudService()
-    this.broadcaster = broadcaster
   }
 
   async syncBlock () {
@@ -240,3 +239,4 @@ class SynBlockData {
 }
 
 module.exports = SynBlockData
+
