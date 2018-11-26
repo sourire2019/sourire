@@ -1,29 +1,32 @@
-/**
- *    SPDX-License-Identifier: Apache-2.0
- */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import createStore from './state/store';
+import { unregister } from './registerServiceWorker';
+import tableOperations from './state/redux/tables/operations';
+import { Provider } from 'react-redux';
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './static/css/reset.css'
-import { Provider } from 'react-redux'
-import createStore from './state/store'
-// import { getChannelList } from './store/actions/chanelList/action-creators';
-import chartsOperations from './state/redux/charts/operations'
-// import { getChannel } from './store/actions/channel/action-creators';
-import './static/css/style.css'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import 'font-awesome/css/font-awesome.min.css'
-import App from './components/App/App'
-import { unregister } from './registerServiceWorker'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/scss/index.scss';
+import './assets/css/base.css';
+import './assets/css/pe-icon-7-stroke.css';
+
+
+import DefaultLayout from './layouts/DefaultLayout';
 
 const store = createStore()
-store.dispatch(chartsOperations.channel())
-store.dispatch(chartsOperations.channelList())
+store.dispatch(tableOperations.channel())
+store.dispatch(tableOperations.channelList())
+store.dispatch(tableOperations.channels())
 unregister()
+
 ReactDOM.render(
-  <Provider store={store} >
-    <App />
-  </Provider>, document.getElementById('root')
-)
+  <HashRouter>
+  	<Provider store={store} >
+	    <Switch>
+	      <Route to="/" component={DefaultLayout} />;
+	    </Switch>
+    </Provider>
+  </HashRouter>,
+  document.getElementById('root')
+);

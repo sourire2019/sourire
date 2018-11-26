@@ -63,15 +63,15 @@ const dbroutes = (app, persist) => {
     }
   })
 
-  app.get('/api/txList/:channel/:blocknum/:txid', function (req, res) {
+  app.get('/api/txList/:channel/:limit/:num', function (req, res) {
     let channelName = req.params.channel
-    let blockNum = parseInt(req.params.blocknum)
-    let txid = parseInt(req.params.txid)
-    if (isNaN(txid)) {
-      txid = 0
+    let limit = parseInt(req.params.limit)
+    let num = parseInt(req.params.num)
+    if (isNaN(num)) {
+      num = 0
     }
     if (channelName) {
-      crudService.getTxList(channelName, blockNum, txid).then(rows => {
+      crudService.getTxList1(channelName, limit, num).then(rows => {
         if (rows) {
           return res.send({ status: 200, rows })
         } else {
@@ -97,24 +97,24 @@ const dbroutes = (app, persist) => {
     }
   })
 
-  app.get('/api/blockAndTxList/:channel/:blocknum', function (req, res) {
-    let channelName = req.params.channel
-    let blockNum = parseInt(req.params.blocknum)
-    if (channelName && !isNaN(blockNum)) {
-      crudService.getBlockAndTxList(channelName, blockNum).then(rows => {
-        if (rows) {
-          return res.send({ status: 200, rows })
-        } else {
-          return res.send({
-            status: 200,
-            rows: []
-          })
-        }
-      })
-    } else {
-      return requtil.invalidRequest(req, res)
-    }
-  })
+  // app.get('/api/blockAndTxList/:channel/:blocknum', function (req, res) {
+  //   let channelName = req.params.channel
+  //   let blockNum = parseInt(req.params.blocknum)
+  //   if (channelName && !isNaN(blockNum)) {
+  //     crudService.getBlockAndTxList(channelName, blockNum).then(rows => {
+  //       if (rows) {
+  //         return res.send({ status: 200, rows })
+  //       } else {
+  //         return res.send({
+  //           status: 200,
+  //           rows: []
+  //         })
+  //       }
+  //     })
+  //   } else {
+  //     return requtil.invalidRequest(req, res)
+  //   }
+  // })
 
   app.get('/api/txByMinute/:channel/:hours', function (req, res) {
     let channelName = req.params.channel
@@ -235,19 +235,39 @@ const dbroutes = (app, persist) => {
     }
   })
 
-  app.get('/api/contract/:channel', function (req, res) {
+  // app.get('/api/contract/:channel', function (req, res) {
+  //   let channelName = req.params.channel
+  //   if (channelName) {
+  //     crudService.getContract(channelName).then(rows => {
+  //       if (rows) {
+  //         res.send({
+  //           status: 200,
+  //           contract: rows
+  //         })
+  //       } else {
+  //         res.send({
+  //           status : 200,
+  //           contract : []
+  //         })
+  //       }
+  //     })
+  //   } else {
+  //     return requtil.invalidRequest(req, res)
+  //   }
+  // })
+  
+  app.get('/api/contract/:channel/:limit/:num', function (req, res) {
     let channelName = req.params.channel
-    if (channelName) {
-      crudService.getContract(channelName).then(rows => {
+    let limit = parseInt(req.params.limit)
+    let num = parseInt(req.params.num)
+    if (channelName && !isNaN(limit) && !isNaN(num)) {
+      crudService.getContractLimit(channelName, limit,num).then(rows => {
         if (rows) {
-          res.send({
-            status: 200,
-            contract: rows
-          })
+          return res.send({ status: 200, contract : rows })
         } else {
-          res.send({
-            status : 200,
-            contract : []
+          return res.send({
+            status: 200,
+            contract: []
           })
         }
       })
@@ -255,6 +275,69 @@ const dbroutes = (app, persist) => {
       return requtil.invalidRequest(req, res)
     }
   })
+
+  app.get('/api/blockAndTxList/:channel/:limit/:num', function (req, res) {
+    let channelName = req.params.channel
+    let limit = parseInt(req.params.limit)
+    let num = parseInt(req.params.num)
+    if (channelName && !isNaN(limit) && !isNaN(num)) {
+      crudService.getBlockAndTxList1(channelName, limit,num).then(rows => {
+        if (rows) {
+          return res.send({ status: 200, rows })
+        } else {
+          return res.send({
+            status: 200,
+            rows: []
+          })
+        }
+      })
+    } else {
+      return requtil.invalidRequest(req, res)
+    }
+  })
+
+  app.get('/api/watchcontract/:channel/:id', function (req, res) {
+    let channelName = req.params.channel
+    let id = parseInt(req.params.id)
+    if (channelName && !isNaN(id) ) {
+      crudService.getSreCodeByID(channelName, id).then(row => {
+        if (row) {
+          return res.send({ status: 200, row : row.srecode })
+        } else {
+          return res.send({
+            status: 200,
+            row: ''
+          })
+        }
+      })
+    } else {
+      return requtil.invalidRequest(req, res)
+    }
+  })
+  app.post('/api/uploadContract/:channel/:id', function(req,res){
+    let channelName = req.params.channel
+    let id = parseInt(req.params.id)
+    let value = req.body.data
+    if (channelName && !isNaN(id)) {
+      crudService.updateSrecode(channelName,id, value).then(row => {
+        if(row){
+          return res.send({
+            status : 200,
+            "message" : "success"
+          })
+        }else {
+          return res.send({
+            status : 200,
+            "message" : "success"
+          })
+        }
+      })          
+    } else {
+      return requtil.invalidRequest(req, res)
+    }
+  })
 }
+
+
 
 module.exports = dbroutes

@@ -35,7 +35,9 @@ if (platform.plf === 'justitia') {
 //     blockListener.emit('syncBlock')
 //   }
 
-
+  if (platform.plf === 'tendermint') {
+    blockListener.emit('syncBlock')
+  }
   setInterval(function () {
     blockPerMinMeter.push(0)
     txnPerSecMeter.push(0)

@@ -89,4 +89,7 @@ ADD COLUMN transaction_from character varying(256) DEFAULT NULL,
 ADD COLUMN transaction_to character varying(256) DEFAULT NULL
 ;
 
+ALTER TABLE contracts ADD COLUMN srecode TEXT default NULL;
+ALTER TABLE contracts ADD COLUMN bytecode TEXT default NULL;
+
 ALTER DATABASE tendermintexplorer SET timezone='PRC';

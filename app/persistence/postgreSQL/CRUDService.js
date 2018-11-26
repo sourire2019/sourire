@@ -13,10 +13,17 @@ class CRUDService {
   }
 
   getTransactionByID (channelName, txhash) {
-    let sqlTxById = ` select t.txhash,t.validation_code,t.payload_proposal_hash,t.creator_msp_id,t.endorser_msp_id,t.contractname,t.type,t.createdt,t.read_set,t.write_set,channel.name as channelname from TRANSACTIONS as t inner join channel on t.genesis_block_hash=channel.genesis_block_hash where t.txhash = '${txhash}' `
+    let sqlTxById = ` select t.txhash,t.validation_code,t.payload_proposal_hash,t.creator_msp_id,t.endorser_msp_id,t.contractname,t.type,t.createdt,t.read_set,t.write_set,channel.name as channelname ,t.transaction_from as from,t.transaction_to as to ,t.blockid from TRANSACTIONS as t inner join channel on t.genesis_block_hash=channel.genesis_block_hash where t.txhash = '${txhash}' `
     return sql.getRowByPkOne(sqlTxById)
   }
-
+  getSreCodeByID (channelName, id) {
+    let sqlBytecodeById = ` SELECT srecode from contracts where id = '${id}' and genesis_block_hash = '${channelName}'  `
+    return sql.getRowByPkOne(sqlBytecodeById)
+  }
+  updateSrecode(channelName, id, value) {
+    let sqlUpdatecode = `update contracts set srecode ='${value}' where id ='${id}' and genesis_block_hash = '${channelName}'`
+    return sql.updateBySql(sqlUpdatecode)
+  }
   getTxList (channelName, blockNum, txid) {
     let sqlTxList = ` select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where  t.blockid >= ${blockNum} and t.id >= ${txid} and
         t.genesis_block_hash = '${channelName}'  order by  t.id desc`
@@ -24,10 +31,13 @@ class CRUDService {
   }
 
   getContract (channelName) {
-    let sqlcontract = ` select name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='${channelName}'`
+    let sqlcontract = ` select id, name ,balance,txcount,creator, creator_hash, contract_code from contracts where genesis_block_hash='${channelName}'`
     return sql.getRowsBySQlQuery(sqlcontract)
   }
-
+  getContractLimit(channelName, limit, num) {
+    let sqlcontract = ` select id, name ,balance,txcount,creator, creator_hash, contract_code , srecode from contracts where genesis_block_hash='${channelName}' order by id desc LIMIT ${limit} OFFSET ${num} * ${limit}`
+    return sql.getRowsBySQlQuery(sqlcontract)
+  }
   getBlockAndTxList (channelName, blockNum) {
     let sqlBlockTxList = ` select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
         SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = '${channelName}' group by transactions.blockid ),
@@ -35,6 +45,20 @@ class CRUDService {
          blocks.genesis_block_hash ='${channelName}' and blocknum >= ${blockNum}
          order by blocks.blocknum desc`
     return sql.getRowsBySQlQuery(sqlBlockTxList)
+  }
+
+  getBlockAndTxList1 (channelName, limit, num ) {
+    let sqlBlockTxList = ` select blocks.blocknum,blocks.txcount ,blocks.datahash ,blocks.blockhash ,blocks.prehash,blocks.createdt,(
+        SELECT  array_agg(txhash) as txhash FROM transactions where blockid = blocks.blocknum and genesis_block_hash = '${channelName}' group by transactions.blockid ),
+        channel.name as channelname  from blocks inner join channel on blocks.genesis_block_hash =channel.genesis_block_hash  where
+         blocks.genesis_block_hash ='${channelName}'
+         order by blocks.blocknum desc LIMIT ${limit} OFFSET ${num} * ${limit}`
+    return sql.getRowsBySQlQuery(sqlBlockTxList)
+  }
+
+    getTxList1 (channelName, limit, num) {
+    let sqlTxList = ` select t.creator_msp_id,t.txhash,t.type,t.contractname,t.createdt,t.blockid,t.blocktime,t.transaction_from as from,t.transaction_to as to,channel.name as channelname from transactions as t  inner join channel on t.genesis_block_hash=channel.genesis_block_hash where     t.genesis_block_hash = '${channelName}'  order by  t.id desc LIMIT ${limit} OFFSET ${num} * ${limit}`
+    return sql.getRowsBySQlQuery(sqlTxList)
   }
 
   async getChannelConfig (channelName) {
