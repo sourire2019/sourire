@@ -178,12 +178,12 @@ class SynData {
     var total_txs = 0
 
     var myDate = new Date();
-    var timestamp = myDate.toLocaleString()
+    //var timestamp = myDate.toLocaleString()
     var channel = {
       blocks: parseInt(nums),
       trans: parseInt(total_txs),
       name: chain_id,
-      createdt: timestamp,
+      createdt: myDate,
       channel_hash: chain_id,
       genesis_block_hash: chain_id
     }
